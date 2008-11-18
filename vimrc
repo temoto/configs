@@ -71,9 +71,12 @@ ino <silent><F3> <C-o>:NERDTreeToggle<CR>
 nno <silent><F3> :NERDTreeToggle<CR>
 let g:NERDTreeSplitVertical = 0
 
+" tag list
+ino <silent><F4> <C-o>:TlistToggle<CR>
+
 " comment/uncomment and move lower
-ino <F4> <Home># <Down>
-ino <F5> <Home><Del><Del><Down>
+ino <M-;> <Home># <Down>
+ino <M-'> <Home><Del><Del><Down>
 
 " undo/redo
 nno <C-z> :undo<CR>i
