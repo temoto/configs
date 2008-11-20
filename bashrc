@@ -3,8 +3,6 @@
 # non-interactive -> quit
 [ -z "$PS1" ] && return
 
-export HISTCONTROL=$HISTCONTROL${HISTCONTROL+,}ignoredups
-export HISTCONTROL=ignoreboth
 [[ -f /etc/bash_completion ]] && source /etc/bash_completion
 
 shopt -s histappend
@@ -14,13 +12,14 @@ shopt -s checkwinsize
 PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 
 # my settings
-export http_proxy=""
-export https_proxy="http://friday.loc:3128/"
+export LANG=en_US.UTF-8
+export HISTCONTROL=ignoredups:erasedups
+export HISTSIZE=5000
+export EDITOR=/usr/bin/vim
 export PYTHONSTARTUP=~/.pythonrc.py
 
 alias grep='grep --color=auto'
 alias ls='ls --color=auto'
-alias _wf='sudo wifi-radar -d >/dev/null 2>/dev/null &'
 alias m='less'
 alias l='ls -l'
 alias p='python'
