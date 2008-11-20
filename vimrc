@@ -29,8 +29,8 @@ set laststatus=2
 set statusline=%F%m%r%h%w\ [ff=%{&ff}]\ [ft=%Y]\ [hex=\%02.2B]\ [pos=%04l,%04v][%p%%]\ [lines=%L]
 set cmdheight=2
 
-set tags+=~/.vim/tags/python.ctags
 set tags+=~/.vim/tags/parking.ctags
+set tags+=~/.vim/tags/python.ctags
 
 " good-mode
 set insertmode
