@@ -25,6 +25,12 @@ alias l='ls -l'
 alias p='python'
 alias cal='cal -m3'
 
+# cd and show todo
+cd()
+{
+    builtin cd $1 && devtodo
+}
+
 alias ']find-py'='find . -name \*.py | xargs '
 alias ']find-pyc'='find . -name \*.pyc | xargs '
 alias ']py-wc-l'=']find-py cat | wc -l'

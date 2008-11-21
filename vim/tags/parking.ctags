@@ -24,6 +24,7 @@ DnsAnswerMock	/home/temoto/project/parking/domain_approver/tests.py	/^class DnsA
 DnsResolverMock	/home/temoto/project/parking/domain_approver/tests.py	/^class DnsResolverMock(object):$/;"	c
 Domain	/home/temoto/project/parking/domain_manager/db.py	/^class Domain(DbRecord):$/;"	c
 DomainView	/home/temoto/project/parking/domain_manager/db.py	/^class DomainView(DbRecord):$/;"	c
+DomainViewTaxonomy	/home/temoto/project/parking/domain_manager/db.py	/^class DomainViewTaxonomy(DbRecord):$/;"	c
 Earnings	/home/temoto/project/parking/account_manager/db.py	/^class Earnings(DbRecord):$/;"	c
 EarningsTestCase	/home/temoto/project/parking/account_manager/tests.py	/^class EarningsTestCase(unittest.TestCase):$/;"	c
 Escape	/home/temoto/project/parking/shared/tests/sql.py	/^class Escape(unittest.TestCase):$/;"	c
@@ -70,7 +71,6 @@ SqlDelete	/home/temoto/project/parking/shared/tests/dbhelpers.py	/^class SqlDele
 SqlFormatWhere	/home/temoto/project/parking/shared/tests/dbhelpers.py	/^class SqlFormatWhere(unittest.TestCase):$/;"	c
 SqlSelect	/home/temoto/project/parking/shared/tests/dbhelpers.py	/^class SqlSelect(unittest.TestCase):$/;"	c
 SupervisorTestCase	/home/temoto/project/parking/supervisor/tests.py	/^class SupervisorTestCase(unittest.TestCase):$/;"	c
-TaxVsDv	/home/temoto/project/parking/domain_manager/db.py	/^class TaxVsDv(DbRecord):$/;"	c
 Taxonomy	/home/temoto/project/parking/domain_manager/db.py	/^class Taxonomy(DbRecord):$/;"	c
 Template	/home/temoto/project/parking/domain_manager/db.py	/^class Template(DbRecord):$/;"	c
 TemplateTestCase	/home/temoto/project/parking/domain_manager/tests.py	/^class TemplateTestCase(unittest.TestCase):$/;"	c
@@ -182,7 +182,6 @@ decode_or_none	/home/temoto/project/parking/shared/util.py	/^def decode_or_none(
 delete	/home/temoto/project/parking/domain_manager/db.py	/^    def delete(self, data):$/;"	m	class:Taxonomy
 delete	/home/temoto/project/parking/shared/dbhelpers.py	/^    def delete(self, record_id):$/;"	m	class:DbRecord
 delete	/home/temoto/project/parking/shared/sql.py	/^def delete(table, **conditions):$/;"	f
-delete_def_template	/home/temoto/project/parking/domain_manager/db.py	/^    def delete_def_template(self):$/;"	m	class:Template
 delete_domain	/home/temoto/project/parking/domain_manager/dbhelpers.py	/^def delete_domain(data):$/;"	f
 delete_keyword	/home/temoto/project/parking/domain_manager/dbhelpers.py	/^def delete_keyword(data):$/;"	f
 delete_record_by	/home/temoto/project/parking/shared/dbhelpers.py	/^def delete_record_by(session, table, where):$/;"	f
@@ -225,7 +224,6 @@ get_runtime_config	/home/temoto/project/parking/shared/util.py	/^def get_runtime
 get_service_by_id	/home/temoto/project/parking/shared/util.py	/^def get_service_by_id(_id, configuration):$/;"	f
 get_service_by_url	/home/temoto/project/parking/shared/util.py	/^def get_service_by_url(url, configuration):$/;"	f
 get_suitable_template	/home/temoto/project/parking/domain_manager/db.py	/^    def get_suitable_template(self, data):$/;"	m	class:Template
-get_table_name	/home/temoto/project/parking/shared/dbhelpers.py	/^def get_table_name(model):$/;"	f
 getbody	/home/temoto/project/parking/shared/asynchttp.py	/^    def getbody(self):$/;"	m	class:AsyncHTTPResponse
 getheader	/home/temoto/project/parking/shared/asynchttp.py	/^    def getheader(self, name, default=None):$/;"	m	class:AsyncHTTPResponse
 getresponse	/home/temoto/project/parking/shared/asynchttp.py	/^    def getresponse(self):$/;"	m	class:AsyncHTTPConnection
@@ -234,20 +232,20 @@ handle_connect	/home/temoto/project/parking/shared/_async_send.py	/^    def hand
 handle_connect	/home/temoto/project/parking/shared/asynchttp.py	/^    def handle_connect(self):$/;"	m	class:AsyncHTTPConnection
 handle_connect	/home/temoto/project/parking/shared/asynchttp.py	/^    def handle_connect(self):$/;"	m	class:__test_AsyncHTTPConnection
 handle_delete_record	/home/temoto/project/parking/account_manager/account_manager.py	/^    def handle_delete_record(table, data):$/;"	f	function:build_delete_record
-handle_delete_record	/home/temoto/project/parking/domain_manager/domain_manager.py	/^    def handle_delete_record(table, data):$/;"	f	function:build_delete_record
+handle_delete_record	/home/temoto/project/parking/domain_manager/domain_manager.py	/^    def handle_delete_record(table, config, data):$/;"	f	function:build_delete_record
 handle_error	/home/temoto/project/parking/shared/_async_send.py	/^    def handle_error(self):$/;"	m	class:SenderHTTPConnection
 handle_error	/home/temoto/project/parking/shared/asynchttp.py	/^    def handle_error(self):$/;"	m	class:AsyncHTTPConnection
 handle_get_feed	/home/temoto/project/parking/feed_fetcher/feed_fetcher.py	/^def handle_get_feed(data, _environ, _config):$/;"	f
 handle_get_record	/home/temoto/project/parking/account_manager/account_manager.py	/^    def handle_get_record(table, data):$/;"	f	function:build_get_record
-handle_get_record	/home/temoto/project/parking/domain_manager/domain_manager.py	/^    def handle_get_record(table, data):$/;"	f	function:build_get_record
+handle_get_record	/home/temoto/project/parking/domain_manager/domain_manager.py	/^    def handle_get_record(table, config, data):$/;"	f	function:build_get_record
 handle_get_record_list	/home/temoto/project/parking/account_manager/account_manager.py	/^    def handle_get_record_list(table, data):$/;"	f	function:build_get_record_list
-handle_get_record_list	/home/temoto/project/parking/domain_manager/domain_manager.py	/^    def handle_get_record_list(table, data):$/;"	f	function:build_get_record_list
-handle_get_suitable_template	/home/temoto/project/parking/domain_manager/domain_manager.py	/^    def handle_get_suitable_template(data):$/;"	f	function:build_get_suitable_template
+handle_get_record_list	/home/temoto/project/parking/domain_manager/domain_manager.py	/^    def handle_get_record_list(table, config, data):$/;"	f	function:build_get_record_list
+handle_get_suitable_template	/home/temoto/project/parking/domain_manager/domain_manager.py	/^    def handle_get_suitable_template(config, data):$/;"	f	function:build_get_suitable_template
 handle_ping	/home/temoto/project/parking/shared/skeleton.py	/^def handle_ping(_data, _environ, _config):$/;"	f
 handle_post_record	/home/temoto/project/parking/account_manager/account_manager.py	/^    def handle_post_record(table, data):$/;"	f	function:build_post_record
-handle_post_record	/home/temoto/project/parking/domain_manager/domain_manager.py	/^    def handle_post_record(table, data):$/;"	f	function:build_post_record
+handle_post_record	/home/temoto/project/parking/domain_manager/domain_manager.py	/^    def handle_post_record(table, config, data):$/;"	f	function:build_post_record
 handle_post_records_list	/home/temoto/project/parking/account_manager/account_manager.py	/^    def handle_post_records_list(table, data):$/;"	f	function:build_post_records_list
-handle_post_records_list	/home/temoto/project/parking/domain_manager/domain_manager.py	/^    def handle_post_records_list(table, data):$/;"	f	function:build_post_records_list
+handle_post_records_list	/home/temoto/project/parking/domain_manager/domain_manager.py	/^    def handle_post_records_list(table, config, data):$/;"	f	function:build_post_records_list
 handle_read	/home/temoto/project/parking/shared/asynchttp.py	/^    def handle_read (self):$/;"	m	class:AsyncHTTPConnection
 handle_reconf	/home/temoto/project/parking/shared/skeleton.py	/^def handle_reconf(data, environ, config):$/;"	f
 handle_register	/home/temoto/project/parking/supervisor/supervisor.py	/^def handle_register(data, environ, config):$/;"	f
@@ -287,8 +285,8 @@ post	/home/temoto/project/parking/account_manager/db.py	/^    def post(self, dat
 post	/home/temoto/project/parking/domain_manager/db.py	/^    def post(self, data):$/;"	m	class:Domain
 post	/home/temoto/project/parking/domain_manager/db.py	/^    def post(self, data):$/;"	m	class:DomainView
 post	/home/temoto/project/parking/domain_manager/db.py	/^    def post(self, data):$/;"	m	class:Filter
+post	/home/temoto/project/parking/domain_manager/db.py	/^    def post(self, data):$/;"	m	class:Taxonomy
 post	/home/temoto/project/parking/shared/dbhelpers.py	/^    def post(self, data):$/;"	m	class:DbRecord
-post_def_template	/home/temoto/project/parking/domain_manager/db.py	/^    def post_def_template(self, data):$/;"	m	class:Template
 post_domain	/home/temoto/project/parking/domain_manager/dbhelpers.py	/^def post_domain(data):$/;"	f
 post_keyword	/home/temoto/project/parking/domain_manager/dbhelpers.py	/^def post_keyword(data):$/;"	f
 post_list	/home/temoto/project/parking/shared/dbhelpers.py	/^    def post_list(self, data):$/;"	m	class:DbRecord
