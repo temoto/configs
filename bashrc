@@ -14,8 +14,6 @@ shopt -s checkwinsize
 PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 
 # my settings
-export http_proxy=""
-export https_proxy="http://friday.loc:3128/"
 export PYTHONSTARTUP=~/.pythonrc.py
 
 alias grep='grep --color=auto'
@@ -56,6 +54,13 @@ alias '[[u'='git stash && git svn rebase && git stash apply'
 alias ']mr'='python manage.py runserver 0.0.0.0:8000'
 alias ']ms'='python manage.py shell'
 alias ']cd'='python syncdb.py && ./create-test-data'
+
+# parking helpers
+parking_serve()
+{
+    ./server.py $1 ~/.config/parking/$1vm-test.conf
+}
+alias ']ps'='parking_serve'
 
 # toys
 alias sho='export PS1="" ; tput bold ; tput setaf 1 ; echo -e "\n\n\n\n\n\n\n\n\n\n\n    Шо?\n\n\n\n\n\n\n\n\n\n\n" ; tput sgr0'

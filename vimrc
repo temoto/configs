@@ -76,7 +76,9 @@ ino <silent><F4> <C-o>:TlistToggle<CR>
 
 " comment/uncomment and move lower
 ino <M-;> <Home># <Down>
+ino ; <Home># <Down>
 ino <M-'> <Home><Del><Del><Down>
+ino ' <Home><Del><Del><Down>
 
 " undo/redo
 nno <C-z> :undo<CR>i
