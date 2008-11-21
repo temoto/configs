@@ -17,7 +17,7 @@ set viminfo+=h
 set tabstop=4 shiftwidth=4 softtabstop=4 autoindent smartindent
 set backspace=indent,eol,start
 
-" webdrive stupid and ugly restriction
+" i hate freaking space indentation, but most people use it :(
 set expandtab
 
 set ffs=unix,mac,dos
@@ -29,8 +29,8 @@ set laststatus=2
 set statusline=%F%m%r%h%w\ [ff=%{&ff}]\ [ft=%Y]\ [hex=\%02.2B]\ [pos=%04l,%04v][%p%%]\ [lines=%L]
 set cmdheight=2
 
-set tags+=~/.vim/tags/parking.ctags
 set tags+=~/.vim/tags/python.ctags
+set tags+=~/.vim/tags/*.ctags
 
 " good-mode
 set insertmode
@@ -53,9 +53,6 @@ ino <C-b> <C-o>:bu!<Space>
 ino <M-b> <C-o>:tab sb<Space>
 ino <F2> <C-o>:w<CR>
 ino <C-s> <C-o>:w<CR>
-ino <C-q> <C-o>:q!
-nno <C-q> :q!
-vno <C-q> :q!
 ino <C-\> <C-o>:q!
 nno <C-\> :q!
 vno <C-\> :q!
@@ -142,6 +139,7 @@ ino <M-PageUp> <C-o>''
 ino <M-PageDown> <C-o>'.
 ino <M-c> <C-o>:
 nno <M-c> :
+vno <M-c> :
 ino c <C-o>:
 ino <C-^> <C-o><C-^>
 ino <silent><M-Left> <C-o><C-t>
@@ -152,6 +150,7 @@ ino <M-C-Left> <C-o><C-o>
 nno <M-C-Left> <C-o>
 ino <M-C-Right> <C-o><C-i>
 nno <M-C-Right> <C-i>
+ino <C-Space> <C-x><C-o>
 
 " quickfix
 ino <F11> <C-o>:cnext<CR>
