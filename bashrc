@@ -21,7 +21,7 @@ export PYTHONSTARTUP=~/.pythonrc.py
 alias grep='grep --color=auto'
 alias ls='ls --color=auto'
 alias m='less'
-alias l='ls -l'
+alias l='ls -lh --color=auto'
 alias p='python'
 alias cal='cal -m3'
 
