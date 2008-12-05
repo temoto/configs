@@ -1,0 +1,152 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.7	//
+AddDomainForm	domain/forms.py	/^class AddDomainForm(forms.Form):$/;"	c
+ApiError	parkki/error.py	/^class ApiError(Exception):$/;"	c
+ApiError	shared/middleware.py	/^class ApiError(object):$/;"	c
+BaseHttpError	parkki/error.py	/^class BaseHttpError(Exception):$/;"	c
+ChangePasswordForm	accounts/forms.py	/^class ChangePasswordForm(forms.Form):$/;"	c
+ConfigurationError	parkki/error.py	/^class ConfigurationError(Exception):$/;"	c
+CustomUserModelBackend	accounts/auth_backends.py	/^class CustomUserModelBackend(ModelBackend):$/;"	c
+Deferred	parkki/network.py	/^class Deferred(object):$/;"	c
+DummyPaymentSettings	payment/models/dummy.py	/^class DummyPaymentSettings(models.Model):$/;"	c
+DummyPaymentSystem	payment/dummy.py	/^class DummyPaymentSystem(object):$/;"	c
+DummyPaymentSystem	payment/webmoney.py	/^class DummyPaymentSystem(object):$/;"	c
+EditDomainForm	domain/forms.py	/^class EditDomainForm(forms.Form):$/;"	c
+EditPasswordTestCase	accounts/tests.py	/^class EditPasswordTestCase(TestCase):$/;"	c
+EditTestCase	accounts/tests.py	/^class EditTestCase(TestCase):$/;"	c
+EditUserForm	accounts/forms.py	/^class EditUserForm(forms.ModelForm):$/;"	c
+ForgotPasswordForm	accounts/forms.py	/^class ForgotPasswordForm(forms.Form):$/;"	c
+Http400	parkki/error.py	/^class Http400(BaseHttpError):$/;"	c
+Http405	parkki/error.py	/^class Http405(BaseHttpError):$/;"	c
+Http411	parkki/error.py	/^class Http411(BaseHttpError):$/;"	c
+Http502	parkki/error.py	/^class Http502(BaseHttpError):$/;"	c
+InternalApiError	parkki/error.py	/^class InternalApiError(ApiError):$/;"	c
+InvalidApiRequest	parkki/error.py	/^class InvalidApiRequest(ApiError):$/;"	c
+MemcacheDownError	parkki/error.py	/^class MemcacheDownError(Exception):$/;"	c
+Meta	accounts/forms.py	/^    class Meta:$/;"	c	class:EditUserForm
+Meta	accounts/forms.py	/^    class Meta:$/;"	c	class:RegisterUserForm
+Meta	domain/forms.py	/^    class Meta:$/;"	c	class:AddDomainForm
+Meta	domain/forms.py	/^    class Meta:$/;"	c	class:EditDomainForm
+MissingOption	parkki/error.py	/^class MissingOption(ConfigurationError):$/;"	c
+Non200StatusError	parkki/error.py	/^class Non200StatusError(ApiError):$/;"	c
+NonJsonResponseError	parkki/error.py	/^class NonJsonResponseError(ApiError):$/;"	c
+NonOkStatusError	parkki/error.py	/^class NonOkStatusError(ApiError):$/;"	c
+PaymentSettings	payment/models/__init__.py	/^class PaymentSettings(models.Model):$/;"	c
+Profile	accounts/models.py	/^class Profile(User):$/;"	c
+RegisterTestCase	accounts/tests.py	/^class RegisterTestCase(TestCase):$/;"	c
+RegisterUserForm	accounts/forms.py	/^class RegisterUserForm(forms.ModelForm):$/;"	c
+RenderContentSettingsNode	payment/templatetags/payment_system_renderer.py	/^class RenderContentSettingsNode(template.Node):$/;"	c
+ResetPasswordForm	accounts/forms.py	/^class ResetPasswordForm(forms.Form):$/;"	c
+ResetPasswordTestCase	accounts/tests.py	/^class ResetPasswordTestCase(TestCase):$/;"	c
+SigninForm	accounts/forms.py	/^class SigninForm(forms.Form):$/;"	c
+SigninTestCase	accounts/tests.py	/^class SigninTestCase(TestCase):$/;"	c
+WrongOption	parkki/error.py	/^class WrongOption(ConfigurationError):$/;"	c
+WsgiServer	parkki/network.py	/^class WsgiServer(object):$/;"	c
+__init__	accounts/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	m	class:EditUserForm
+__init__	accounts/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	m	class:RegisterUserForm
+__init__	accounts/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	m	class:SigninForm
+__init__	accounts/forms.py	/^    def __init__(self, user, *args, **kwargs):$/;"	m	class:ChangePasswordForm
+__init__	domain/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	m	class:AddDomainForm
+__init__	domain/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	m	class:EditDomainForm
+__init__	parkki/error.py	/^    def __init__(self):$/;"	m	class:Http411
+__init__	parkki/error.py	/^    def __init__(self, code, message):$/;"	m	class:BaseHttpError
+__init__	parkki/error.py	/^    def __init__(self, invalid_method, valid_methods):$/;"	m	class:Http405
+__init__	parkki/error.py	/^    def __init__(self, message):$/;"	m	class:ConfigurationError
+__init__	parkki/error.py	/^    def __init__(self, message):$/;"	m	class:Http400
+__init__	parkki/error.py	/^    def __init__(self, message):$/;"	m	class:Http502
+__init__	parkki/error.py	/^    def __init__(self, message=None, answer=None, status=None, response=None):$/;"	m	class:ApiError
+__init__	parkki/error.py	/^    def __init__(self, option):$/;"	m	class:MissingOption
+__init__	parkki/error.py	/^    def __init__(self, option, value, expected):$/;"	m	class:WrongOption
+__init__	parkki/error.py	/^    def __init__(self, response):$/;"	m	class:NonJsonResponseError
+__init__	parkki/error.py	/^    def __init__(self, status, response):$/;"	m	class:NonOkStatusError
+__init__	parkki/error.py	/^    def __init__(self, status_code, response):$/;"	m	class:Non200StatusError
+__init__	parkki/network.py	/^    def __init__(self, address, port, callback):$/;"	m	class:WsgiServer
+__init__	payment/templatetags/payment_system_renderer.py	/^    def __init__(self, payment_settings):$/;"	m	class:RenderContentSettingsNode
+__repr__	parkki/error.py	/^    def __repr__(self):$/;"	m	class:ApiError	file:
+__repr__	parkki/error.py	/^    def __repr__(self):$/;"	m	class:BaseHttpError	file:
+__repr__	parkki/error.py	/^    def __repr__(self):$/;"	m	class:ConfigurationError	file:
+__unicode__	parkki/error.py	/^    def __unicode__(self):$/;"	m	class:ApiError	file:
+__unicode__	parkki/error.py	/^    def __unicode__(self):$/;"	m	class:BaseHttpError	file:
+__unicode__	parkki/error.py	/^    def __unicode__(self):$/;"	m	class:ConfigurationError	file:
+activate	accounts/views.py	/^def activate(request, secret):$/;"	f
+activate_user	accounts/tests.py	/^def activate_user(self):$/;"	f
+add	domain/views.py	/^def add(request):$/;"	f
+add_settings	payment/views/__init__.py	/^def add_settings(request):$/;"	f
+authenticate	accounts/auth_backends.py	/^    def authenticate(self, username=None, password=None):$/;"	m	class:CustomUserModelBackend
+change_password	accounts/views.py	/^def change_password(request):$/;"	f
+clean	accounts/forms.py	/^    def clean(self):$/;"	m	class:ChangePasswordForm
+clean	accounts/forms.py	/^    def clean(self):$/;"	m	class:ResetPasswordForm
+clean_next	accounts/forms.py	/^    def clean_next(self):$/;"	m	class:SigninForm
+clean_oldpassword	accounts/forms.py	/^    def clean_oldpassword(self):$/;"	m	class:ChangePasswordForm
+clean_password	accounts/forms.py	/^    def clean_password(self):$/;"	m	class:SigninForm
+clean_username	accounts/forms.py	/^    def clean_username(self):$/;"	m	class:SigninForm
+close	parkki/network.py	/^    def close(self):$/;"	m	class:WsgiServer
+close	parkki/network.py	/^def close():$/;"	f
+create_user	accounts/tests.py	/^def create_user(self):$/;"	f
+decode_or_none	parkki/util.py	/^def decode_or_none(json_data):$/;"	f
+delete	domain/views.py	/^def delete(request):$/;"	f
+delete_messages	shared/misc.py	/^def delete_messages(request):$/;"	f
+edit	domain/views.py	/^def edit(request):$/;"	f
+edit_account	accounts/views.py	/^def edit_account(request):$/;"	f
+filter_dict	parkki/util.py	/^def filter_dict(fun, data):$/;"	f
+filter_templates	accounts/tests.py	/^def filter_templates(response, templates):$/;"	f
+forgot_password	accounts/views.py	/^def forgot_password(request, secret=''):$/;"	f
+get_domain	domain/utils.py	/^def get_domain(profile, id_=None, name=None):$/;"	f
+get_domains_list	domain/utils.py	/^def get_domains_list(profile, limit=None, offset=0):$/;"	f
+get_payment_info_list	accounts/utils.py	/^def get_payment_info_list(profile):$/;"	f
+get_random_key	shared/misc.py	/^def get_random_key(seed=''):$/;"	f
+get_taxonomy_list	domain/utils.py	/^def get_taxonomy_list(profile):$/;"	f
+get_user	accounts/auth_backends.py	/^    def get_user(self, user_id):$/;"	m	class:CustomUserModelBackend
+get_user	accounts/forms.py	/^    def get_user(self):$/;"	m	class:SigninForm
+http_request	parkki/network.py	/^def http_request(url, get_params={}, sync=True):$/;"	f
+https_request	parkki/util.py	/^def https_request(url, body, key_file, cert_file, content_type='application\/json'):$/;"	f
+init	parkki/network.py	/^    def init(self):$/;"	m	class:WsgiServer
+init	parkki/network.py	/^def init():$/;"	f
+init_proxy	parkki/network.py	/^def init_proxy():$/;"	f
+is_valid_next_url	accounts/views.py	/^def is_valid_next_url(next):$/;"	f
+list	domain/views.py	/^def list(request):$/;"	f
+message	shared/context_processors.py	/^def message(request):$/;"	f
+pay	payment/dummy.py	/^    def pay(self, settings, pay_to):$/;"	m	class:DummyPaymentSystem
+pay	payment/webmoney.py	/^    def pay(self, settings, pay_to):$/;"	m	class:DummyPaymentSystem
+post_domain	domain/utils.py	/^def post_domain(profile, domain_data):$/;"	f
+post_payment_info	accounts/utils.py	/^def post_payment_info(profile, payment_info):$/;"	f
+process_exception	shared/middleware.py	/^    def process_exception(self, request, exception):$/;"	m	class:ApiError
+profile	accounts/views.py	/^def profile(request):$/;"	f
+register	accounts/views.py	/^def register(request):$/;"	f
+register_profile	accounts/utils.py	/^def register_profile(profile):$/;"	f
+render	payment/templatetags/payment_system_renderer.py	/^    def render(self, context):$/;"	m	class:RenderContentSettingsNode
+render_payment_system	payment/templatetags/payment_system_renderer.py	/^def render_payment_system(parser, token):$/;"	f
+request_api_provider	parkki/api.py	/^def request_api_provider(action, data, raise_non_ok=False):$/;"	f
+request_by_url	parkki/api.py	/^def request_by_url(url, action, data):$/;"	f
+reset_password	accounts/views.py	/^def reset_password(request, secret):$/;"	f
+response	parkki/api.py	/^def response(status, data):$/;"	f
+response_enoent	parkki/api.py	/^def response_enoent(data=None):$/;"	f
+response_fail	parkki/api.py	/^def response_fail(data=None):$/;"	f
+response_ok	parkki/api.py	/^def response_ok(data=None):$/;"	f
+run	parkki/network.py	/^    def run(self):$/;"	m	class:WsgiServer
+run	parkki/network.py	/^def run():$/;"	f
+send_message	shared/misc.py	/^def send_message(request, text):$/;"	f
+setup_signal	parkki/network.py	/^def setup_signal(sig, cb, *args):$/;"	f
+signin	accounts/views.py	/^def signin(request):$/;"	f
+signin_user	accounts/tests.py	/^def signin_user(self, fields={}, status=None):$/;"	f
+signout	accounts/views.py	/^def signout(request):$/;"	f
+test_bad_001	accounts/tests.py	/^    def test_bad_001(self):$/;"	m	class:RegisterTestCase
+test_bad_002	accounts/tests.py	/^    def test_bad_002(self):$/;"	m	class:SigninTestCase
+test_bad_003	accounts/tests.py	/^    def test_bad_003(self):$/;"	m	class:SigninTestCase
+test_bad_004	accounts/tests.py	/^    def test_bad_004(self):$/;"	m	class:SigninTestCase
+test_good_001	accounts/tests.py	/^    def test_good_001(self):$/;"	m	class:EditPasswordTestCase
+test_good_001	accounts/tests.py	/^    def test_good_001(self):$/;"	m	class:EditTestCase
+test_good_001	accounts/tests.py	/^    def test_good_001(self):$/;"	m	class:RegisterTestCase
+test_good_001	accounts/tests.py	/^    def test_good_001(self):$/;"	m	class:ResetPasswordTestCase
+test_good_001	accounts/tests.py	/^    def test_good_001(self):$/;"	m	class:SigninTestCase
+test_good_002	accounts/tests.py	/^    def test_good_002(self):$/;"	m	class:EditTestCase
+test_good_002	accounts/tests.py	/^    def test_good_002(self):$/;"	m	class:RegisterTestCase
+test_good_002	accounts/tests.py	/^    def test_good_002(self):$/;"	m	class:SigninTestCase
+test_good_003	accounts/tests.py	/^    def test_good_003(self):$/;"	m	class:EditTestCase
+test_good_003	accounts/tests.py	/^    def test_good_003(self):$/;"	m	class:RegisterTestCase
+test_good_004	accounts/tests.py	/^    def test_good_004(self):$/;"	m	class:RegisterTestCase
+user_class	accounts/auth_backends.py	/^    def user_class(self):$/;"	m	class:CustomUserModelBackend
