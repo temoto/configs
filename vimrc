@@ -24,7 +24,7 @@ set ffs=unix,mac,dos
 set listchars=tab:>-,trail:-
 set nowrap showbreak=+ ignorecase
 
-set number showmode showmatch hlsearch ttyfast lazyredraw wildmenu ruler
+set number showmode showmatch incsearch hlsearch ttyfast lazyredraw wildmenu ruler
 set laststatus=2
 set statusline=%F%m%r%h%w\ [%{&ff},\ %Y]\ [0x\%02.2B]\ [%04l,%04v]\ [%p%%][%L]
 set cmdheight=2
@@ -117,6 +117,7 @@ vno / /\v
 ino <M-n> <C-o>n
 nno <M-n> n
 vno <M-n> n
+cno <M-n> <CR>n
 ino <silent><M-F3> <C-o>:let @/=""<CR>
 nno <silent><M-F3> :let @/=""<CR>
 ino <C-h> <C-o>:%s/\v
