@@ -1,0 +1,66 @@
+##########################
+# xbindkeys configuration #
+###########################
+#
+# Version: 0.1.3
+#
+
+#keystate_numlock = enable
+#keystate_scrolllock = enable
+#keystate_capslock = enable
+
+# xkill
+"xkill"
+    Mod4 + Delete
+
+# lock
+"xscreensaver-command -lock"
+    Mod4 + l
+
+# svnup
+"~/bin/7up"
+    Mod4 + F5
+
+# file browser
+"nautilus --no-desktop --browser"
+    Mod4 + e
+
+# cmus-play
+"cmus-remote --play"
+    Mod4 + x
+
+# cmus-stop
+"cmus-remote --stop"
+    Mod4 + v
+
+# cmus-pause
+"cmus-remote --pause"
+    Mod4 + c
+
+# cmus-next
+"cmus-remote --next"
+    Mod4 + b
+
+# cmus-prev
+"cmus-remote --prev"
+    Mod4 + z
+
+# next window
+"wm-next-window"
+    Mod4 + grave
+
+# volume up
+"amixer sset Master 4+"
+    XF86AudioRaiseVolume
+
+# volume down
+"amixer sset Master 4-"
+    XF86AudioLowerVolume
+
+# volume mute
+"amixer sset Master toggle"
+    XF86AudioMute
+
+# sleep-to-disk (hibernate)
+"sudo /sbin/s2disk"
+    Control+Shift + XF86Sleep
