@@ -4,18 +4,25 @@
 !_TAG_PROGRAM_NAME	Exuberant Ctags	//
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.7	//
+AddPartnerForm	/home/temoto/project/parking/admin_interface/partners/forms.py	/^class AddPartnerForm(forms.Form):$/;"	c
+AddTemplate	/home/temoto/project/parking/admin_interface/parking_templates/forms.py	/^class AddTemplate(forms.Form):$/;"	c
+AddTopic	/home/temoto/project/parking/admin_interface/topics/forms.py	/^class AddTopic(forms.Form):$/;"	c
+ApiError	/home/temoto/project/parking/pagebuilder/parkki/error.py	/^class ApiError(Exception):$/;"	c
 ApiError	/home/temoto/project/parking/shared/error.py	/^class ApiError(Exception):$/;"	c
 ApiProviderTestCase	/home/temoto/project/parking/api_provider/tests.py	/^class ApiProviderTestCase(unittest.TestCase):$/;"	c
 AsyncHTTPConnection	/home/temoto/project/parking/shared/asynchttp.py	/^class AsyncHTTPConnection(asynchat.async_chat):$/;"	c
 AsyncHTTPException	/home/temoto/project/parking/shared/asynchttp.py	/^class AsyncHTTPException(Exception):$/;"	c
 AsyncHTTPResponse	/home/temoto/project/parking/shared/asynchttp.py	/^class AsyncHTTPResponse:$/;"	c
 BadStatusLine	/home/temoto/project/parking/shared/asynchttp.py	/^class BadStatusLine(AsyncHTTPException):$/;"	c
+BaseHttpError	/home/temoto/project/parking/pagebuilder/parkki/error.py	/^class BaseHttpError(Exception):$/;"	c
 BaseHttpError	/home/temoto/project/parking/shared/error.py	/^class BaseHttpError(Exception):$/;"	c
+BatchAreaId	/home/temoto/project/parking/admin_interface/parking_templates/forms.py	/^class BatchAreaId(forms.Form):$/;"	c
 BuildDnsResolverTestCase	/home/temoto/project/parking/domain_approver/tests.py	/^class BuildDnsResolverTestCase(unittest.TestCase):$/;"	c
+Click	/home/temoto/project/parking/statistics_gatherer/db.py	/^class Click(shared.dbhelpers.DbRecord):$/;"	c
 Client	/home/temoto/project/parking/account_manager/db.py	/^class Client(DbRecord):$/;"	c
+ConfigurationError	/home/temoto/project/parking/pagebuilder/parkki/error.py	/^class ConfigurationError(Exception):$/;"	c
 ConfigurationError	/home/temoto/project/parking/shared/error.py	/^class ConfigurationError(Exception):$/;"	c
 DbRecord	/home/temoto/project/parking/shared/dbhelpers.py	/^class DbRecord(object):$/;"	c
-Deferred	/home/temoto/project/parking/network.py	/^class Deferred(object):$/;"	c
 Delete	/home/temoto/project/parking/shared/tests/sql.py	/^class Delete(unittest.TestCase):$/;"	c
 DispatcherTestCase	/home/temoto/project/parking/account_manager/tests.py	/^class DispatcherTestCase(unittest.TestCase):$/;"	c
 DispatcherTestCase	/home/temoto/project/parking/domain_manager/tests.py	/^class DispatcherTestCase(unittest.TestCase):$/;"	c
@@ -26,58 +33,69 @@ Domain	/home/temoto/project/parking/domain_manager/db.py	/^class Domain(DbRecord
 DomainView	/home/temoto/project/parking/domain_manager/db.py	/^class DomainView(DbRecord):$/;"	c
 DomainViewTaxonomy	/home/temoto/project/parking/domain_manager/db.py	/^class DomainViewTaxonomy(DbRecord):$/;"	c
 Earnings	/home/temoto/project/parking/account_manager/db.py	/^class Earnings(DbRecord):$/;"	c
+EditPartnerForm	/home/temoto/project/parking/admin_interface/partners/forms.py	/^class EditPartnerForm(forms.Form):$/;"	c
+EditTemplate	/home/temoto/project/parking/admin_interface/parking_templates/forms.py	/^class EditTemplate(forms.Form):$/;"	c
+EditTopic	/home/temoto/project/parking/admin_interface/topics/forms.py	/^class EditTopic(forms.Form):$/;"	c
 Escape	/home/temoto/project/parking/shared/tests/sql.py	/^class Escape(unittest.TestCase):$/;"	c
+FailedRequest	/home/temoto/project/parking/admin_interface/shared/api.py	/^class FailedRequest(Exception):$/;"	c
 Filter	/home/temoto/project/parking/domain_manager/db.py	/^class Filter(DbRecord):$/;"	c
 GetAddressesTestCase	/home/temoto/project/parking/domain_approver/tests.py	/^class GetAddressesTestCase(unittest.TestCase):$/;"	c
 GetApprovedDomainsTestCase	/home/temoto/project/parking/domain_approver/tests.py	/^class GetApprovedDomainsTestCase(unittest.TestCase):$/;"	c
 HandleResponse	/home/temoto/project/parking/shared/asynchttp.py	/^class HandleResponse(ImproperConnectionState):$/;"	c
+Http400	/home/temoto/project/parking/pagebuilder/parkki/error.py	/^class Http400(BaseHttpError):$/;"	c
 Http400	/home/temoto/project/parking/shared/error.py	/^class Http400(BaseHttpError):$/;"	c
+Http405	/home/temoto/project/parking/pagebuilder/parkki/error.py	/^class Http405(BaseHttpError):$/;"	c
 Http405	/home/temoto/project/parking/shared/error.py	/^class Http405(BaseHttpError):$/;"	c
+Http411	/home/temoto/project/parking/pagebuilder/parkki/error.py	/^class Http411(BaseHttpError):$/;"	c
 Http411	/home/temoto/project/parking/shared/error.py	/^class Http411(BaseHttpError):$/;"	c
+Http502	/home/temoto/project/parking/pagebuilder/parkki/error.py	/^class Http502(BaseHttpError):$/;"	c
 Http502	/home/temoto/project/parking/shared/error.py	/^class Http502(BaseHttpError):$/;"	c
 ImproperConnectionState	/home/temoto/project/parking/shared/asynchttp.py	/^class ImproperConnectionState(AsyncHTTPException):$/;"	c
 Insert	/home/temoto/project/parking/shared/tests/sql.py	/^class Insert(unittest.TestCase):$/;"	c
+InternalApiError	/home/temoto/project/parking/pagebuilder/parkki/error.py	/^class InternalApiError(ApiError):$/;"	c
 InternalApiError	/home/temoto/project/parking/shared/error.py	/^class InternalApiError(ApiError):$/;"	c
+InvalidApiRequest	/home/temoto/project/parking/pagebuilder/parkki/error.py	/^class InvalidApiRequest(ApiError):$/;"	c
 InvalidApiRequest	/home/temoto/project/parking/shared/error.py	/^class InvalidApiRequest(ApiError):$/;"	c
 InvalidChunk	/home/temoto/project/parking/shared/asynchttp.py	/^class InvalidChunk(AsyncHTTPException):$/;"	c
 IsApprovedTestCase	/home/temoto/project/parking/domain_approver/tests.py	/^class IsApprovedTestCase(unittest.TestCase):$/;"	c
 KeywordsTestCase	/home/temoto/project/parking/domain_manager/tests.py	/^class KeywordsTestCase(unittest.TestCase):$/;"	c
 Language	/home/temoto/project/parking/domain_manager/db.py	/^class Language(DbRecord):$/;"	c
 MakeKey	/home/temoto/project/parking/shared/tests/cache.py	/^class MakeKey(unittest.TestCase):$/;"	c
+MemcacheDownError	/home/temoto/project/parking/pagebuilder/parkki/error.py	/^class MemcacheDownError(Exception):$/;"	c
 MemcacheDownError	/home/temoto/project/parking/shared/error.py	/^class MemcacheDownError(Exception):$/;"	c
+Meta	/home/temoto/project/parking/admin_interface/partners/forms.py	/^    class Meta:$/;"	c	class:AddPartnerForm
+Meta	/home/temoto/project/parking/admin_interface/partners/forms.py	/^    class Meta:$/;"	c	class:EditPartnerForm
+MissingOption	/home/temoto/project/parking/pagebuilder/parkki/error.py	/^class MissingOption(ConfigurationError):$/;"	c
 MissingOption	/home/temoto/project/parking/shared/error.py	/^class MissingOption(ConfigurationError):$/;"	c
 Mock	/home/temoto/project/parking/shared/minimock/__init__.py	/^class Mock(object):$/;"	c
+Non200StatusError	/home/temoto/project/parking/pagebuilder/parkki/error.py	/^class Non200StatusError(ApiError):$/;"	c
 Non200StatusError	/home/temoto/project/parking/shared/error.py	/^class Non200StatusError(ApiError):$/;"	c
+NonJsonResponseError	/home/temoto/project/parking/pagebuilder/parkki/error.py	/^class NonJsonResponseError(ApiError):$/;"	c
 NonJsonResponseError	/home/temoto/project/parking/shared/error.py	/^class NonJsonResponseError(ApiError):$/;"	c
+NonOkStatusError	/home/temoto/project/parking/pagebuilder/parkki/error.py	/^class NonOkStatusError(ApiError):$/;"	c
 NonOkStatusError	/home/temoto/project/parking/shared/error.py	/^class NonOkStatusError(ApiError):$/;"	c
 NotConnected	/home/temoto/project/parking/shared/asynchttp.py	/^class NotConnected(AsyncHTTPException):$/;"	c
+NotOkError	/home/temoto/project/parking/admin_interface/shared/api.py	/^class NotOkError(Exception):$/;"	c
 Partner	/home/temoto/project/parking/account_manager/db.py	/^class Partner(DbRecord):$/;"	c
 PaymentInfo	/home/temoto/project/parking/account_manager/db.py	/^class PaymentInfo(DbRecord):$/;"	c
-PingzillaTestCase	/home/temoto/project/parking/supervisor/tests.py	/^class PingzillaTestCase(unittest.TestCase):$/;"	c
-PrefixDispatcherTestCase	/home/temoto/project/parking/shared/tests/skeleton.py	/^class PrefixDispatcherTestCase(unittest.TestCase):$/;"	c
 Record_mock	/home/temoto/project/parking/domain_manager/tests.py	/^    class Record_mock(object):$/;"	c	class:TemplateTestCase
-RegistrationFailed	/home/temoto/project/parking/shared/error.py	/^class RegistrationFailed(ApiError):$/;"	c
 RequestNotReady	/home/temoto/project/parking/shared/asynchttp.py	/^class RequestNotReady(ImproperConnectionState):$/;"	c
 ResponseNotReady	/home/temoto/project/parking/shared/asynchttp.py	/^class ResponseNotReady(ImproperConnectionState):$/;"	c
 Select	/home/temoto/project/parking/shared/tests/sql.py	/^class Select(unittest.TestCase):$/;"	c
 SenderHTTPConnection	/home/temoto/project/parking/shared/_async_send.py	/^class SenderHTTPConnection(AsyncHTTPConnection):$/;"	c
-ServerIsNotConfigured	/home/temoto/project/parking/shared/skeleton.py	/^    class ServerIsNotConfigured(Exception):$/;"	c	function:server
-ServicesConfigurationError	/home/temoto/project/parking/shared/error.py	/^class ServicesConfigurationError(ApiError):$/;"	c
 SessionRecord	/home/temoto/project/parking/domain_manager/tests.py	/^class SessionRecord(object):$/;"	c
 SharedConfig	/home/temoto/project/parking/shared/shared_config.py	/^class SharedConfig(object):$/;"	c
 SharedConfigTestCase	/home/temoto/project/parking/shared/shared_config.py	/^class SharedConfigTestCase(unittest.TestCase):$/;"	c
-Singleton	/home/temoto/project/parking/shared/util.py	/^class Singleton(object):$/;"	c
+Signin	/home/temoto/project/parking/admin_interface/accounts/forms.py	/^class Signin(forms.Form):$/;"	c
 SkeletonHandlersTestCase	/home/temoto/project/parking/shared/tests/skeleton.py	/^class SkeletonHandlersTestCase(unittest.TestCase):$/;"	c
 SkeletonServerTestCase	/home/temoto/project/parking/shared/tests/skeleton.py	/^class SkeletonServerTestCase(unittest.TestCase):$/;"	c
 SqlDelete	/home/temoto/project/parking/shared/tests/dbhelpers.py	/^class SqlDelete(unittest.TestCase):$/;"	c
 SqlFormatWhere	/home/temoto/project/parking/shared/tests/dbhelpers.py	/^class SqlFormatWhere(unittest.TestCase):$/;"	c
 SqlSelect	/home/temoto/project/parking/shared/tests/dbhelpers.py	/^class SqlSelect(unittest.TestCase):$/;"	c
-SupervisorTestCase	/home/temoto/project/parking/supervisor/tests.py	/^class SupervisorTestCase(unittest.TestCase):$/;"	c
 Taxonomy	/home/temoto/project/parking/domain_manager/db.py	/^class Taxonomy(DbRecord):$/;"	c
 Template	/home/temoto/project/parking/domain_manager/db.py	/^class Template(DbRecord):$/;"	c
 TemplateTestCase	/home/temoto/project/parking/domain_manager/tests.py	/^class TemplateTestCase(unittest.TestCase):$/;"	c
 TestServer	/home/temoto/project/parking/shared/tests/__init__.py	/^class TestServer(object):$/;"	c
-Thread_mock	/home/temoto/project/parking/supervisor/tests.py	/^class Thread_mock(object):$/;"	c
 Topic	/home/temoto/project/parking/domain_manager/db.py	/^class Topic(DbRecord):$/;"	c
 Transaction	/home/temoto/project/parking/shared/dbhelpers.py	/^class Transaction(object):$/;"	c
 UnexpectedData	/home/temoto/project/parking/shared/asynchttp.py	/^class UnexpectedData(AsyncHTTPException):$/;"	c
@@ -85,17 +103,40 @@ UnexpectedTerminator	/home/temoto/project/parking/shared/asynchttp.py	/^class Un
 UnknownProtocol	/home/temoto/project/parking/shared/asynchttp.py	/^class UnknownProtocol(AsyncHTTPException):$/;"	c
 UnknownTransferEncoding	/home/temoto/project/parking/shared/asynchttp.py	/^class UnknownTransferEncoding(AsyncHTTPException):$/;"	c
 Update	/home/temoto/project/parking/shared/tests/sql.py	/^class Update(unittest.TestCase):$/;"	c
+View	/home/temoto/project/parking/statistics_gatherer/db.py	/^class View(shared.dbhelpers.DbRecord):$/;"	c
 Where	/home/temoto/project/parking/shared/tests/sql.py	/^class Where(unittest.TestCase):$/;"	c
+WrongOption	/home/temoto/project/parking/pagebuilder/parkki/error.py	/^class WrongOption(ConfigurationError):$/;"	c
 WrongOption	/home/temoto/project/parking/shared/error.py	/^class WrongOption(ConfigurationError):$/;"	c
 WsgiServer	/home/temoto/project/parking/network.py	/^class WsgiServer(object):$/;"	c
+Xaction	/home/temoto/project/parking/statistics_gatherer/db.py	/^class Xaction(shared.dbhelpers.DbRecord):$/;"	c
 __call__	/home/temoto/project/parking/shared/minimock/__init__.py	/^    def __call__(self, *args, **kw):$/;"	m	class:Mock	file:
 __contains__	/home/temoto/project/parking/shared/shared_config.py	/^    def __contains__(self, key):$/;"	m	class:SharedConfig	file:
+__del__	/home/temoto/project/parking/network.py	/^    def __del__(self):$/;"	m	class:WsgiServer	file:
+__eq__	/home/temoto/project/parking/shared/shared_config.py	/^    def __eq__(self, value):$/;"	m	class:SharedConfig	file:
 __getattr__	/home/temoto/project/parking/shared/minimock/__init__.py	/^    def __getattr__(self, attr):$/;"	m	class:Mock	file:
 __getitem__	/home/temoto/project/parking/shared/shared_config.py	/^    def __getitem__(self, key):$/;"	m	class:SharedConfig	file:
+__init__	/home/temoto/project/parking/admin_interface/parking_templates/forms.py	/^    def __init__(self, templates_choices, *args, **kwargs):$/;"	m	class:BatchAreaId
+__init__	/home/temoto/project/parking/admin_interface/partners/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	m	class:AddPartnerForm
+__init__	/home/temoto/project/parking/admin_interface/partners/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	m	class:EditPartnerForm
+__init__	/home/temoto/project/parking/admin_interface/shared/api.py	/^    def __init__(self, status):$/;"	m	class:NotOkError
+__init__	/home/temoto/project/parking/admin_interface/topics/forms.py	/^    def __init__(self, *args, **kwargs):$/;"	m	class:AddTopic
+__init__	/home/temoto/project/parking/admin_interface/topics/forms.py	/^    def __init__(self, current_topic_id, *args, **kwargs):$/;"	m	class:EditTopic
 __init__	/home/temoto/project/parking/domain_approver/tests.py	/^    def __init__(self, query_returns=[], query_raises=None, nameservers=[], configure=True):$/;"	m	class:DnsResolverMock
 __init__	/home/temoto/project/parking/domain_approver/tests.py	/^    def __init__(self, to_text_returns=""):$/;"	m	class:DnsAnswerMock
 __init__	/home/temoto/project/parking/domain_manager/tests.py	/^    def __init__(self):$/;"	m	class:SessionRecord
 __init__	/home/temoto/project/parking/network.py	/^    def __init__(self, address, port, callback):$/;"	m	class:WsgiServer
+__init__	/home/temoto/project/parking/pagebuilder/parkki/error.py	/^    def __init__(self):$/;"	m	class:Http411
+__init__	/home/temoto/project/parking/pagebuilder/parkki/error.py	/^    def __init__(self, code, message):$/;"	m	class:BaseHttpError
+__init__	/home/temoto/project/parking/pagebuilder/parkki/error.py	/^    def __init__(self, invalid_method, valid_methods):$/;"	m	class:Http405
+__init__	/home/temoto/project/parking/pagebuilder/parkki/error.py	/^    def __init__(self, message):$/;"	m	class:ConfigurationError
+__init__	/home/temoto/project/parking/pagebuilder/parkki/error.py	/^    def __init__(self, message):$/;"	m	class:Http400
+__init__	/home/temoto/project/parking/pagebuilder/parkki/error.py	/^    def __init__(self, message):$/;"	m	class:Http502
+__init__	/home/temoto/project/parking/pagebuilder/parkki/error.py	/^    def __init__(self, message=None, answer=None, status=None, response=None):$/;"	m	class:ApiError
+__init__	/home/temoto/project/parking/pagebuilder/parkki/error.py	/^    def __init__(self, option):$/;"	m	class:MissingOption
+__init__	/home/temoto/project/parking/pagebuilder/parkki/error.py	/^    def __init__(self, option, value, expected):$/;"	m	class:WrongOption
+__init__	/home/temoto/project/parking/pagebuilder/parkki/error.py	/^    def __init__(self, response):$/;"	m	class:NonJsonResponseError
+__init__	/home/temoto/project/parking/pagebuilder/parkki/error.py	/^    def __init__(self, status, response):$/;"	m	class:NonOkStatusError
+__init__	/home/temoto/project/parking/pagebuilder/parkki/error.py	/^    def __init__(self, status_code, response):$/;"	m	class:Non200StatusError
 __init__	/home/temoto/project/parking/shared/_async_send.py	/^    def __init__(self, url, request, _map=None):$/;"	m	class:SenderHTTPConnection
 __init__	/home/temoto/project/parking/shared/asynchttp.py	/^    def __init__(self, fp, debuglevel=0):$/;"	m	class:AsyncHTTPResponse
 __init__	/home/temoto/project/parking/shared/asynchttp.py	/^    def __init__(self, host, port, url):$/;"	m	class:__test_AsyncHTTPConnection
@@ -118,8 +159,9 @@ __init__	/home/temoto/project/parking/shared/error.py	/^    def __init__(self, s
 __init__	/home/temoto/project/parking/shared/minimock/__init__.py	/^    def __init__(self, name, returns=None, returns_iter=None,$/;"	m	class:Mock
 __init__	/home/temoto/project/parking/shared/shared_config.py	/^    def __init__(self, name=''):$/;"	m	class:SharedConfig
 __init__	/home/temoto/project/parking/shared/tests/__init__.py	/^    def __init__(self, disable_logging=True):$/;"	m	class:TestServer
-__init__	/home/temoto/project/parking/supervisor/tests.py	/^    def __init__(self, target=None, args=[], name=''):$/;"	m	class:Thread_mock
-__new__	/home/temoto/project/parking/shared/util.py	/^    def __new__(cls, *args, **kwargs):$/;"	m	class:Singleton	file:
+__repr__	/home/temoto/project/parking/pagebuilder/parkki/error.py	/^    def __repr__(self):$/;"	m	class:ApiError	file:
+__repr__	/home/temoto/project/parking/pagebuilder/parkki/error.py	/^    def __repr__(self):$/;"	m	class:BaseHttpError	file:
+__repr__	/home/temoto/project/parking/pagebuilder/parkki/error.py	/^    def __repr__(self):$/;"	m	class:ConfigurationError	file:
 __repr__	/home/temoto/project/parking/shared/error.py	/^    def __repr__(self):$/;"	m	class:ApiError	file:
 __repr__	/home/temoto/project/parking/shared/error.py	/^    def __repr__(self):$/;"	m	class:BaseHttpError	file:
 __repr__	/home/temoto/project/parking/shared/error.py	/^    def __repr__(self):$/;"	m	class:ConfigurationError	file:
@@ -132,6 +174,9 @@ __str__	/home/temoto/project/parking/shared/asynchttp.py	/^    def __str__(self)
 __str__	/home/temoto/project/parking/shared/error.py	/^    def __str__(self):$/;"	m	class:BaseHttpError	file:
 __str__	/home/temoto/project/parking/shared/error.py	/^    def __str__(self):$/;"	m	class:ConfigurationError	file:
 __test_AsyncHTTPConnection	/home/temoto/project/parking/shared/asynchttp.py	/^class __test_AsyncHTTPConnection(AsyncHTTPConnection):$/;"	c
+__unicode__	/home/temoto/project/parking/pagebuilder/parkki/error.py	/^    def __unicode__(self):$/;"	m	class:ApiError	file:
+__unicode__	/home/temoto/project/parking/pagebuilder/parkki/error.py	/^    def __unicode__(self):$/;"	m	class:BaseHttpError	file:
+__unicode__	/home/temoto/project/parking/pagebuilder/parkki/error.py	/^    def __unicode__(self):$/;"	m	class:ConfigurationError	file:
 __unicode__	/home/temoto/project/parking/shared/error.py	/^    def __unicode__(self):$/;"	m	class:ApiError	file:
 _body_data	/home/temoto/project/parking/shared/asynchttp.py	/^    def _body_data(self):$/;"	m	class:AsyncHTTPConnection
 _build_filter	/home/temoto/project/parking/domain_manager/db.py	/^    def _build_filter(self, record):$/;"	m	class:Filter
@@ -147,20 +192,28 @@ _send_request	/home/temoto/project/parking/shared/asynchttp.py	/^    def _send_r
 _set_hostport	/home/temoto/project/parking/shared/asynchttp.py	/^    def _set_hostport(self, host, port):$/;"	m	class:AsyncHTTPConnection
 _start_response	/home/temoto/project/parking/shared/tests/__init__.py	/^    def _start_response(self, status, headers):$/;"	m	class:TestServer
 add_or_change_record	/home/temoto/project/parking/shared/dbhelpers.py	/^def add_or_change_record(session, table, lookup_key, data):$/;"	f
+add_partner	/home/temoto/project/parking/admin_interface/partners/views.py	/^def add_partner(request):$/;"	f
+add_template	/home/temoto/project/parking/admin_interface/parking_templates/views.py	/^def add_template(request):$/;"	f
+add_topic	/home/temoto/project/parking/admin_interface/topics/views.py	/^def add_topic(request):$/;"	f
 api_request_by_url_mock	/home/temoto/project/parking/api_provider/tests.py	/^        def api_request_by_url_mock(url, action, data):$/;"	f	function:ApiProviderTestCase.test_get_partner_enoent
 api_request_by_url_mock	/home/temoto/project/parking/api_provider/tests.py	/^        def api_request_by_url_mock(url, action, data):$/;"	f	function:ApiProviderTestCase.test_get_partner_failure
 api_request_by_url_mock	/home/temoto/project/parking/api_provider/tests.py	/^        def api_request_by_url_mock(url, action, data):$/;"	f	function:ApiProviderTestCase.test_get_partner_inactive
 api_request_by_url_mock	/home/temoto/project/parking/api_provider/tests.py	/^        def api_request_by_url_mock(url, action, data):$/;"	f	function:ApiProviderTestCase.test_get_partner_ok
 aquire_lock	/home/temoto/project/parking/shared/cache.py	/^def aquire_lock(connection, key, timeout=5):$/;"	f
+batch_area_id	/home/temoto/project/parking/admin_interface/parking_templates/views.py	/^def batch_area_id(request):$/;"	f
 begin	/home/temoto/project/parking/shared/dbhelpers.py	/^    def begin(self):$/;"	m	class:Transaction
+build	/home/temoto/project/parking/pagebuilder/page/views.py	/^def build(request, category_id=None):$/;"	f
 build_delete_record	/home/temoto/project/parking/account_manager/account_manager.py	/^def build_delete_record(table):$/;"	f
 build_delete_record	/home/temoto/project/parking/domain_manager/domain_manager.py	/^def build_delete_record(table):$/;"	f
+build_delete_record	/home/temoto/project/parking/statistics_gatherer/statistics_gatherer.py	/^def build_delete_record(table):$/;"	f
 build_dns_resolver	/home/temoto/project/parking/domain_approver/approver.py	/^def build_dns_resolver(service_config):$/;"	f
 build_dummy_handler	/home/temoto/project/parking/shared/tests/skeleton.py	/^    def build_dummy_handler(self, action, returns=response_ok()):$/;"	m	class:SkeletonServerTestCase
 build_get_record	/home/temoto/project/parking/account_manager/account_manager.py	/^def build_get_record(table):$/;"	f
 build_get_record	/home/temoto/project/parking/domain_manager/domain_manager.py	/^def build_get_record(table):$/;"	f
+build_get_record	/home/temoto/project/parking/statistics_gatherer/statistics_gatherer.py	/^def build_get_record(table):$/;"	f
 build_get_record_list	/home/temoto/project/parking/account_manager/account_manager.py	/^def build_get_record_list(table):$/;"	f
 build_get_record_list	/home/temoto/project/parking/domain_manager/domain_manager.py	/^def build_get_record_list(table):$/;"	f
+build_get_record_list	/home/temoto/project/parking/statistics_gatherer/statistics_gatherer.py	/^def build_get_record_list(table):$/;"	f
 build_get_suitable_template	/home/temoto/project/parking/domain_manager/domain_manager.py	/^def build_get_suitable_template():$/;"	f
 build_handlers_map	/home/temoto/project/parking/api_provider/api_provider.py	/^def build_handlers_map(_service_actions_map):$/;"	f
 build_inner_join	/home/temoto/project/parking/shared/sql.py	/^    def build_inner_join(default_table, column1, column2):$/;"	f	function:select
@@ -168,52 +221,85 @@ build_join	/home/temoto/project/parking/shared/sql.py	/^    def build_join(join_
 build_left_outer_join	/home/temoto/project/parking/shared/sql.py	/^    def build_left_outer_join(default_table, column1, column2):$/;"	f	function:select
 build_post_record	/home/temoto/project/parking/account_manager/account_manager.py	/^def build_post_record(table):$/;"	f
 build_post_record	/home/temoto/project/parking/domain_manager/domain_manager.py	/^def build_post_record(table):$/;"	f
+build_post_record	/home/temoto/project/parking/statistics_gatherer/statistics_gatherer.py	/^def build_post_record(table):$/;"	f
 build_post_records_list	/home/temoto/project/parking/account_manager/account_manager.py	/^def build_post_records_list(table):$/;"	f
 build_post_records_list	/home/temoto/project/parking/domain_manager/domain_manager.py	/^def build_post_records_list(table):$/;"	f
 build_request	/home/temoto/project/parking/shared/tests/__init__.py	/^    def build_request(self, action, data):$/;"	m	class:TestServer
 build_request_raw	/home/temoto/project/parking/shared/tests/__init__.py	/^    def build_request_raw(self, method, _uri, args):$/;"	m	class:TestServer
-cache_get	/home/temoto/project/parking/domain_manager/cache.py	/^def cache_get(tag, *lookup_keys):$/;"	f
-cache_set	/home/temoto/project/parking/domain_manager/cache.py	/^def cache_set(tag, *lookup_keys):$/;"	f
-cache_set_list	/home/temoto/project/parking/domain_manager/cache.py	/^def cache_set_list(tag, lookup_key):$/;"	f
+cache_delete	/home/temoto/project/parking/shared/cache.py	/^def cache_delete(tag, *lookup_keys):$/;"	f
+cache_get	/home/temoto/project/parking/shared/cache.py	/^def cache_get(tag, *lookup_keys):$/;"	f
+cache_set	/home/temoto/project/parking/shared/cache.py	/^def cache_set(tag, *lookup_keys):$/;"	f
 callback	/home/temoto/project/parking/server.py	/^    def callback(wsgi_environ, start_response):$/;"	f	function:callback_builder
 callback_builder	/home/temoto/project/parking/server.py	/^def callback_builder(prepared_environ):$/;"	f
 clear	/home/temoto/project/parking/shared/shared_config.py	/^    def clear(self):$/;"	m	class:SharedConfig
+client	/home/temoto/project/parking/account_manager/syncdb/create_all.sql	/^CREATE TABLE client ($/;"	t
+client.contact_email	/home/temoto/project/parking/account_manager/syncdb/create_all.sql	/^        contact_email VARCHAR(100),$/;"	F
+client.email	/home/temoto/project/parking/account_manager/syncdb/create_all.sql	/^        email VARCHAR(100),$/;"	F
+client.id	/home/temoto/project/parking/account_manager/syncdb/create_all.sql	/^        id SERIAL NOT NULL,$/;"	F
+client.is_active	/home/temoto/project/parking/account_manager/syncdb/create_all.sql	/^        is_active BOOLEAN DEFAULT 'False',$/;"	F
+client.ix_client_email	/home/temoto/project/parking/account_manager/syncdb/create_all.sql	/^CREATE UNIQUE INDEX ix_client_email ON client (lower(email));$/;"	i
+client.ix_client_partner_id	/home/temoto/project/parking/account_manager/syncdb/create_all.sql	/^CREATE INDEX ix_client_partner_id ON client (partner_id);$/;"	i
+client.partner_id	/home/temoto/project/parking/account_manager/syncdb/create_all.sql	/^        partner_id INTEGER NOT NULL,$/;"	F
+client.referal_id	/home/temoto/project/parking/account_manager/syncdb/create_all.sql	/^        referal_id INTEGER,$/;"	F
+client.registration_date	/home/temoto/project/parking/account_manager/syncdb/create_all.sql	/^        registration_date TIMESTAMP WITHOUT TIME ZONE,$/;"	F
 close	/home/temoto/project/parking/domain_approver/domain_approver.py	/^def close():$/;"	f
 close	/home/temoto/project/parking/network.py	/^    def close(self):$/;"	m	class:WsgiServer
 close	/home/temoto/project/parking/network.py	/^def close():$/;"	f
 close	/home/temoto/project/parking/shared/asynchttp.py	/^    def close(self):$/;"	m	class:AsyncHTTPConnection
 close	/home/temoto/project/parking/shared/shared_config.py	/^    def close(self):$/;"	m	class:SharedConfig
-close	/home/temoto/project/parking/supervisor/supervisor.py	/^def close():$/;"	f
 collect_incoming_data	/home/temoto/project/parking/shared/asynchttp.py	/^    def collect_incoming_data(self, data):$/;"	m	class:AsyncHTTPConnection
 commit	/home/temoto/project/parking/shared/dbhelpers.py	/^    def commit(self):$/;"	m	class:Transaction
+compare_by_name	/home/temoto/project/parking/admin_interface/topics/views.py	/^def compare_by_name(x, y):$/;"	f
 connect	/home/temoto/project/parking/shared/asynchttp.py	/^    def connect(self):$/;"	m	class:AsyncHTTPConnection
+create_data	/home/temoto/project/parking/account_manager/syncdb/__init__.py	/^def create_data():$/;"	f
 create_engine	/home/temoto/project/parking/shared/dbhelpers.py	/^def create_engine(connection_string):$/;"	f
 create_pool	/home/temoto/project/parking/shared/dbhelpers.py	/^def create_pool(get_connection_function):$/;"	f
-custom_server_mock	/home/temoto/project/parking/shared/tests/skeleton.py	/^        def custom_server_mock(environ, start_response):$/;"	f	function:SkeletonServerTestCase.test_custom_not_configured
 decode_or_none	/home/temoto/project/parking/shared/util.py	/^def decode_or_none(json_data):$/;"	f
+delete	/home/temoto/project/parking/account_manager/db.py	/^    def delete(self, record_id):$/;"	m	class:Partner
 delete	/home/temoto/project/parking/domain_manager/db.py	/^    def delete(self, data):$/;"	m	class:Taxonomy
+delete	/home/temoto/project/parking/domain_manager/db.py	/^    def delete(self, record_id):$/;"	m	class:Domain
+delete	/home/temoto/project/parking/domain_manager/db.py	/^    def delete(self, record_id):$/;"	m	class:DomainView
+delete	/home/temoto/project/parking/domain_manager/db.py	/^    def delete(self, record_id):$/;"	m	class:Template
+delete	/home/temoto/project/parking/domain_manager/db.py	/^    def delete(self, record_id):$/;"	m	class:Topic
 delete	/home/temoto/project/parking/shared/dbhelpers.py	/^    def delete(self, record_id):$/;"	m	class:DbRecord
 delete	/home/temoto/project/parking/shared/sql.py	/^def delete(table, **conditions):$/;"	f
 delete_domain	/home/temoto/project/parking/domain_manager/dbhelpers.py	/^def delete_domain(data):$/;"	f
 delete_keyword	/home/temoto/project/parking/domain_manager/dbhelpers.py	/^def delete_keyword(data):$/;"	f
+delete_partner	/home/temoto/project/parking/admin_interface/partners/views.py	/^def delete_partner(request, partner_id):$/;"	f
+delete_partner	/home/temoto/project/parking/admin_interface/shared/api.py	/^def delete_partner(where):$/;"	f
 delete_record_by	/home/temoto/project/parking/shared/dbhelpers.py	/^def delete_record_by(session, table, where):$/;"	f
+delete_template	/home/temoto/project/parking/admin_interface/parking_templates/views.py	/^def delete_template(request, template_id):$/;"	f
+delete_template	/home/temoto/project/parking/admin_interface/shared/api.py	/^def delete_template(template_id):$/;"	f
+delete_topic	/home/temoto/project/parking/admin_interface/shared/api.py	/^def delete_topic(topic_id):$/;"	f
+delete_topic	/home/temoto/project/parking/admin_interface/topics/views.py	/^def delete_topic(_request, topic_id):$/;"	f
+deleter	/home/temoto/project/parking/shared/cache.py	/^    def deleter(func):$/;"	f	function:cache_delete
 dict_factory	/home/temoto/project/parking/shared/util.py	/^def dict_factory(columns, row):$/;"	f
 dispatcher	/home/temoto/project/parking/account_manager/account_manager.py	/^def dispatcher(action, _environ):$/;"	f
 dispatcher	/home/temoto/project/parking/api_provider/api_provider.py	/^def dispatcher(action, _environ):$/;"	f
 dispatcher	/home/temoto/project/parking/domain_approver/domain_approver.py	/^def dispatcher(action, environ):$/;"	f
 dispatcher	/home/temoto/project/parking/domain_manager/domain_manager.py	/^def dispatcher(action, _environ):$/;"	f
 dispatcher	/home/temoto/project/parking/feed_fetcher/feed_fetcher.py	/^def dispatcher(action, _environ):$/;"	f
-dispatcher	/home/temoto/project/parking/supervisor/supervisor.py	/^def dispatcher(action, environ):$/;"	f
+dispatcher	/home/temoto/project/parking/statistics_gatherer/statistics_gatherer.py	/^def dispatcher(action, _environ):$/;"	f
 dispatcher_mock	/home/temoto/project/parking/shared/tests/skeleton.py	/^    def dispatcher_mock(self, action, _environ):$/;"	m	class:SkeletonServerTestCase
-do_ping	/home/temoto/project/parking/supervisor/ping.py	/^def do_ping(environ, runtime_config):$/;"	f
+drop_tables	/home/temoto/project/parking/account_manager/syncdb/__init__.py	/^def drop_tables():$/;"	f
 dummy_handler	/home/temoto/project/parking/shared/tests/skeleton.py	/^        def dummy_handler(_data, _environ, _runtime_config):$/;"	f	function:SkeletonServerTestCase.build_dummy_handler
+earnings	/home/temoto/project/parking/account_manager/syncdb/create_all.sql	/^CREATE TABLE earnings ($/;"	t
+earnings.amount	/home/temoto/project/parking/account_manager/syncdb/create_all.sql	/^        amount INTEGER NOT NULL,$/;"	F
+earnings.client_id	/home/temoto/project/parking/account_manager/syncdb/create_all.sql	/^        client_id INTEGER,$/;"	F
+earnings.currency	/home/temoto/project/parking/account_manager/syncdb/create_all.sql	/^        currency VARCHAR(50) NOT NULL,$/;"	F
+earnings.id	/home/temoto/project/parking/account_manager/syncdb/create_all.sql	/^        id SERIAL NOT NULL,$/;"	F
+earnings.partner_id	/home/temoto/project/parking/account_manager/syncdb/create_all.sql	/^        partner_id INTEGER NOT NULL,$/;"	F
+edit_partner	/home/temoto/project/parking/admin_interface/partners/views.py	/^def edit_partner(request, partner_id):$/;"	f
+edit_template	/home/temoto/project/parking/admin_interface/parking_templates/views.py	/^def edit_template(request, template_id):$/;"	f
+edit_topic	/home/temoto/project/parking/admin_interface/topics/views.py	/^def edit_topic(request, topic_id):$/;"	f
 endheaders	/home/temoto/project/parking/shared/asynchttp.py	/^    def endheaders(self):$/;"	m	class:AsyncHTTPConnection
 escape	/home/temoto/project/parking/shared/sql.py	/^def escape(text):$/;"	f
 escape_column	/home/temoto/project/parking/shared/sql.py	/^def escape_column(text):$/;"	f
 execute	/home/temoto/project/parking/shared/dbhelpers.py	/^    def execute(self, query, parameters=[]):$/;"	m	class:Transaction
+execute_sql	/home/temoto/project/parking/account_manager/syncdb/__init__.py	/^def execute_sql(sql):$/;"	f
 filter_dict	/home/temoto/project/parking/shared/util.py	/^def filter_dict(fun, data):$/;"	f
 flush	/home/temoto/project/parking/shared/dbhelpers.py	/^    def flush(self):$/;"	m	class:Transaction
-generate_unique_id	/home/temoto/project/parking/supervisor/supervisor.py	/^def generate_unique_id(configuration):$/;"	f
+generic_request	/home/temoto/project/parking/pagebuilder/page/utils.py	/^def generic_request(url, data):$/;"	f
 get	/home/temoto/project/parking/account_manager/db.py	/^    def get(self, where):$/;"	m	class:Client
 get	/home/temoto/project/parking/account_manager/db.py	/^    def get(self, where):$/;"	m	class:Partner
 get	/home/temoto/project/parking/domain_manager/db.py	/^    def get(self, data, columns=[]):$/;"	m	class:Domain
@@ -226,86 +312,122 @@ get	/home/temoto/project/parking/shared/shared_config.py	/^    def get(self, key
 get_addresses	/home/temoto/project/parking/domain_approver/approver.py	/^def get_addresses(resolver, address):$/;"	f
 get_connection	/home/temoto/project/parking/account_manager/db.py	/^def get_connection():$/;"	f
 get_connection	/home/temoto/project/parking/domain_manager/db.py	/^def get_connection():$/;"	f
+get_connection	/home/temoto/project/parking/statistics_gatherer/db.py	/^def get_connection():$/;"	f
 get_domain	/home/temoto/project/parking/domain_manager/dbhelpers.py	/^def get_domain(data):$/;"	f
+get_fullpath	/home/temoto/project/parking/account_manager/syncdb/__init__.py	/^def get_fullpath(filename):$/;"	f
 get_keyword	/home/temoto/project/parking/domain_manager/dbhelpers.py	/^def get_keyword(data):$/;"	f
+get_list	/home/temoto/project/parking/account_manager/db.py	/^    def get_list(self, data):$/;"	m	class:Client
 get_list	/home/temoto/project/parking/account_manager/db.py	/^    def get_list(self, data):$/;"	m	class:Earnings
 get_list	/home/temoto/project/parking/account_manager/db.py	/^    def get_list(self, data):$/;"	m	class:PaymentInfo
+get_list	/home/temoto/project/parking/account_manager/db.py	/^    def get_list(self, where):$/;"	m	class:Partner
 get_list	/home/temoto/project/parking/domain_manager/db.py	/^    def get_list(self, data):$/;"	m	class:Domain
 get_list	/home/temoto/project/parking/domain_manager/db.py	/^    def get_list(self, data):$/;"	m	class:DomainView
 get_list	/home/temoto/project/parking/domain_manager/db.py	/^    def get_list(self, data):$/;"	m	class:Filter
 get_list	/home/temoto/project/parking/domain_manager/db.py	/^    def get_list(self, data):$/;"	m	class:Taxonomy
 get_list	/home/temoto/project/parking/domain_manager/db.py	/^    def get_list(self, data):$/;"	m	class:Template
-get_list	/home/temoto/project/parking/domain_manager/db.py	/^    def get_list(self, data, where={}):$/;"	m	class:Topic
-get_list	/home/temoto/project/parking/shared/dbhelpers.py	/^    def get_list(self, data, where={}):$/;"	m	class:DbRecord
+get_list	/home/temoto/project/parking/domain_manager/db.py	/^    def get_list(self, data):$/;"	m	class:Topic
+get_list	/home/temoto/project/parking/shared/dbhelpers.py	/^    def get_list(self, data):$/;"	m	class:DbRecord
+get_memcache	/home/temoto/project/parking/pagebuilder/page/views.py	/^def get_memcache():$/;"	f
+get_partner	/home/temoto/project/parking/admin_interface/shared/api.py	/^def get_partner(where):$/;"	f
 get_partner	/home/temoto/project/parking/api_provider/api_provider.py	/^def get_partner(environ):$/;"	f
+get_partners	/home/temoto/project/parking/admin_interface/shared/api.py	/^def get_partners(offset=0, limit=0):$/;"	f
 get_response_from_domain	/home/temoto/project/parking/domain_approver/approver.py	/^def get_response_from_domain(resolver, domain, parking_ips):$/;"	f
 get_runtime_config	/home/temoto/project/parking/shared/util.py	/^def get_runtime_config(environ):$/;"	f
 get_service_by_id	/home/temoto/project/parking/shared/util.py	/^def get_service_by_id(_id, configuration):$/;"	f
 get_service_by_url	/home/temoto/project/parking/shared/util.py	/^def get_service_by_url(url, configuration):$/;"	f
 get_service_config	/home/temoto/project/parking/shared/util.py	/^def get_service_config(environ):$/;"	f
+get_services_state	/home/temoto/project/parking/admin_interface/shared/api.py	/^def get_services_state():$/;"	f
 get_session	/home/temoto/project/parking/account_manager/account_manager.py	/^def get_session(config):$/;"	f
 get_session	/home/temoto/project/parking/domain_manager/domain_manager.py	/^def get_session(config):$/;"	f
+get_session	/home/temoto/project/parking/statistics_gatherer/statistics_gatherer.py	/^def get_session(config):$/;"	f
 get_suitable_template	/home/temoto/project/parking/domain_manager/db.py	/^    def get_suitable_template(self, data):$/;"	m	class:Template
+get_template	/home/temoto/project/parking/admin_interface/shared/api.py	/^def get_template(where):$/;"	f
+get_templates	/home/temoto/project/parking/admin_interface/shared/api.py	/^def get_templates(where={}):$/;"	f
+get_topic	/home/temoto/project/parking/admin_interface/shared/api.py	/^def get_topic(where):$/;"	f
+get_topics	/home/temoto/project/parking/admin_interface/shared/api.py	/^def get_topics(where={}):$/;"	f
 get_value	/home/temoto/project/parking/shared/cache.py	/^def get_value(connection, tag, key):$/;"	f
 getbody	/home/temoto/project/parking/shared/asynchttp.py	/^    def getbody(self):$/;"	m	class:AsyncHTTPResponse
 getheader	/home/temoto/project/parking/shared/asynchttp.py	/^    def getheader(self, name, default=None):$/;"	m	class:AsyncHTTPResponse
 getresponse	/home/temoto/project/parking/shared/asynchttp.py	/^    def getresponse(self):$/;"	m	class:AsyncHTTPConnection
-getter	/home/temoto/project/parking/domain_manager/cache.py	/^    def getter(func):$/;"	f	function:cache_get
+getter	/home/temoto/project/parking/shared/cache.py	/^    def getter(func):$/;"	f	function:cache_get
 handle_close	/home/temoto/project/parking/shared/asynchttp.py	/^    def handle_close(self):$/;"	m	class:AsyncHTTPConnection
 handle_connect	/home/temoto/project/parking/shared/_async_send.py	/^    def handle_connect(self):$/;"	m	class:SenderHTTPConnection
 handle_connect	/home/temoto/project/parking/shared/asynchttp.py	/^    def handle_connect(self):$/;"	m	class:AsyncHTTPConnection
 handle_connect	/home/temoto/project/parking/shared/asynchttp.py	/^    def handle_connect(self):$/;"	m	class:__test_AsyncHTTPConnection
 handle_delete_record	/home/temoto/project/parking/account_manager/account_manager.py	/^    def handle_delete_record(data, _environ, config):$/;"	f	function:build_delete_record
 handle_delete_record	/home/temoto/project/parking/domain_manager/domain_manager.py	/^    def handle_delete_record(data, _environ, config):$/;"	f	function:build_delete_record
+handle_delete_record	/home/temoto/project/parking/statistics_gatherer/statistics_gatherer.py	/^    def handle_delete_record(data, _environ, config):$/;"	f	function:build_delete_record
 handle_error	/home/temoto/project/parking/shared/_async_send.py	/^    def handle_error(self):$/;"	m	class:SenderHTTPConnection
 handle_error	/home/temoto/project/parking/shared/asynchttp.py	/^    def handle_error(self):$/;"	m	class:AsyncHTTPConnection
 handle_get_feed	/home/temoto/project/parking/feed_fetcher/feed_fetcher.py	/^def handle_get_feed(data, _environ, _config):$/;"	f
 handle_get_record	/home/temoto/project/parking/account_manager/account_manager.py	/^    def handle_get_record(data, _environ, config):$/;"	f	function:build_get_record
 handle_get_record	/home/temoto/project/parking/domain_manager/domain_manager.py	/^    def handle_get_record(data, _environ, config):$/;"	f	function:build_get_record
+handle_get_record	/home/temoto/project/parking/statistics_gatherer/statistics_gatherer.py	/^    def handle_get_record(data, _environ, config):$/;"	f	function:build_get_record
 handle_get_record_list	/home/temoto/project/parking/account_manager/account_manager.py	/^    def handle_get_record_list(data, _environ, config):$/;"	f	function:build_get_record_list
 handle_get_record_list	/home/temoto/project/parking/domain_manager/domain_manager.py	/^    def handle_get_record_list(data, _environ, config):$/;"	f	function:build_get_record_list
+handle_get_record_list	/home/temoto/project/parking/statistics_gatherer/statistics_gatherer.py	/^    def handle_get_record_list(data, _environ, config):$/;"	f	function:build_get_record_list
 handle_get_suitable_template	/home/temoto/project/parking/domain_manager/domain_manager.py	/^    def handle_get_suitable_template(data, _environ, config):$/;"	f	function:build_get_suitable_template
 handle_ping	/home/temoto/project/parking/shared/skeleton.py	/^def handle_ping(_data, _environ, _config):$/;"	f
 handle_post_record	/home/temoto/project/parking/account_manager/account_manager.py	/^    def handle_post_record(data, _environ, config):$/;"	f	function:build_post_record
 handle_post_record	/home/temoto/project/parking/domain_manager/domain_manager.py	/^    def handle_post_record(data, _environ, config):$/;"	f	function:build_post_record
+handle_post_record	/home/temoto/project/parking/statistics_gatherer/statistics_gatherer.py	/^    def handle_post_record(data, _environ, config):$/;"	f	function:build_post_record
 handle_post_records_list	/home/temoto/project/parking/account_manager/account_manager.py	/^    def handle_post_records_list(data, _environ, config):$/;"	f	function:build_post_records_list
 handle_post_records_list	/home/temoto/project/parking/domain_manager/domain_manager.py	/^    def handle_post_records_list(data, _environ, config):$/;"	f	function:build_post_records_list
 handle_read	/home/temoto/project/parking/shared/asynchttp.py	/^    def handle_read (self):$/;"	m	class:AsyncHTTPConnection
-handle_reconf	/home/temoto/project/parking/shared/skeleton.py	/^def handle_reconf(data, environ, config):$/;"	f
-handle_register	/home/temoto/project/parking/supervisor/supervisor.py	/^def handle_register(data, environ, config):$/;"	f
 handle_response	/home/temoto/project/parking/shared/_async_send.py	/^    def handle_response(self):$/;"	m	class:SenderHTTPConnection
 handle_response	/home/temoto/project/parking/shared/asynchttp.py	/^    def handle_response(self):$/;"	m	class:AsyncHTTPConnection
 handle_response	/home/temoto/project/parking/shared/asynchttp.py	/^    def handle_response(self):$/;"	m	class:__test_AsyncHTTPConnection
-handle_stop	/home/temoto/project/parking/shared/skeleton.py	/^def handle_stop(_data, _environ, config):$/;"	f
-handle_test_action_1	/home/temoto/project/parking/shared/tests/skeleton.py	/^        def handle_test_action_1():$/;"	f	function:PrefixDispatcherTestCase.test_good_001
-handle_test_another_action	/home/temoto/project/parking/shared/tests/skeleton.py	/^        def handle_test_another_action():$/;"	f	function:PrefixDispatcherTestCase.test_good_001
 handler	/home/temoto/project/parking/api_provider/api_provider.py	/^    def handler(data, environ, _config):$/;"	f	function:proxy
 has_key	/home/temoto/project/parking/shared/shared_config.py	/^    def has_key(self, key):$/;"	m	class:SharedConfig
-http_request	/home/temoto/project/parking/network.py	/^def http_request(url, get_params={}, sync=True):$/;"	f
-init	/home/temoto/project/parking/account_manager/account_manager.py	/^def init(environ, register=True):$/;"	f
-init	/home/temoto/project/parking/api_provider/api_provider.py	/^def init(environ, register=True):$/;"	f
-init	/home/temoto/project/parking/domain_approver/domain_approver.py	/^def init(environ, register=True):$/;"	f
-init	/home/temoto/project/parking/domain_manager/domain_manager.py	/^def init(environ, register=True):$/;"	f
-init	/home/temoto/project/parking/feed_fetcher/feed_fetcher.py	/^def init(environ, register=True):$/;"	f
+http_request	/home/temoto/project/parking/admin_interface/shared/api.py	/^def http_request(url, get_params):$/;"	f
+http_request	/home/temoto/project/parking/network.py	/^def http_request(url, get_params=None, post_params=None):$/;"	f
+http_request	/home/temoto/project/parking/pagebuilder/page/utils.py	/^def http_request(url, get_params={}, callback=None, sync=True):$/;"	f
+http_request	/home/temoto/project/parking/pagebuilder/parkki/api.py	/^def http_request(url, get_params={}):$/;"	f
+init	/home/temoto/project/parking/account_manager/account_manager.py	/^def init(environ):$/;"	f
+init	/home/temoto/project/parking/api_provider/api_provider.py	/^def init(environ):$/;"	f
+init	/home/temoto/project/parking/domain_approver/domain_approver.py	/^def init(environ):$/;"	f
+init	/home/temoto/project/parking/domain_manager/domain_manager.py	/^def init(environ):$/;"	f
+init	/home/temoto/project/parking/feed_fetcher/feed_fetcher.py	/^def init(environ):$/;"	f
 init	/home/temoto/project/parking/network.py	/^    def init(self):$/;"	m	class:WsgiServer
 init	/home/temoto/project/parking/network.py	/^def init():$/;"	f
-init	/home/temoto/project/parking/shared/skeleton.py	/^def init(environ, register):$/;"	f
-init	/home/temoto/project/parking/supervisor/supervisor.py	/^def init(environ, _register=False):$/;"	f
+init	/home/temoto/project/parking/shared/skeleton.py	/^def init(environ):$/;"	f
+init	/home/temoto/project/parking/statistics_gatherer/statistics_gatherer.py	/^def init(environ):$/;"	f
 init_proxy	/home/temoto/project/parking/network.py	/^def init_proxy():$/;"	f
 insert	/home/temoto/project/parking/shared/sql.py	/^def insert(table, data):$/;"	f
 is_approved	/home/temoto/project/parking/domain_approver/approver.py	/^def is_approved(addresses, parking_ips):$/;"	f
 is_called	/home/temoto/project/parking/shared/minimock/__init__.py	/^def is_called(object_name, filter_func=None):$/;"	f
 is_client_belongs_to_partner	/home/temoto/project/parking/api_provider/api_provider.py	/^def is_client_belongs_to_partner(environ, partner_id, client_id):$/;"	f
 kill_server	/home/temoto/project/parking/shared/util.py	/^    def kill_server():$/;"	f	function:server_quit
+list_partners	/home/temoto/project/parking/admin_interface/partners/views.py	/^def list_partners(request):$/;"	f
+list_services	/home/temoto/project/parking/admin_interface/services/views.py	/^def list_services(request):$/;"	f
+list_templates	/home/temoto/project/parking/admin_interface/parking_templates/views.py	/^def list_templates(request):$/;"	f
+list_topics	/home/temoto/project/parking/admin_interface/topics/views.py	/^def list_topics(request):$/;"	f
 lookup_by_name	/home/temoto/project/parking/shared/minimock/__init__.py	/^def lookup_by_name(name, nsdicts):$/;"	f
 main	/home/temoto/project/parking/server.py	/^def main():$/;"	f
 make_key	/home/temoto/project/parking/shared/cache.py	/^def make_key(prefix, data):$/;"	f
 make_request	/home/temoto/project/parking/shared/tests/__init__.py	/^    def make_request(self, action, data, server):$/;"	m	class:TestServer
 make_request_raw	/home/temoto/project/parking/shared/tests/__init__.py	/^    def make_request_raw(self, method, uri, args, server):$/;"	m	class:TestServer
+md5	/home/temoto/project/parking/shared/cache.py	/^def md5(data):$/;"	f
 mock	/home/temoto/project/parking/shared/minimock/__init__.py	/^def mock(name, nsdicts=None, mock_obj=None, **kw):$/;"	f
 mock_dns_answer	/home/temoto/project/parking/domain_approver/tests.py	/^    def mock_dns_answer(self, returns=[]):$/;"	m	class:GetAddressesTestCase
 multicast_by_urls	/home/temoto/project/parking/shared/api.py	/^def multicast_by_urls(url_timeout_list, action, data):$/;"	f
-multicast_to_registered	/home/temoto/project/parking/shared/api.py	/^def multicast_to_registered(environ, action, data, include_supervisor=False, include_self=False):$/;"	f
+partner	/home/temoto/project/parking/account_manager/syncdb/create_all.sql	/^CREATE TABLE partner ($/;"	t
+partner.can_login	/home/temoto/project/parking/account_manager/syncdb/create_all.sql	/^        can_login BOOLEAN DEFAULT 'False',$/;"	F
+partner.certificate	/home/temoto/project/parking/account_manager/syncdb/create_all.sql	/^        certificate VARCHAR(512),$/;"	F
+partner.email	/home/temoto/project/parking/account_manager/syncdb/create_all.sql	/^        email VARCHAR(100),$/;"	F
+partner.id	/home/temoto/project/parking/account_manager/syncdb/create_all.sql	/^        id SERIAL NOT NULL,$/;"	F
+partner.is_active	/home/temoto/project/parking/account_manager/syncdb/create_all.sql	/^        is_active BOOLEAN DEFAULT 'False',$/;"	F
+partner.name	/home/temoto/project/parking/account_manager/syncdb/create_all.sql	/^        name VARCHAR(50) NOT NULL,$/;"	F
+partner.password	/home/temoto/project/parking/account_manager/syncdb/create_all.sql	/^        password VARCHAR(128),$/;"	F
+partner.registration_date	/home/temoto/project/parking/account_manager/syncdb/create_all.sql	/^        registration_date TIMESTAMP WITHOUT TIME ZONE,$/;"	F
+payment_info	/home/temoto/project/parking/account_manager/syncdb/create_all.sql	/^CREATE TABLE payment_info ($/;"	t
+payment_info.client_id	/home/temoto/project/parking/account_manager/syncdb/create_all.sql	/^        client_id INTEGER,$/;"	F
+payment_info.currency	/home/temoto/project/parking/account_manager/syncdb/create_all.sql	/^        currency VARCHAR(50),$/;"	F
+payment_info.custom	/home/temoto/project/parking/account_manager/syncdb/create_all.sql	/^        custom VARCHAR(1024),$/;"	F
+payment_info.id	/home/temoto/project/parking/account_manager/syncdb/create_all.sql	/^        id SERIAL NOT NULL,$/;"	F
+payment_info.is_preferred	/home/temoto/project/parking/account_manager/syncdb/create_all.sql	/^        is_preferred BOOLEAN DEFAULT 'False',$/;"	F
+payment_info.number	/home/temoto/project/parking/account_manager/syncdb/create_all.sql	/^        number VARCHAR(50),$/;"	F
+payment_info.partner_id	/home/temoto/project/parking/account_manager/syncdb/create_all.sql	/^        partner_id INTEGER,$/;"	F
 post	/home/temoto/project/parking/account_manager/db.py	/^    def post(self, data):$/;"	m	class:Client
 post	/home/temoto/project/parking/account_manager/db.py	/^    def post(self, data):$/;"	m	class:Partner
 post	/home/temoto/project/parking/account_manager/db.py	/^    def post(self, data):$/;"	m	class:PaymentInfo
@@ -316,15 +438,19 @@ post	/home/temoto/project/parking/domain_manager/db.py	/^    def post(self, data
 post	/home/temoto/project/parking/domain_manager/db.py	/^    def post(self, data):$/;"	m	class:Template
 post	/home/temoto/project/parking/domain_manager/db.py	/^    def post(self, data):$/;"	m	class:Topic
 post	/home/temoto/project/parking/shared/dbhelpers.py	/^    def post(self, data):$/;"	m	class:DbRecord
+post	/home/temoto/project/parking/statistics_gatherer/db.py	/^    def post(self, data):$/;"	m	class:Click
+post	/home/temoto/project/parking/statistics_gatherer/db.py	/^    def post(self, data):$/;"	m	class:View
+post	/home/temoto/project/parking/statistics_gatherer/db.py	/^    def post(self, data):$/;"	m	class:Xaction
 post_domain	/home/temoto/project/parking/domain_manager/dbhelpers.py	/^def post_domain(data):$/;"	f
 post_keyword	/home/temoto/project/parking/domain_manager/dbhelpers.py	/^def post_keyword(data):$/;"	f
 post_list	/home/temoto/project/parking/shared/dbhelpers.py	/^    def post_list(self, data):$/;"	m	class:DbRecord
+post_partner	/home/temoto/project/parking/admin_interface/shared/api.py	/^def post_partner(what):$/;"	f
 post_records_list	/home/temoto/project/parking/shared/dbhelpers.py	/^def post_records_list(session, table, data_list):$/;"	f
-prefix_dispatcher	/home/temoto/project/parking/shared/skeleton.py	/^def prefix_dispatcher(action, environ, _globals):$/;"	f
-prepare_environment	/home/temoto/project/parking/shared/server.py	/^def prepare_environment(module_name, register=True, config_path=None):$/;"	f
+post_template	/home/temoto/project/parking/admin_interface/shared/api.py	/^def post_template(where):$/;"	f
+post_topic	/home/temoto/project/parking/admin_interface/shared/api.py	/^def post_topic(where):$/;"	f
+prepare_environment	/home/temoto/project/parking/shared/server.py	/^def prepare_environment(module_name, config_path=None):$/;"	f
 print_usage	/home/temoto/project/parking/request.py	/^def print_usage():$/;"	f
 process_domains	/home/temoto/project/parking/domain_approver/approver.py	/^def process_domains(environ):$/;"	f
-process_fail_list	/home/temoto/project/parking/supervisor/ping.py	/^def process_fail_list(runtime_config, fail_list):$/;"	f
 process_get	/home/temoto/project/parking/shared/dbhelpers.py	/^    def process_get(self, db_response):$/;"	m	class:DbRecord
 process_get_list	/home/temoto/project/parking/shared/dbhelpers.py	/^    def process_get_list(self, db_response):$/;"	m	class:DbRecord
 proxy	/home/temoto/project/parking/api_provider/api_provider.py	/^def proxy(service, action):$/;"	f
@@ -332,26 +458,29 @@ putheader	/home/temoto/project/parking/shared/asynchttp.py	/^    def putheader(s
 putrequest	/home/temoto/project/parking/shared/asynchttp.py	/^    def putrequest(self, method, url):$/;"	m	class:AsyncHTTPConnection
 query	/home/temoto/project/parking/domain_approver/tests.py	/^    def query(self, _address, _type):$/;"	m	class:DnsResolverMock
 read	/home/temoto/project/parking/shared/shared_config.py	/^    def read(self):$/;"	m	class:SharedConfig
-read_config	/home/temoto/project/parking/shared/server.py	/^def read_config(module_name, fname):$/;"	f
+read_config	/home/temoto/project/parking/shared/server.py	/^def read_config(fname):$/;"	f
+read_file	/home/temoto/project/parking/account_manager/syncdb/__init__.py	/^def read_file(filename):$/;"	f
 real_filter_func	/home/temoto/project/parking/shared/minimock/__init__.py	/^    def real_filter_func( (name, args, kwargs) ):$/;"	f	function:is_called
-register	/home/temoto/project/parking/shared/api.py	/^def register(environ):$/;"	f
 repl	/home/temoto/project/parking/shared/sql.py	/^    def repl(m):$/;"	f	function:escape
-request	/home/temoto/project/parking/shared/api.py	/^def request(environ, service_name, action, data, shard_id=0):$/;"	f
+request	/home/temoto/project/parking/shared/api.py	/^def request(environ, service_name, action, data):$/;"	f
 request	/home/temoto/project/parking/shared/asynchttp.py	/^    def request(self, method, url, body=None, headers={}):$/;"	m	class:AsyncHTTPConnection
+request_by_url	/home/temoto/project/parking/admin_interface/shared/api.py	/^def request_by_url(url, action, data):$/;"	f
+request_by_url	/home/temoto/project/parking/pagebuilder/parkki/api.py	/^def request_by_url(url, action, data, raise_non_ok=False):$/;"	f
 request_by_url	/home/temoto/project/parking/shared/api.py	/^def request_by_url(url, action, data):$/;"	f
 request_parse	/home/temoto/project/parking/shared/server.py	/^def request_parse(environ):$/;"	f
-resend	/home/temoto/project/parking/supervisor/reconfer.py	/^def resend():$/;"	f
+response	/home/temoto/project/parking/pagebuilder/parkki/api.py	/^def response(status, data):$/;"	f
 response	/home/temoto/project/parking/shared/api.py	/^def response(status, data):$/;"	f
+response_enoent	/home/temoto/project/parking/pagebuilder/parkki/api.py	/^def response_enoent(data=None):$/;"	f
 response_enoent	/home/temoto/project/parking/shared/api.py	/^def response_enoent(data=None):$/;"	f
+response_fail	/home/temoto/project/parking/pagebuilder/parkki/api.py	/^def response_fail(data=None):$/;"	f
 response_fail	/home/temoto/project/parking/shared/api.py	/^def response_fail(data=None):$/;"	f
+response_ok	/home/temoto/project/parking/pagebuilder/parkki/api.py	/^def response_ok(data=None):$/;"	f
 response_ok	/home/temoto/project/parking/shared/api.py	/^def response_ok(data=None):$/;"	f
 restore	/home/temoto/project/parking/shared/minimock/__init__.py	/^def restore():$/;"	f
 rollback	/home/temoto/project/parking/shared/dbhelpers.py	/^    def rollback(self):$/;"	m	class:Transaction
 run	/home/temoto/project/parking/domain_approver/approver.py	/^def run(environ):$/;"	f
 run	/home/temoto/project/parking/network.py	/^    def run(self):$/;"	m	class:WsgiServer
 run	/home/temoto/project/parking/network.py	/^def run():$/;"	f
-run	/home/temoto/project/parking/supervisor/ping.py	/^def run(environ):$/;"	f
-run	/home/temoto/project/parking/supervisor/reconfer.py	/^def run(environ):$/;"	f
 select	/home/temoto/project/parking/shared/sql.py	/^def select(table, columns=[], limit=0, offset=0, order_by=None, inner_join=None, left_outer_join=None, **conditions):$/;"	f
 send_data	/home/temoto/project/parking/shared/_async_send.py	/^def send_data(urls):$/;"	f
 send_entity	/home/temoto/project/parking/shared/asynchttp.py	/^    def send_entity(self, str):$/;"	m	class:AsyncHTTPConnection
@@ -360,8 +489,8 @@ server	/home/temoto/project/parking/api_provider/api_provider.py	/^def server(en
 server	/home/temoto/project/parking/domain_approver/domain_approver.py	/^def server(environ, start_response):$/;"	f
 server	/home/temoto/project/parking/domain_manager/domain_manager.py	/^def server(environ, start_response):$/;"	f
 server	/home/temoto/project/parking/feed_fetcher/feed_fetcher.py	/^def server(environ, start_response):$/;"	f
-server	/home/temoto/project/parking/shared/skeleton.py	/^def server(environ, start_response, dispatcher,$/;"	f
-server	/home/temoto/project/parking/supervisor/supervisor.py	/^def server(environ, start_response):$/;"	f
+server	/home/temoto/project/parking/shared/skeleton.py	/^def server(environ, start_response, dispatcher):$/;"	f
+server	/home/temoto/project/parking/statistics_gatherer/statistics_gatherer.py	/^def server(environ, start_response):$/;"	f
 server_mock	/home/temoto/project/parking/shared/tests/skeleton.py	/^    def server_mock(self, environ, start_response):$/;"	m	class:SkeletonServerTestCase
 server_quit	/home/temoto/project/parking/shared/util.py	/^def server_quit():$/;"	f
 setUp	/home/temoto/project/parking/api_provider/tests.py	/^    def setUp(self):$/;"	m	class:ApiProviderTestCase
@@ -370,22 +499,23 @@ setUp	/home/temoto/project/parking/domain_manager/tests.py	/^    def setUp(self)
 setUp	/home/temoto/project/parking/shared/shared_config.py	/^    def setUp(self):$/;"	m	class:SharedConfigTestCase
 setUp	/home/temoto/project/parking/shared/tests/skeleton.py	/^    def setUp(self):$/;"	m	class:SkeletonHandlersTestCase
 setUp	/home/temoto/project/parking/shared/tests/skeleton.py	/^    def setUp(self):$/;"	m	class:SkeletonServerTestCase
-setUp	/home/temoto/project/parking/supervisor/tests.py	/^    def setUp(self):$/;"	m	class:PingzillaTestCase
-setUp	/home/temoto/project/parking/supervisor/tests.py	/^    def setUp(self):$/;"	m	class:SupervisorTestCase
-set_configured	/home/temoto/project/parking/shared/tests/__init__.py	/^    def set_configured(self, _configured):$/;"	m	class:TestServer
 set_debuglevel	/home/temoto/project/parking/shared/asynchttp.py	/^    def set_debuglevel(self, level):$/;"	m	class:AsyncHTTPConnection
 set_tag	/home/temoto/project/parking/shared/cache.py	/^def set_tag(connection, tag, time=0):$/;"	f
 set_value	/home/temoto/project/parking/shared/cache.py	/^def set_value(connection, tag, key, data, time=0):$/;"	f
-setter	/home/temoto/project/parking/domain_manager/cache.py	/^    def setter(func):$/;"	f	function:cache_set
-setter	/home/temoto/project/parking/domain_manager/cache.py	/^    def setter(func):$/;"	f	function:cache_set_list
-setup_signal	/home/temoto/project/parking/network.py	/^def setup_signal(sig, cb, *args):$/;"	f
-signal_handler	/home/temoto/project/parking/server.py	/^def signal_handler(sig):$/;"	f
+setter	/home/temoto/project/parking/shared/cache.py	/^    def setter(func):$/;"	f	function:cache_set
+setup_signal	/home/temoto/project/parking/network.py	/^def setup_signal(sig, cb, *args, **kwargs):$/;"	f
+show_partner	/home/temoto/project/parking/admin_interface/partners/views.py	/^def show_partner(request, partner_id):$/;"	f
+show_topic	/home/temoto/project/parking/admin_interface/topics/views.py	/^def show_topic(request, topic_id):$/;"	f
+signin	/home/temoto/project/parking/admin_interface/accounts/views.py	/^def signin(request):$/;"	f
+signout	/home/temoto/project/parking/admin_interface/accounts/views.py	/^def signout(request):$/;"	f
 split_netloc	/home/temoto/project/parking/shared/_async_send.py	/^def split_netloc(netloc, default_port):$/;"	f
-start	/home/temoto/project/parking/supervisor/tests.py	/^    def start(self):$/;"	m	class:Thread_mock
 start_response_mock	/home/temoto/project/parking/shared/tests/skeleton.py	/^    def start_response_mock(self, status, headers):$/;"	m	class:SkeletonServerTestCase
-sync	/home/temoto/project/parking/account_manager/syncdb.py	/^def sync():$/;"	f
+stop_service	/home/temoto/project/parking/admin_interface/services/views.py	/^def stop_service(request, service_name):$/;"	f
+stop_service	/home/temoto/project/parking/admin_interface/shared/api.py	/^def stop_service(name):$/;"	f
+sync	/home/temoto/project/parking/account_manager/syncdb/__init__.py	/^def sync():$/;"	f
 sync	/home/temoto/project/parking/domain_manager/syncdb.py	/^def sync():$/;"	f
 sync	/home/temoto/project/parking/shared/shared_config.py	/^    def sync(self):$/;"	m	class:SharedConfig
+sync	/home/temoto/project/parking/statistics_gatherer/syncdb.py	/^def sync():$/;"	f
 tearDown	/home/temoto/project/parking/api_provider/tests.py	/^    def tearDown(self):$/;"	m	class:ApiProviderTestCase
 tearDown	/home/temoto/project/parking/domain_approver/tests.py	/^    def tearDown(self):$/;"	m	class:BuildDnsResolverTestCase
 tearDown	/home/temoto/project/parking/domain_approver/tests.py	/^    def tearDown(self):$/;"	m	class:GetApprovedDomainsTestCase
@@ -394,8 +524,6 @@ tearDown	/home/temoto/project/parking/domain_manager/tests.py	/^    def tearDown
 tearDown	/home/temoto/project/parking/shared/shared_config.py	/^    def tearDown(self):$/;"	m	class:SharedConfigTestCase
 tearDown	/home/temoto/project/parking/shared/tests/skeleton.py	/^    def tearDown(self):$/;"	m	class:SkeletonHandlersTestCase
 tearDown	/home/temoto/project/parking/shared/tests/skeleton.py	/^    def tearDown(self):$/;"	m	class:SkeletonServerTestCase
-tearDown	/home/temoto/project/parking/supervisor/tests.py	/^    def tearDown(self):$/;"	m	class:PingzillaTestCase
-tearDown	/home/temoto/project/parking/supervisor/tests.py	/^    def tearDown(self):$/;"	m	class:SupervisorTestCase
 test_001	/home/temoto/project/parking/domain_approver/tests.py	/^    def test_001(self):$/;"	m	class:BuildDnsResolverTestCase
 test_001	/home/temoto/project/parking/domain_approver/tests.py	/^    def test_001(self):$/;"	m	class:GetAddressesTestCase
 test_001	/home/temoto/project/parking/domain_approver/tests.py	/^    def test_001(self):$/;"	m	class:GetApprovedDomainsTestCase
@@ -451,40 +579,20 @@ test_010	/home/temoto/project/parking/shared/shared_config.py	/^    def test_010
 test_011	/home/temoto/project/parking/shared/shared_config.py	/^    def test_011(self):$/;"	m	class:SharedConfigTestCase
 test_call_dispatcher	/home/temoto/project/parking/shared/tests/skeleton.py	/^    def test_call_dispatcher(self):$/;"	m	class:SkeletonServerTestCase
 test_call_start_response	/home/temoto/project/parking/shared/tests/skeleton.py	/^    def test_call_start_response(self):$/;"	m	class:SkeletonServerTestCase
-test_custom_not_configured	/home/temoto/project/parking/shared/tests/skeleton.py	/^    def test_custom_not_configured(self):$/;"	m	class:SkeletonServerTestCase
-test_default_not_configured	/home/temoto/project/parking/shared/tests/skeleton.py	/^    def test_default_not_configured(self):$/;"	m	class:SkeletonServerTestCase
 test_dispatch_exposed_api	/home/temoto/project/parking/api_provider/tests.py	/^    def test_dispatch_exposed_api(self):$/;"	m	class:ApiProviderTestCase
 test_dispatch_ping	/home/temoto/project/parking/api_provider/tests.py	/^    def test_dispatch_ping(self):$/;"	m	class:ApiProviderTestCase
-test_dispatch_reconf	/home/temoto/project/parking/api_provider/tests.py	/^    def test_dispatch_reconf(self):$/;"	m	class:ApiProviderTestCase
-test_dispatch_stop	/home/temoto/project/parking/api_provider/tests.py	/^    def test_dispatch_stop(self):$/;"	m	class:ApiProviderTestCase
 test_dispatcher_called	/home/temoto/project/parking/api_provider/tests.py	/^    def test_dispatcher_called(self):$/;"	m	class:ApiProviderTestCase
 test_get_partner_enoent	/home/temoto/project/parking/api_provider/tests.py	/^    def test_get_partner_enoent(self):$/;"	m	class:ApiProviderTestCase
 test_get_partner_failure	/home/temoto/project/parking/api_provider/tests.py	/^    def test_get_partner_failure(self):$/;"	m	class:ApiProviderTestCase
 test_get_partner_inactive	/home/temoto/project/parking/api_provider/tests.py	/^    def test_get_partner_inactive(self):$/;"	m	class:ApiProviderTestCase
 test_get_partner_ok	/home/temoto/project/parking/api_provider/tests.py	/^    def test_get_partner_ok(self):$/;"	m	class:ApiProviderTestCase
-test_get_partner_services_configuration	/home/temoto/project/parking/api_provider/tests.py	/^    def test_get_partner_services_configuration(self):$/;"	m	class:ApiProviderTestCase
 test_get_partner_ssl_environ	/home/temoto/project/parking/api_provider/tests.py	/^    def test_get_partner_ssl_environ(self):$/;"	m	class:ApiProviderTestCase
-test_good_001	/home/temoto/project/parking/shared/tests/skeleton.py	/^    def test_good_001(self):$/;"	m	class:PrefixDispatcherTestCase
 test_handlers_validation	/home/temoto/project/parking/api_provider/tests.py	/^    def test_handlers_validation(self):$/;"	m	class:ApiProviderTestCase
 test_non_json_request	/home/temoto/project/parking/shared/tests/skeleton.py	/^    def test_non_json_request(self):$/;"	m	class:SkeletonServerTestCase
 test_ping_001	/home/temoto/project/parking/shared/tests/skeleton.py	/^    def test_ping_001(self):$/;"	m	class:SkeletonHandlersTestCase
-test_ping_empty	/home/temoto/project/parking/supervisor/tests.py	/^    def test_ping_empty(self):$/;"	m	class:PingzillaTestCase
-test_ping_not_configured	/home/temoto/project/parking/shared/tests/skeleton.py	/^    def test_ping_not_configured(self):$/;"	m	class:SkeletonServerTestCase
 test_post_001	/home/temoto/project/parking/domain_manager/tests.py	/^    def test_post_001(self):$/;"	m	class:KeywordsTestCase
 test_post_002	/home/temoto/project/parking/domain_manager/tests.py	/^    def test_post_002(self):$/;"	m	class:KeywordsTestCase
 test_post_def_001	/home/temoto/project/parking/domain_manager/tests.py	/^    def test_post_def_001(self):$/;"	m	class:TemplateTestCase
-test_reconf_bad_001	/home/temoto/project/parking/shared/tests/skeleton.py	/^    def test_reconf_bad_001(self):$/;"	m	class:SkeletonHandlersTestCase
-test_reconf_bad_002	/home/temoto/project/parking/shared/tests/skeleton.py	/^    def test_reconf_bad_002(self):$/;"	m	class:SkeletonHandlersTestCase
-test_reconf_bad_003	/home/temoto/project/parking/shared/tests/skeleton.py	/^    def test_reconf_bad_003(self):$/;"	m	class:SkeletonHandlersTestCase
-test_reconf_bad_004	/home/temoto/project/parking/shared/tests/skeleton.py	/^    def test_reconf_bad_004(self):$/;"	m	class:SkeletonHandlersTestCase
-test_reconf_good_001	/home/temoto/project/parking/shared/tests/skeleton.py	/^    def test_reconf_good_001(self):$/;"	m	class:SkeletonHandlersTestCase
-test_reconf_good_002	/home/temoto/project/parking/shared/tests/skeleton.py	/^    def test_reconf_good_002(self):$/;"	m	class:SkeletonHandlersTestCase
-test_reconf_good_003	/home/temoto/project/parking/shared/tests/skeleton.py	/^    def test_reconf_good_003(self):$/;"	m	class:SkeletonHandlersTestCase
-test_reconf_good_004	/home/temoto/project/parking/shared/tests/skeleton.py	/^    def test_reconf_good_004(self):$/;"	m	class:SkeletonHandlersTestCase
-test_reconf_not_configured	/home/temoto/project/parking/shared/tests/skeleton.py	/^    def test_reconf_not_configured(self):$/;"	m	class:SkeletonServerTestCase
-test_register_001	/home/temoto/project/parking/supervisor/tests.py	/^    def test_register_001(self):$/;"	m	class:SupervisorTestCase
-test_register_002	/home/temoto/project/parking/supervisor/tests.py	/^    def test_register_002(self):$/;"	m	class:SupervisorTestCase
-test_register_003	/home/temoto/project/parking/supervisor/tests.py	/^    def test_register_003(self):$/;"	m	class:SupervisorTestCase
 test_request_without_action	/home/temoto/project/parking/shared/tests/skeleton.py	/^    def test_request_without_action(self):$/;"	m	class:SkeletonServerTestCase
 test_returns_correct_handlers_001	/home/temoto/project/parking/account_manager/tests.py	/^    def test_returns_correct_handlers_001(self):$/;"	m	class:DispatcherTestCase
 test_returns_correct_handlers_001	/home/temoto/project/parking/domain_manager/tests.py	/^    def test_returns_correct_handlers_001(self):$/;"	m	class:DispatcherTestCase
@@ -494,17 +602,12 @@ test_returns_correct_handlers_002	/home/temoto/project/parking/domain_manager/te
 test_returns_correct_handlers_002	/home/temoto/project/parking/feed_fetcher/tests.py	/^    def test_returns_correct_handlers_002(self):$/;"	m	class:DispatcherTestCase
 test_status_200_OK	/home/temoto/project/parking/shared/tests/skeleton.py	/^    def test_status_200_OK(self):$/;"	m	class:SkeletonServerTestCase
 test_status_headers	/home/temoto/project/parking/shared/tests/skeleton.py	/^    def test_status_headers(self):$/;"	m	class:SkeletonServerTestCase
-test_stop_001	/home/temoto/project/parking/shared/tests/skeleton.py	/^    def test_stop_001(self):$/;"	m	class:SkeletonHandlersTestCase
-test_unknown_action	/home/temoto/project/parking/shared/tests/skeleton.py	/^    def test_unknown_action(self):$/;"	m	class:PrefixDispatcherTestCase
 test_unknown_action	/home/temoto/project/parking/shared/tests/skeleton.py	/^    def test_unknown_action(self):$/;"	m	class:SkeletonServerTestCase
 to_text	/home/temoto/project/parking/domain_approver/tests.py	/^    def to_text(self):$/;"	m	class:DnsAnswerMock
 update	/home/temoto/project/parking/shared/shared_config.py	/^    def update(self, data):$/;"	m	class:SharedConfig
 update	/home/temoto/project/parking/shared/sql.py	/^def update(table, data, conditions={}):$/;"	f
 validate	/home/temoto/project/parking/api_provider/api_provider.py	/^def validate(service, action, data):$/;"	f
-validate	/home/temoto/project/parking/shared/validators.py	/^    def validate(func):$/;"	f	function:validate_request
-validate_request	/home/temoto/project/parking/shared/validators.py	/^def validate_request(*schemes):$/;"	f
 where	/home/temoto/project/parking/shared/sql.py	/^def where(**conditions):$/;"	f
-wrapper	/home/temoto/project/parking/domain_manager/cache.py	/^        def wrapper(self, data, *args, **kwargs):$/;"	f	function:cache_get/getter
-wrapper	/home/temoto/project/parking/domain_manager/cache.py	/^        def wrapper(self, data, *args, **kwargs):$/;"	f	function:cache_set/setter
-wrapper	/home/temoto/project/parking/domain_manager/cache.py	/^        def wrapper(self, data, *args, **kwargs):$/;"	f	function:cache_set_list/setter
-wrapper	/home/temoto/project/parking/shared/validators.py	/^        def wrapper(data, environ, config):$/;"	f	function:validate_request/validate
+wrapper	/home/temoto/project/parking/shared/cache.py	/^        def wrapper(self, data, *args, **kwargs):$/;"	f	function:cache_get/getter
+wrapper	/home/temoto/project/parking/shared/cache.py	/^        def wrapper(self, data, *args, **kwargs):$/;"	f	function:cache_set/setter
+wrapper	/home/temoto/project/parking/shared/cache.py	/^        def wrapper(self, record_id, *args, **kwargs):$/;"	f	function:cache_delete/deleter
