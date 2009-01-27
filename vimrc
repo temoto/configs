@@ -194,6 +194,8 @@ ino <silent><C-Down> <C-o>:call <SID>CycleBuffer(1)<CR>
 " =========================
 
 let python_highlight_all = 1
+let ropevim_vim_completion = 1
+let ropevim_autoimport_underlineds = 1
 
 python << ENDCODE
 import vim
@@ -251,12 +253,12 @@ nno <M-9> :call <SID>PythonGrep('pychecker')<CR>
 augroup python
 	au!
 	au BufReadPre,FileReadPre *.py setlocal expandtab
-	au FileType python setlocal omnifunc=pythoncomplete#Complete
 	au BufRead,BufEnter,BufWinEnter *.py setlocal makeprg=python\ -c\ \"import\ py_compile,sys;\ sys.stderr=sys.stdout;\ py_compile.compile(r'%')\"
 	au BufRead,BufEnter,BufWinEnter *.py setlocal efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
-	au BufEnter,BufWinEnter *.py ino <buffer> <F8> <C-o>:!python %<CR>
-	au BufEnter,BufWinEnter *.py ino <buffer> <F9> <C-o>:py EvaluateCurrentRange()<CR>
-	au BufEnter,BufWinEnter *.py vno <buffer> <F9> :py EvaluateCurrentRange()<CR>
+	au BufEnter,BufWinEnter *.py ino <buffer><silent> <C-n> <C-r>=RopeCodeAssistInsertMode()<CR>
+	au BufEnter,BufWinEnter *.py ino <buffer><silent> <F8> <C-o>:!python %<CR>
+	au BufEnter,BufWinEnter *.py ino <buffer><silent> <F9> <C-o>:py EvaluateCurrentRange()<CR>
+	au BufEnter,BufWinEnter *.py vno <buffer><silent> <F9> :py EvaluateCurrentRange()<CR>
 	au BufWritePre *.py silent! %s/\v(\ +)$//
 augroup END
 
