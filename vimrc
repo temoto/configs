@@ -176,20 +176,6 @@ ino <silent><Tab> <C-r>=InsertTabWrapper()<CR>
 " diff
 com! DiffOrig diffoff! | vert new | set bt=nofile | r # | 0d_ | diffthis | wincmd p | diffthis
 
-" minibufexplorer plugin options
-" ==============================
-let g:miniBufExplTabWrap = 1
-let g:miniBufExplMapCTabSwitchBufs = 0
-let g:miniBufExplMapCTabSwitchWindows = 0
-let g:miniBufExplMapWindowNavVim = 0
-let g:miniBufExplMapWindowNav = 0
-let g:miniBufExplorerAutoUpdate = 0
-let g:miniBufExplMapWindowNavArrows = 0
-ino <silent><F5> <C-o>:TMiniBufExplorer<CR>
-nno <silent><F5> <C-o>:TMiniBufExplorer<CR>
-ino <silent><C-Up> <C-o>:call <SID>CycleBuffer(0)<CR>
-ino <silent><C-Down> <C-o>:call <SID>CycleBuffer(1)<CR>
-
 " filetype specific options
 " =========================
 
