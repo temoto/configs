@@ -12,6 +12,7 @@ shopt -s checkwinsize
 PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 
 # my settings
+export PATH=$PATH:/var/lib/gems/1.8/bin
 export LANG=en_US.UTF-8
 export HISTCONTROL=ignoredups:erasedups
 export HISTSIZE=5000
@@ -24,11 +25,12 @@ alias m='less'
 alias l='ls -lh --color=auto'
 alias p='python'
 alias cal='cal -m3'
+alias eix='apt-cache search'
 
 # cd and show todo
 cd()
 {
-    builtin cd $1 && devtodo
+    builtin cd "$*" && devtodo
 }
 
 alias ']find-py'='find . -name \*.py | xargs '
@@ -54,20 +56,18 @@ alias '[dc'='git diff --cached'
 alias '[dms'='git daemon --detach --base-path=/home/temoto/project --export-all'
 alias '[l'='git log --stat'
 alias '[st'='git status'
+alias '[s'='git stash'
+alias '[sa'='git stash apply'
+alias '[sd'='git stash drop'
+# git-svn helpers
 alias '[[l'='git svn log'
 alias '[[u'='git stash && git svn rebase && git stash apply'
+alias '[[ci'='git svn dcommit'
 
 # django helpers
 alias ']mr'='python manage.py runserver 0.0.0.0:8000'
 alias ']ms'='python manage.py shell'
 alias ']cd'='python syncdb.py && ./create-test-data'
-
-# parking helpers
-parking_serve()
-{
-    ./server.py $1 ~/.config/parking/$1vm-test.conf
-}
-alias ']ps'='parking_serve'
 
 # toys
 alias sho='export PS1="" ; tput bold ; tput setaf 1 ; echo -e "\n\n\n\n\n\n\n\n\n\n\n    Шо?\n\n\n\n\n\n\n\n\n\n\n" ; tput sgr0'
