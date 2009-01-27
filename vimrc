@@ -66,6 +66,7 @@ nno <silent><C-w> :silent! tabclose<CR>
 " NERDtree
 ino <silent><F3> <C-o>:NERDTreeToggle<CR>
 nno <silent><F3> :NERDTreeToggle<CR>
+vno <silent><F3> :<C-w>NERDTreeToggle<CR>
 let g:NERDTreeSplitVertical = 0
 
 " tag list

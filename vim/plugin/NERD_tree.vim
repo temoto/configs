@@ -123,7 +123,7 @@ call s:InitVariable("g:NERDTreeMapUpdirKeepOpen", "U")
 let s:escape_chars =  " \\`\|\"#%&,?()\*^<>"
 let s:NERDTreeWinName = '_NERD_tree_'
 
-let s:tree_wid = 2
+let s:tree_wid = 4
 let s:tree_markup_reg = '[ \-+~`|]'
 let s:tree_markup_reg_neg = '[^ \-+~`|]'
 let s:tree_up_dir_line = '.. (up a dir)'
@@ -1686,9 +1686,9 @@ function! s:DrawTree(curNode, depth, drawText, vertMap, isLastChild)
         if a:depth > 1
             for j in a:vertMap[0:-2]
                 if j == 1
-                    let treeParts = treeParts . '| '
+                    let treeParts = treeParts . '|   '
                 else
-                    let treeParts = treeParts . '  '
+                    let treeParts = treeParts . '    '
                 endif
             endfor
         endif
