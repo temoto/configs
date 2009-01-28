@@ -4,6 +4,7 @@
 [ -z "$PS1" ] && return
 
 [[ -f /etc/bash_completion ]] && source /etc/bash_completion
+[[ -r /usr/share/bash-completion/git ]] && source /usr/share/bash-completion/git
 
 shopt -s histappend
 shopt -s checkwinsize
@@ -68,6 +69,10 @@ alias '[[ci'='git svn dcommit'
 alias ']mr'='python manage.py runserver 0.0.0.0:8000'
 alias ']ms'='python manage.py shell'
 alias ']cd'='python syncdb.py && ./create-test-data'
+
+# google appengine helpers
+alias 'gae-upload'='~/google_appengine/appcfg.py update .'
+alias 'gae-upload-all'='( [co stable && gae-upload ) ; ( [co master && gae-upload )'
 
 # toys
 alias sho='export PS1="" ; tput bold ; tput setaf 1 ; echo -e "\n\n\n\n\n\n\n\n\n\n\n    Шо?\n\n\n\n\n\n\n\n\n\n\n" ; tput sgr0'
