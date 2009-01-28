@@ -26,7 +26,7 @@ set nowrap showbreak=+ ignorecase
 
 set number showmode showmatch incsearch hlsearch ttyfast lazyredraw wildmenu ruler
 set laststatus=2
-set statusline=%F%m%r%h%w\ [%{&ff},\ %Y]\ [0x\%02.2B]\ [%04l,%04v]\ [%p%%][%L]
+set statusline=%F%m%r%h%w\ [%{&ff},\ %Y]\ [0x\%02.2B]\ [%04l,%04v][%p%%/%L]
 set cmdheight=2
 
 set tags+=~/.vim/tags/python.ctags
