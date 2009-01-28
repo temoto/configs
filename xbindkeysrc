@@ -17,10 +17,6 @@
 "xscreensaver-command -lock"
     Mod4 + l
 
-# svnup
-"~/bin/7up"
-    Mod4 + F5
-
 # file browser
 "nautilus --no-desktop --browser"
     Mod4 + e
