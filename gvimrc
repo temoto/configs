@@ -5,9 +5,6 @@ set guioptions=aegirLt
 set guifont=dejavu\ sans\ mono\ 9
 let &guicursor = "a:block-Cursor/blinkon0"
 
-" Ctrl+F2 = save and close
-ino <C-F2> <C-o>:wq<CR>
-
 " X clipboard
 ino <C-Insert> <C-o>"+yy
 vno <C-Insert> "+y
