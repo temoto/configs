@@ -6,7 +6,7 @@ paranoid
 global-database $HOME/.tododb
 backup 2
 comment
-sort priority,-created,-text
+sort -priority,-created,-text
 format date=%d/%m/%y, %H:%M
 on create {
 	exec chmod 600 $TODODB
