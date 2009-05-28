@@ -13,7 +13,7 @@ shopt -s checkwinsize
 PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
 
 # my settings
-export PATH=$PATH:/var/lib/gems/1.8/bin
+export PATH=$PATH:$HOME/bin
 export LANG=en_US.UTF-8
 export HISTCONTROL=ignoredups:erasedups
 export HISTSIZE=5000
