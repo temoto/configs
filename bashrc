@@ -22,8 +22,9 @@ export PYTHONSTARTUP=~/.pythonrc.py
 
 alias grep='grep --color=auto'
 alias ls='ls --color=auto'
-alias m='less'
-alias l='ls -lh --color=auto'
+alias _m='less'
+alias _l='ls -lh --color=auto'
+alias l=_l
 alias p='python'
 alias cal='cal -m3'
 alias eix='apt-cache search'
@@ -32,6 +33,18 @@ alias eix='apt-cache search'
 cd()
 {
     builtin cd "$*" && devtodo
+}
+
+# ls or less depending on type
+m()
+{
+    if [ $# = 0 ] || [ -d "$1" ]; then
+        _l $@
+    else
+        _m $@
+    fi
+}
+
 }
 
 alias ']find-py'='find . -name \*.py | xargs '
