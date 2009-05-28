@@ -62,7 +62,18 @@ m()
     fi
 }
 
+# execute command in other dir
+function in_ {
+    local ret
+    pushd "$1" > /dev/null || return 255
+    shift
+    "$@"; ret=$?
+    popd > /dev/null
+    return $ret
 }
+function in_s() ( cd "$1"; shift; "$@" )
+alias ']i'=in_
+alias ']i_'=in_s
 
 alias ']find-py'='find . -name \*.py | xargs '
 alias ']find-pyc'='find . -name \*.pyc | xargs '
