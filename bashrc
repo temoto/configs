@@ -10,9 +10,26 @@ shopt -s histappend
 shopt -s checkwinsize
 
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
-PS1='\[\033[01;32m\]\u@\h\[\033[00m\]:\[\033[01;34m\]\w\[\033[00m\]\$ '
+
+# colors
+c_clr="$(tput sgr 0)"; ec_clr="\[$c_clr\]"
+c_host="$(tput setaf 2)"; ec_host="\[$c_host\]" # green
+c_path="$(tput setaf 4)"; ec_path="\[$c_path\]" # blue
+c_success="$(tput setaf 7)"; ec_success="\[$c_success\]" # grey
+c_error="$(tput setaf 1)$(tput bold)"; ec_error="\[$c_error\]" # red bold
+
+function print_exit_code { __ec=${?-0}
+    if [ $__ec -eq 0 ]
+    then printf "%b✔" "$c_success"
+    else printf "%b%s" "$c_error" "$__ec"; fi
+}
 
 # my settings
+# command prompt: (two lines)
+# First: green time and hostname, blue current dir, green/red exitcode
+# Second: $/#
+PS1="$ec_clr$ec_host\u@\h$ec_clr:$ec_path\w$ec_clr \[\$(print_exit_code)\]$ec_clr\n\
+\\$ "
 export PATH=$PATH:$HOME/bin
 export LANG=en_US.UTF-8
 export HISTCONTROL=ignoredups:erasedups
