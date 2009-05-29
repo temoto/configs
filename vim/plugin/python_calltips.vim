@@ -141,10 +141,6 @@ python << PYTHONEOF
 import vim
 import __builtin__
 from string import letters
-try:
-    from sets import Set
-except:
-    pass
 
 def CT_AutoCompleteWord(index):
     """Return matched word in calltip window"""
@@ -371,8 +367,8 @@ def CT_ParseSyntax():
                     elif tokenType == tokenize.NUMBER:
                         pass
                         #print 'number:%s' % varName
-                    #see if vars = Set([xxx])
-                    elif t == 'Set': 
+                    #see if vars = set([xxx])
+                    elif t == 'set': 
                         #print 'set:%s' % varName
                         try:
                             exec('%s = CT_SETTYPE' % varName)  in globals()
@@ -467,7 +463,7 @@ def CT_DelUnusedObject():
            'CT_ParseSyntax', 'CT_UnMapKeys',\
            '__builtin__', '__builtins__', '__doc__', \
            '__name__', 'vim', 'letters', 'tips_buffer', 'CT_STRINGTYPE', \
-           'CT_LISTTYPE', 'CT_DICTTYPE', 'CT_FILETYPE', 'CT_SETTYPE', 'Set']
+           'CT_LISTTYPE', 'CT_DICTTYPE', 'CT_FILETYPE', 'CT_SETTYPE', 'set']
           
     for object in globals().keys():
         if object not in ALL:
@@ -489,7 +485,7 @@ CT_STRINGTYPE = str
 CT_LISTTYPE   = list
 CT_DICTTYPE   = dict
 CT_FILETYPE   = file
-CT_SETTYPE    = Set
+CT_SETTYPE    = set
 from sys import path
 path.extend(['.','..'])  #add current path and parent path
 PYTHONEOF
