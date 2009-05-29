@@ -4,7 +4,6 @@
 [ -z "$PS1" ] && return
 
 [[ -f /etc/bash_completion ]] && source /etc/bash_completion
-[[ -r /usr/share/bash-completion/git ]] && source /usr/share/bash-completion/git
 
 shopt -s histappend
 shopt -s checkwinsize
@@ -101,6 +100,9 @@ alias '[st'='git status'
 alias '[s'='git stash'
 alias '[sa'='git stash apply'
 alias '[sd'='git stash drop'
+complete -o default -o nospace -F _git_log '[l'
+complete -o default -o nospace -F _git_diff '[d'
+complete -o default -o nospace -F _git_checkout '[co'
 # git-svn helpers
 alias '[[l'='git svn log'
 alias '[[u'='git stash && git svn rebase && git stash apply'
