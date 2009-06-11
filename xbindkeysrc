@@ -68,3 +68,8 @@
 # sleep-to-disk (hibernate)
 "sudo /sbin/s2disk"
     Control+Shift + XF86Sleep
+
+# send clipboard to paste service
+"xclip -o | ~/bin/lodgeit.py"
+    Control+Mod4 + p
+
