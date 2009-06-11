@@ -13,6 +13,10 @@
 "xkill"
     Mod4 + Delete
 
+# dmenu-run
+"dmenu_run -i -fn 'Consolas-11' -nb '#555555' -nf '#000000' -sb '#304050' -sf '#eeeeee'"
+    Mod4 + r
+
 # lock
 "xscreensaver-command -lock"
     Mod4 + l
