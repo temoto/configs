@@ -44,10 +44,14 @@
 # cmus-next
 "cmus-remote --next"
     Mod4 + b
+"cmus-remote --next"
+    XF86AudioNext
 
 # cmus-prev
 "cmus-remote --prev"
     Mod4 + z
+"cmus-remote --prev"
+    XF86AudioPrev
 
 # next window
 "wm-next-window"
