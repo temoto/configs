@@ -22,7 +22,7 @@
     Mod4 + l
 
 # file browser
-"nautilus --no-desktop --browser"
+"dolphin"
     Mod4 + e
 
 # terminal
