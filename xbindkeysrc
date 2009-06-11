@@ -25,6 +25,10 @@
 "nautilus --no-desktop --browser"
     Mod4 + e
 
+# terminal
+"gnome-terminal"
+    Shift+Mod4 + Return
+
 # cmus-play
 "cmus-remote --play"
     Mod4 + x
