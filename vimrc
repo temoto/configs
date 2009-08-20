@@ -56,9 +56,11 @@ ino <C-b> <C-o>:bu!<Space>
 ino <M-b> <C-o>:tab sb<Space>
 ino <F2> <C-o>:w<CR>
 ino <C-s> <C-o>:w<CR>
-ino <C-\> <C-o>:q!
-nno <C-\> :q!
-vno <C-\> :q!
+ino <C-\> <C-o>:q!<CR>
+nno <C-\> :q!<CR>
+vno <C-\> :q!<CR>
+ino <silent><M-q> <C-o>:bd!<CR>
+nno <silent><M-q> :bd!<CR>
 
 " tab management
 ino <silent><C-Tab> <C-o>:tabnext<CR>
