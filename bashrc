@@ -35,6 +35,8 @@ export HISTCONTROL=ignoredups:erasedups
 export HISTSIZE=5000
 export EDITOR=/usr/bin/vim
 export PYTHONSTARTUP=~/.pythonrc.py
+export XDG_DATA_HOME=$HOME/.config
+export XDG_CONFIG_HOME=$HOME/.config
 
 alias grep='grep --color=auto'
 alias ls='ls --color=auto'
