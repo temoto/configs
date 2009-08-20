@@ -16,6 +16,8 @@ set viminfo+=h
 
 set tabstop=4 shiftwidth=4 softtabstop=4 autoindent smartindent
 set backspace=indent,eol,start
+set history=2000
+set undolevels=200
 
 " i hate freaking space indentation, but most people use it :(
 set expandtab
