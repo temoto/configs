@@ -167,14 +167,15 @@ nno <S-F11> :cprevious<CR>
 ino <silent><C-F11> <C-o>:cclose<CR>
 nno <silent><C-F11> :cclose<CR>
 
-" smart Tab completion
+" not yet smart Tab indentation cycle
 function! InsertTabWrapper()
-	let col = col('.') - 1
-	if !col || getline('.')[col - 1] !~ '\k'
-		return "\<Tab>"
-	else
-		return "\<C-p>"
-	endif
+	"let col = col('.') - 1
+	"if !col || getline('.')[col - 1] !~ '\k'
+	"	return "\<Tab>"
+	"else
+	"	return "\<C-p>"
+	"endif
+	return "\<C-t>"
 endfunction
 ino <silent><Tab> <C-r>=InsertTabWrapper()<CR>
 
@@ -251,6 +252,29 @@ augroup python
 	au BufEnter,BufWinEnter *.py ino <buffer><silent> <F9> <C-o>:py EvaluateCurrentRange()<CR>
 	au BufEnter,BufWinEnter *.py vno <buffer><silent> <F9> :py EvaluateCurrentRange()<CR>
 	au BufWritePre *.py silent! %s/\v(\ +)$//
+augroup END
+
+" vimrc uses tabs
+augroup vimrc
+	au!
+	au BufEnter,BufWinEnter *vimrc setlocal noexpandtab
+augroup END
+
+" some of particular projects use tabs
+augroup python-tabs
+	au!
+	au BufEnter,BufWinEnter project/vm-001/* setlocal noexpandtab
+	au BufEnter,BufWinEnter project/qt-001/* setlocal noexpandtab
+	au BufEnter,BufWinEnter project/edicore-001/* setlocal noexpandtab
+	au BufEnter,BufWinEnter project/heroshi/* setlocal noexpandtab
+	au BufEnter,BufWinEnter project/corners-bot/* setlocal noexpandtab
+	au BufEnter,BufWinEnter project/insomnia-server/* setlocal noexpandtab
+	au BufEnter,BufWinEnter project/insomnia-client/* setlocal noexpandtab
+augroup END
+
+" markdown settings
+augroup mkd
+	autocmd BufRead *.mkd  setlocal ai formatoptions=tcroqn2 comments=n:>
 augroup END
 
 " read-only windows trigger insert-mode off
