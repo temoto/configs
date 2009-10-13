@@ -18,9 +18,11 @@ c_success="$(tput setaf 7)"; ec_success="\[$c_success\]" # grey
 c_error="$(tput setaf 1)$(tput bold)"; ec_error="\[$c_error\]" # red bold
 
 function print_exit_code { __ec=${?-0}
-    if [ $__ec -eq 0 ]
-    then printf "%b✔" "$c_success"
-    else printf "%b%s" "$c_error" "$__ec"; fi
+    if [ $__ec -ne 0 ]
+    then printf "%b%s" "$c_error" "$__ec"; fi
+    #then printf "%bok" "$c_success"
+    #else printf "%b%s" "$c_error" "$__ec"; fi
+    tput sgr0
 }
 
 # my settings
