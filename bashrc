@@ -17,7 +17,7 @@ c_path="$(tput setaf 4)"; ec_path="\[$c_path\]" # blue
 c_success="$(tput setaf 7)"; ec_success="\[$c_success\]" # grey
 c_error="$(tput setaf 1)$(tput bold)"; ec_error="\[$c_error\]" # red bold
 
-function print_exit_code { __ec=${?-0}
+function print_exit_code {
     if [ $__ec -ne 0 ]
     then printf "%b%s" "$c_error" "$__ec"; fi
     #then printf "%bok" "$c_success"
@@ -25,13 +25,28 @@ function print_exit_code { __ec=${?-0}
     tput sgr0
 }
 
+function print_vcs_info {
+    printf "%b" "$head_local"
+}
+
+function on_prompt {
+    __ec=${?-0} # save last executed command exit code
+    # these two are from git-prompt.sh
+    set_shell_label
+    parse_vcs_status 
+}
+
+# run git-prompt
+[[ $- == *i* ]] && . $(which git-prompt.sh)
+
 # my settings
 # command prompt: (two lines)
 # First: green time and hostname, blue current dir, green/red exitcode
 # Second: $/#
-PS1="$ec_clr$ec_host\u@\h$ec_clr:$ec_path\w$ec_clr \[\$(print_exit_code)\]$ec_clr\n\
+PS1="$ec_clr$ec_host\u@\h$ec_clr:$ec_path\w$ec_clr \$(print_vcs_info)$ec_clr\[\$(print_exit_code)\]$ec_clr\n\
 \\$ "
 export PATH=$PATH:$HOME/bin
+PROMPT_COMMAND=on_prompt
 export LANG=en_US.UTF-8
 export HISTCONTROL=ignoredups:erasedups
 export HISTSIZE=5000
