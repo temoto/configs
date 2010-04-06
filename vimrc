@@ -271,6 +271,10 @@ augroup python-tabs
 	au BufEnter,BufWinEnter project/corners-bot/* setlocal noexpandtab
 	au BufEnter,BufWinEnter project/insomnia-server/* setlocal noexpandtab
 	au BufEnter,BufWinEnter project/insomnia-client/* setlocal noexpandtab
+
+augroup html
+	au!
+	au BufReadPre,FileReadPre,BufEnter,BufWinEnter *.html setlocal tabstop=2 shiftwidth=2 softtabstop=2
 augroup END
 
 " markdown settings
