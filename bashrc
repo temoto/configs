@@ -45,7 +45,8 @@ alias ls='ls --color=auto'
 alias _m='less'
 alias _l='ls -lh --color=auto'
 alias l=_l
-alias p='python'
+alias p='ipython'
+alias py='python'
 alias cal='cal -m3'
 alias eix='apt-cache search'
 
