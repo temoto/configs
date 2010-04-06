@@ -1,6 +1,6 @@
 #!/bin/bash
 
-: ${WIN_MANAGER="/usr/bin/xmonad"}
+: ${WIN_MANAGER=xmonad}
 
 # xcompmgr &
 xrdb -load .Xdefaults
