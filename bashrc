@@ -47,7 +47,7 @@ alias _l='ls -lh --color=auto'
 alias l=_l
 alias p='ipython'
 alias py='python'
-alias cal='cal -m3'
+alias cal='cal -h3'
 alias eix='apt-cache search'
 
 # cd and show todo
