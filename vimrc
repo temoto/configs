@@ -245,13 +245,15 @@ nno <M-9> :call <SID>PythonGrep('pychecker')<CR>
 " python has 4 spaces instead of tabs
 augroup python
 	au!
-	au BufReadPre,FileReadPre *.py setlocal expandtab
 	au BufRead,BufEnter,BufWinEnter *.py setlocal makeprg=python\ -c\ \"import\ py_compile,sys;\ sys.stderr=sys.stdout;\ py_compile.compile(r'%')\"
 	au BufRead,BufEnter,BufWinEnter *.py setlocal efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
 	au BufEnter,BufWinEnter *.py ino <buffer><silent> <C-n> <C-r>=RopeCodeAssistInsertMode()<CR>
 	au BufEnter,BufWinEnter *.py ino <buffer><silent> <F8> <C-o>:!python %<CR>
 	au BufEnter,BufWinEnter *.py ino <buffer><silent> <F9> <C-o>:py EvaluateCurrentRange()<CR>
 	au BufEnter,BufWinEnter *.py vno <buffer><silent> <F9> :py EvaluateCurrentRange()<CR>
+	au BufEnter,BufWinEnter *.py ino <buffer><silent> ( ()<Left>
+	au BufEnter,BufWinEnter *.py ino <buffer><silent> [ []<Left>
+	au BufEnter,BufWinEnter *.py ino <buffer><silent> { {}<Left>
 	au BufWritePre *.py silent! %s/\v(\ +)$//
 augroup END
 
@@ -261,16 +263,20 @@ augroup vimrc
 	au BufEnter,BufWinEnter *vimrc setlocal noexpandtab
 augroup END
 
-" some of particular projects use tabs
-augroup python-tabs
+" some particular projects use tabs
+augroup python_tabs
 	au!
-	au BufEnter,BufWinEnter project/vm-001/* setlocal noexpandtab
-	au BufEnter,BufWinEnter project/qt-001/* setlocal noexpandtab
-	au BufEnter,BufWinEnter project/edicore-001/* setlocal noexpandtab
-	au BufEnter,BufWinEnter project/heroshi/* setlocal noexpandtab
-	au BufEnter,BufWinEnter project/corners-bot/* setlocal noexpandtab
-	au BufEnter,BufWinEnter project/insomnia-server/* setlocal noexpandtab
-	au BufEnter,BufWinEnter project/insomnia-client/* setlocal noexpandtab
+	au BufReadPre,FileReadPre,BufEnter,BufWinEnter project/obuh/* setlocal noexpandtab
+	au BufReadPre,FileReadPre,BufEnter,BufWinEnter project/vm-001/* setlocal noexpandtab
+	au BufReadPre,FileReadPre,BufEnter,BufWinEnter project/qt-001/* setlocal noexpandtab
+	au BufReadPre,FileReadPre,BufEnter,BufWinEnter project/qt-002/* setlocal noexpandtab
+	au BufReadPre,FileReadPre,BufEnter,BufWinEnter project/edicore-001/* setlocal noexpandtab
+	au BufReadPre,FileReadPre,BufEnter,BufWinEnter project/wedi/* setlocal noexpandtab
+	au BufReadPre,FileReadPre,BufEnter,BufWinEnter project/heroshi/* setlocal noexpandtab
+	au BufReadPre,FileReadPre,BufEnter,BufWinEnter project/corners-bot/* setlocal noexpandtab
+	au BufReadPre,FileReadPre,BufEnter,BufWinEnter project/insomnia-server/* setlocal noexpandtab
+	au BufReadPre,FileReadPre,BufEnter,BufWinEnter project/insomnia-client/* setlocal noexpandtab
+augroup END
 
 augroup html
 	au!
