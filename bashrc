@@ -39,6 +39,9 @@ export EDITOR=/usr/bin/vim
 export PYTHONSTARTUP=~/.pythonrc.py
 export XDG_DATA_HOME=$HOME/.config
 export XDG_CONFIG_HOME=$HOME/.config
+export GOROOT=$HOME/src/go
+export GOOS=linux
+export GOARCH=amd64
 
 alias grep='grep --color=auto'
 alias ls='ls --color=auto'
