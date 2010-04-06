@@ -49,6 +49,7 @@ alias p='ipython'
 alias py='python'
 alias cal='cal -h3'
 alias eix='apt-cache search'
+alias appt='apt-cache show'
 
 # cd and show todo
 cd()
