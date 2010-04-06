@@ -23,12 +23,13 @@ profile=no
 ignore=CVS
 ignore=.svn
 ignore=.git
+ignore=.ropeproject
 
 # Pickle collected data for later comparisons.
 persistent=yes
 
 # Set the cache size for astng objects.
-cache-size=20000
+cache-size=50000
 
 # List of plugins (as comma separated values of python modules names) to load,
 # usually to register additional checkers.
@@ -56,6 +57,7 @@ load-plugins=
 
 # Disable the message(s) with the given id(s).
 #disable-msg=
+disable-msg=W0142
 
 
 [REPORTS]
@@ -181,10 +183,10 @@ variable-rgx=[a-zA-Z_][a-zA-Z0-9_]{2,30}$
 inlinevar-rgx=[A-Za-z_][A-Za-z0-9_]*$
 
 # Good variable names which should always be accepted, separated by a comma
-good-names=i,j,k,ex,Run,_
+good-names=a,b,f,g,h,i,j,k,s,x,ex,Run,_
 
 # Bad variable names which should always be refused, separated by a comma
-bad-names=foo,bar,baz,toto,tutu,tata
+bad-names=foo,bar,baz,toto,tutu,tata,lala
 
 # List of builtins function names that should not be used, separated by a comma
 bad-functions=apply,input
