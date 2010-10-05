@@ -1,0 +1,21 @@
+[user]
+	email = temotor@gmail.com
+	name = Sergey Shepelev
+[color]
+	ui = auto
+[color "diff"]
+	whitespace = yellow reverse
+[core]
+	excludesfile = /home/temoto/.gitignore
+    whitespace = trailing-space,space-before-tab
+[diff]
+    renames = copies
+[gui]
+	commitmsgwidth = 85
+	fontui = -family arial -size 11 -weight bold -slant roman -underline 0 -overstrike 0
+	fontdiff = -family fixed -size 11 -weight normal -slant roman -underline 0 -overstrike 0
+[merge]
+	tool = meld
+	summary = true
+[push]
+	default = matching
