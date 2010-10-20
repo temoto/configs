@@ -62,6 +62,7 @@ alias ls='ls --color=auto'
 alias _m='less'
 alias _l='ls -lh --color=auto'
 alias l=_l
+alias la='_l -a'
 alias p='ipython'
 alias py='python'
 alias cal='cal -h3'
