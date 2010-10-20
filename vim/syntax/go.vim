@@ -1,0 +1,1 @@
+/home/temoto/src/go/misc/vim/syntax/go.vim
