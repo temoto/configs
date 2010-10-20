@@ -46,7 +46,7 @@ function on_prompt {
 PS1="$ec_clr$ec_host\u@\h$ec_clr:$ec_path\w$ec_clr \$(print_vcs_info)$ec_clr\[\$(print_exit_code)\]$ec_clr\n\
 \\$ "
 PROMPT_COMMAND=on_prompt
-export PATH=$PATH:$HOME/bin:$HOME/.cabal/bin
+export PATH=$HOME/bin:$HOME/.cabal/bin:$PATH
 export LANG=en_US.UTF-8
 export HISTCONTROL=ignoredups:erasedups
 export HISTSIZE=5000
