@@ -66,7 +66,7 @@ hi FoldColumn guifg=#3465a4 guibg=#000000
 " Specials
 hi Title guifg=#fcaf3e
 hi Todo guifg=#fcaf3e guibg=bg gui=bold
-hi SpecialKey guifg=#701919 guibg=#101c1e gui=bold
+hi SpecialKey guifg=#401919 guibg=#172325 gui=bold
 
 " Tabs
 hi TabLine guibg=#0a1012 guifg=#888a85
@@ -84,13 +84,21 @@ hi Comment guifg=#858683
 hi Constant guifg=#8ae234 guibg=#000000
 hi Number guifg=#8ae234
 hi Statement guifg=#729fcf gui=bold
-hi Identifier guifg=#ffffff
+hi Identifier guifg=#fcaf3e
 hi PreProc guifg=#fcaf3e
 hi Function guifg=#fcaf3e
-hi Type guifg=#e3e7df gui=none
-hi Keyword guifg=#eeeeec
+hi Type guifg=#b3b788 gui=none
+hi Keyword guifg=#fcaf3e
 hi Special guifg=#dc8f1e guibg=#000000
 hi Error guifg=#eeeeec guibg=#cc0000
+
+" C
+hi cType guifg=#729fcf
+hi cStorageClass guifg=#dc8f1e
+hi cStructure guifg=#dc8f1e
+
+" Haskell
+hi hsStructure guifg=#729fcf gui=bold
 
 " PHP
 hi phpRegionDelimiter guifg=#ad7fa8
@@ -106,6 +114,10 @@ hi phpVarSelector guifg=#babdb6
 hi phpSemicolon guifg=#888a85 gui=none
 hi phpFunctions guifg=#d3d7cf
 hi phpParent guifg=#888a85
+
+" Python
+hi pythonBuiltinObj guifg=#fcaf3e
+hi pythonExClass guifg=#fcaf3e gui=bold
 
 " JavaScript
 hi javaScriptBraces guifg=#888a85
