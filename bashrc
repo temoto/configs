@@ -68,7 +68,7 @@ export PATH=$HOME/bin:$HOME/.cabal/bin:$PATH
 export LANG=en_US.UTF-8
 export HISTCONTROL=ignoredups:erasedups
 export HISTSIZE=5000
-export EDITOR=/usr/bin/vim
+export EDITOR=$(which vim)
 export XDG_DATA_HOME=$HOME/.config
 export XDG_CONFIG_HOME=$HOME/.config
 export GOROOT=$HOME/src/go
@@ -83,9 +83,9 @@ alias ls='ls --color=auto'
 alias _m='less'
 alias _l='ls -lh --color=auto'
 alias l=_l
+alias p='/usr/bin/env python $(which ipython)'
+alias py='/usr/bin/env python'
 alias la='_l -a'
-alias p='ipython'
-alias py='python'
 alias cal='cal -h3'
 alias eix='apt-cache search'
 alias appt='apt-cache show'
