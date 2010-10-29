@@ -12,7 +12,7 @@ shopt -s checkwinsize
 
 # colors
 c_clr="$(tput sgr 0)"; ec_clr="\[$c_clr\]"
-c_host="$(tput setaf 2)"; ec_host="\[$c_host\]" # green
+c_user="$(tput setaf 2)"; ec_user="\[$c_user\]" # green
 c_path="$(tput setaf 4)"; ec_path="\[$c_path\]" # blue
 c_success="$(tput setaf 7)"; ec_success="\[$c_success\]" # grey
 c_error="$(tput setaf 1)$(tput bold)"; ec_error="\[$c_error\]" # red bold
@@ -33,7 +33,13 @@ function on_prompt {
     __ec=${?-0} # save last executed command exit code
     # these two are from git-prompt.sh
     set_shell_label
-    parse_vcs_status 
+    unset head_local
+    parse_vcs_status
+
+    host_hash=$(( (${#HOSTNAME}+0x$(hostid)) % 15+1))
+    c_host="$(tput setaf $host_hash)"
+    ec_host="\[$c_host\]"
+    unset host_hash
 }
 
 # run git-prompt
@@ -41,10 +47,22 @@ function on_prompt {
 
 # my settings
 # command prompt: (two lines)
-# First: green time and hostname, blue current dir, green/red exitcode
+# First: green username, different color hostname, blue current dir, green/red exitcode
 # Second: $/#
-PS1="$ec_clr$ec_host\u@\h$ec_clr:$ec_path\w$ec_clr \$(print_vcs_info)$ec_clr\[\$(print_exit_code)\]$ec_clr\n\
-\\$ "
+prompt=(
+    "$ec_clr"
+    "$ec_user"                 '\u'
+    "$ec_clr"                  '@'
+    "\$(echo \$c_host)"        '\h'
+    "$ec_clr"                  ':'
+    "$ec_path"                 '\w'
+    "$ec_clr"                  ' '
+    ""                         "\$(print_vcs_info)"
+    "$ec_clr"                  "\[\$(print_exit_code)\]"
+    "$ec_clr"                  '\n'
+    ""                         "\\$ "
+)
+printf -v PS1 "%s" "${prompt[@]}"
 PROMPT_COMMAND=on_prompt
 export PATH=$HOME/bin:$HOME/.cabal/bin:$PATH
 export LANG=en_US.UTF-8
