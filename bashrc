@@ -56,6 +56,9 @@ export XDG_CONFIG_HOME=$HOME/.config
 export GOROOT=$HOME/src/go
 export GOOS=linux
 export GOARCH=amd64
+# Set <TAB> width to 4 characters.
+# Thanks http://superuser.com/questions/110421/tab-character-width-in-terminal
+tabs -4
 
 alias grep='grep --color=auto'
 alias ls='ls --color=auto'
