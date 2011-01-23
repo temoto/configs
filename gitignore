@@ -1,25 +1,70 @@
-*.aux
-*.backup
-*.kilepr
-*.log
-*.mo
+# Compiled source #
+###################
+*.com
+*.class
+*.dll
+*.exe
 *.o
 *.so
-*.pdf
-*.pyc
-*.pyo
+
+# Packages #
+############
+# it's better to unpack these files and commit the raw source
+# git has its own built in compression methods
+*.7z
+*.dmg
+*.gz
+*.iso
+*.jar
+*.rar
+*.tar
+*.zip
+
+# Logs and databases #
+######################
+*.log
+*.sqlite
+
+# OS generated files #
+######################
+.DS_Store?
+ehthumbs.db
+Icon?
+Thumbs.db
+
+
+# Editors, IDE #
+################
 *~
 *.swp
 *.swo
+*.kilepr
+.eric4project
+.pydevproject
+.project
+.ropeproject
+
+
+# TODO managers #
+#################
 .ditz-config
 .ditz-plugins
-.eric4project
-.gitignore
-pip-log.txt
-.project
-.pydevproject
-.ropeproject
-.settings
 .todo
 .todo.*
 
+
+# Python #
+##########
+*.pyc
+*.pyo
+pip-log.txt
+
+
+# Misc #
+########
+*.aux
+*.backup
+*.mo
+*.pdf
+.gitignore
+.settings
