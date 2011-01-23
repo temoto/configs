@@ -3,6 +3,10 @@
 # non-interactive -> quit
 [ -z "$PS1" ] && return
 
+# Important environment settings, must go first.
+export PATH=$HOME/bin:$HOME/.cabal/bin:$PATH
+export LANG=en_US.UTF-8
+
 [[ -f /etc/bash_completion ]] && source /etc/bash_completion
 
 shopt -s histappend
@@ -64,8 +68,6 @@ prompt=(
 )
 printf -v PS1 "%s" "${prompt[@]}"
 PROMPT_COMMAND=on_prompt
-export PATH=$HOME/bin:$HOME/.cabal/bin:$PATH
-export LANG=en_US.UTF-8
 export HISTCONTROL=ignoredups:erasedups
 export HISTSIZE=5000
 export EDITOR=$(which vim)
