@@ -73,8 +73,6 @@ export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/lib
 export XDG_DATA_HOME=$HOME/.config
 export XDG_CONFIG_HOME=$HOME/.config
 export GOROOT=$HOME/src/go
-export GOOS=linux
-export GOARCH=amd64
 # Set <TAB> width to 4 characters.
 # Thanks http://superuser.com/questions/110421/tab-character-width-in-terminal
 tabs -4
