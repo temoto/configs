@@ -78,6 +78,8 @@ export GOARCH=amd64
 # Set <TAB> width to 4 characters.
 # Thanks http://superuser.com/questions/110421/tab-character-width-in-terminal
 tabs -4
+# Use parallel build in SCons by default.
+export SCONSFLAGS="-j 4"
 
 alias grep='grep --color=auto'
 alias ls='ls --color=auto'
