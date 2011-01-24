@@ -55,8 +55,11 @@ Thumbs.db
 
 # Python #
 ##########
+*.egg
+*.egg-info
 *.pyc
 *.pyo
+.coverage
 pip-log.txt
 
 
