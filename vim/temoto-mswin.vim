@@ -13,6 +13,10 @@ imap <S-Down> <C-o>V
 
 " C-v in normal mode is for block-selection, not pasting clipboard
 unmap <C-v>
+" But in visual mode, C-v is for pasting clipboard.
+" Use C-q for block selection in visual.
+vmap <C-v> "+gP
+smap <C-v> "+gP
 
 " <C-p> does neocomplcache completion
 inoremap <C-p> <C-x><C-u>
