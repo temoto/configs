@@ -154,18 +154,9 @@ complete -o default -o nospace -F _git_branch '[b'
 complete -o default -o nospace -F _git_checkout '[co'
 complete -o default -o nospace -F _git_log '[l'
 complete -o default -o nospace -F _git_diff '[d'
-# git-svn helpers
-alias '[[l'='git svn log'
-alias '[[u'='git stash && git svn rebase && git stash apply'
-alias '[[ci'='git svn dcommit'
-
-# django helpers
-alias ']mr'='python manage.py runserver 0.0.0.0:8000'
-alias ']ms'='python manage.py shell'
-alias ']cd'='python syncdb.py && ./create-test-data'
 
 # google appengine helpers
-alias 'gae-upload'='~/google_appengine/appcfg.py update .'
+alias 'gae-upload'='PYTHONPATH= ~/python2.5/bin/python2.5 ~/google_appengine/appcfg.py -q update .'
 alias 'gae-upload-all'='( [co stable && gae-upload ) ; ( [co master && gae-upload )'
 
 # toys
