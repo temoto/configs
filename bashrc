@@ -36,18 +36,21 @@ function print_vcs_info {
 function on_prompt {
     __ec=${?-0} # save last executed command exit code
     # these two are from git-prompt.sh
-    set_shell_label
-    unset head_local
-    parse_vcs_status
+    if declare -f parse_vcs_status >/dev/null; then
+        set_shell_label
+        unset head_local
+        parse_vcs_status
+    fi
 
-    host_hash=$(( (${#HOSTNAME}+0x$(hostid)) % 15+1))
+    host_id=$(which hostid >/dev/null && hostid || echo 1)
+    host_hash=$(( (${#HOSTNAME}+0x${host_id}) % 15+1))
     c_host="$(tput setaf $host_hash)"
     ec_host="\[$c_host\]"
     unset host_hash
 }
 
 # run git-prompt
-[[ $- == *i* ]] && . $(which git-prompt.sh)
+[[ $- == *i* ]] && which git-prompt.sh && . $(which git-prompt.sh)
 
 # my settings
 # command prompt: (two lines)
@@ -81,10 +84,16 @@ tabs -4
 # Use parallel build in SCons by default.
 export SCONSFLAGS="-j 4"
 
+if ls --color >/dev/null 2>&1 ; then
+    ls_color_flag="--color=auto"
+else
+    ls_color_flag="-G"
+fi
+
 alias grep='grep --color=auto'
-alias ls='ls --color=auto'
+alias ls='ls ${color_flag}'
 alias _m='less'
-alias _l='ls -lh --color=auto'
+alias _l='ls -lh ${color_flag}'
 alias l=_l
 alias p='/usr/bin/env python $(which ipython)'
 alias py='/usr/bin/env python'
@@ -94,10 +103,12 @@ alias eix='apt-cache search'
 alias appt='apt-cache show'
 
 # cd and show todo
-cd()
-{
-    builtin cd "$*" && devtodo
-}
+if which devtodo >/dev/null ; then
+    cd()
+    {
+        builtin cd "$*" && devtodo
+    }
+fi
 
 # ls or less depending on type
 m()
