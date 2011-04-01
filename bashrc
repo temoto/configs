@@ -91,9 +91,9 @@ else
 fi
 
 alias grep='grep --color=auto'
-alias ls='ls ${color_flag}'
+alias ls='ls ${ls_color_flag}'
 alias _m='less'
-alias _l='ls -lh ${color_flag}'
+alias _l='ls -lh ${ls_color_flag}'
 alias l=_l
 alias p='/usr/bin/env python $(which ipython)'
 alias py='/usr/bin/env python'
