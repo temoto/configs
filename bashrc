@@ -50,7 +50,7 @@ function on_prompt {
 }
 
 # run git-prompt
-[[ $- == *i* ]] && which git-prompt.sh && . $(which git-prompt.sh)
+[[ $- == *i* ]] && which git-prompt.sh >/dev/null && . $(which git-prompt.sh)
 
 # my settings
 # command prompt: (two lines)
