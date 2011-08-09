@@ -1,7 +1,11 @@
 #!/bin/sh
-LINK="ln -sf"
-$LINK ~/.config/vimrc ~/.vimrc
-$LINK ~/.config/gvimrc ~/.gvimrc
-$LINK ~/.config/vim ~/.vim
-$LINK ~/.config/todorc ~/.todorc
-$LINK ~/.config/bashrc ~/.bashrc
+link="ln -sf"
+src="`pwd`"
+case $0 in /*) src="`dirname $0`";; esac
+
+$link "$src/bashrc" ~/.bashrc
+$link "$src/gvimrc" ~/.gvimrc
+$link "$src/inputrc" ~/.inputrc
+$link "$src/todorc" ~/.todorc
+$link "$src/vim" ~/.vim
+$link "$src/vimrc" ~/.vimrc
