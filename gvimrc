@@ -2,7 +2,7 @@
 
 set list
 set guioptions=aegirLt
-set guifont=dejavu\ sans\ mono\ 9
+set guifont=dejavu\ sans\ mono\ 10
 let &guicursor = "a:block-Cursor/blinkon0"
 
 " X clipboard
