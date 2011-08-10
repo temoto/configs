@@ -178,6 +178,11 @@ let g:neocomplcache_dictionary_filetype_lists = {
 let python_highlight_all = 1
 let ropevim_vim_completion = 1
 let ropevim_autoimport_underlineds = 1
+" Don't let sql completion ruin your insert-mode experience.
+" Annoying completions on Left/Right keys. Impossible to move cursor!
+let g:ftplugin_sql_omni_key_left = 'stub'
+let g:ftplugin_sql_omni_key_right = 'stub'
+
 
 python << ENDCODE
 import vim
