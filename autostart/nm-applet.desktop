@@ -1,0 +1,15 @@
+
+[Desktop Entry]
+Name=Network Manager
+Comment=Control your network connections
+Icon=nm-device-wireless
+Exec=nm-applet --sm-disable
+Terminal=false
+Type=Application
+OnlyShowIn=GNOME;XFCE;
+X-GNOME-Bugzilla-Bugzilla=GNOME
+X-GNOME-Bugzilla-Product=NetworkManager
+X-GNOME-Bugzilla-Component=general
+X-GNOME-Autostart-enabled=true
+X-Ubuntu-Gettext-Domain=nm-applet
+Hidden=true
