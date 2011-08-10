@@ -155,6 +155,23 @@ ino <silent><Tab> <C-r>=InsertTabWrapper()<CR>
 " diff
 com! DiffOrig diffoff! | vert new | set bt=nofile | r # | 0d_ | diffthis | wincmd p | diffthis
 
+
+" Use neocomplcache.
+let g:neocomplcache_enable_at_startup = 1
+" Use smartcase.
+"let g:neocomplcache_enable_smart_case = 1
+let g:neocomplcache_max_list = 17
+let g:neocomplcache_disable_auto_complete = 1
+let g:neocomplcache_enable_camel_case_completion = 1
+let g:neocomplcache_enable_underbar_completion = 1
+let g:neocomplcache_temporary_dir = "/tmp/vim-neocomplcache"
+let g:neocomplcache_dictionary_filetype_lists = {
+    \ 'default' : '',
+    \ 'vimshell' : $HOME.'/.vimshell_hist',
+    \ 'scheme' : $HOME.'/.gosh_completions'
+    \ }
+
+
 " filetype specific options
 " =========================
 
