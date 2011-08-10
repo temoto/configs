@@ -28,6 +28,7 @@ set listchars=tab:>-,trail:-
 set nowrap showbreak=+ ignorecase
 
 set number showmode showmatch incsearch hlsearch lazyredraw wildmenu ruler
+set splitright
 set laststatus=2
 set statusline=%F%m%r%h%w\ [%{&ff},\ %Y]\ [0x\%02.2B]\ [%04l,%04v][%p%%/%L]
 set cmdheight=2
@@ -37,6 +38,7 @@ set tags+=~/.vim/tags/*.ctags
 
 " good-mode
 set insertmode
+so ~/.vim/temoto-mswin.vim
 
 " reread config
 if has("gui_running")
@@ -54,25 +56,19 @@ ino <M-e> <C-o>:tabe!<Space>
 nno <M-e> :tabe!<Space>
 ino <C-b> <C-o>:bu!<Space>
 ino <M-b> <C-o>:tab sb<Space>
-ino <F2> <C-o>:w<CR>
-ino <C-s> <C-o>:w<CR>
-ino <C-\> <C-o>:q!<CR>
-nno <C-\> :q!<CR>
-vno <C-\> :q!<CR>
+ino <F2> <C-o>:update<CR>
+ino <C-s> <C-o>:update<CR>
+ino <silent><C-\> <C-o>:q!<CR>
+nno <silent><C-\> :q!<CR>
+vno <silent><C-\> :q!<CR>
 ino <silent><M-q> <C-o>:bd!<CR>
 nno <silent><M-q> :bd!<CR>
-
-" tab management
-ino <silent><C-Tab> <C-o>:tabnext<CR>
-ino <silent><C-S-Tab> <C-o>:tabprevious<CR>
-ino <silent><C-w> <C-o>:silent! tabclose<CR>
-nno <silent><C-w> :silent! tabclose<CR>
 
 " NERDtree
 ino <silent><F3> <C-o>:NERDTreeToggle<CR>
 nno <silent><F3> :NERDTreeToggle<CR>
 vno <silent><F3> :<C-w>NERDTreeToggle<CR>
-let g:NERDTreeSplitVertical = 0
+let g:NERDTreeSplitVertical = 1
 let g:NERDTreeIgnore = ['\.pyc', '\.hi', '\.o']
 
 " tag list
@@ -84,25 +80,6 @@ ino ; <Home># <Down>
 ino <M-'> <Home><Del><Del><Down>
 ino ' <Home><Del><Del><Down>
 
-" undo/redo
-nno <C-z> :undo<CR>i
-ino <C-z> <C-o>:undo<CR>
-ino <C-y> <C-o>:redo<CR>
-
-" clipboard
-ino <C-l> <C-o>dd
-vno <C-l> d
-ino <C-k> <C-o>yy
-vno <C-k> y
-ino <C-p> <C-o>P
-vno <C-p> P
-ino <M-p> <C-o>p
-vno <M-p> p
-
-" S-Tab goes to next split
-ino <silent><S-Tab> <C-o>:wincmd w<CR>
-nno <silent><S-Tab> :wincmd w<CR>
-
 " erase word
 ino <C-BS> <C-w>
 cno <C-BS> <C-w>
@@ -113,8 +90,15 @@ ino <M-Del> <Right><C-o>daw
 ino <M-kDel> <Right><C-o>daw
 
 " erase line
-ino <C-Del> <C-o>"_dd
+ino <C-k>    <C-o>"_dd
+ino <C-Del>  <C-o>"_dd
 ino <C-kDel> <C-o>"_dd
+
+" join lines
+ino <silent><C-j> <C-o>J
+
+" sort
+vno <M-s> :sort<CR>
 
 " search
 ino <M-/> <C-o>/\v
@@ -129,18 +113,6 @@ ino <silent><M-F3> <C-o>:let @/=""<CR>
 nno <silent><M-F3> :let @/=""<CR>
 ino <C-h> <C-o>:%s/\v
 vno <C-h> :s/\v
-
-" selection
-ino <S-Down> <C-o>V
-vno <S-Down> <Down>
-ino <S-Up> <C-o>V<Up>
-vno <S-Up> <Up>
-ino <S-Right> <C-o>v
-vno <S-Right> <Right>
-ino <S-Left> <Left><C-o>v
-vno <S-Left> <Left>
-ino <S-End> <C-o>v<End>
-ino <S-Home> <C-o>v<Home>
 
 " browsing
 ino <M-PageUp> <C-o>''
@@ -266,26 +238,29 @@ augroup END
 " some particular projects use tabs
 augroup python_tabs
 	au!
-	au BufReadPre,FileReadPre,BufEnter,BufWinEnter project/obuh/* setlocal noexpandtab
-	au BufReadPre,FileReadPre,BufEnter,BufWinEnter project/vm-001/* setlocal noexpandtab
-	au BufReadPre,FileReadPre,BufEnter,BufWinEnter project/qt-001/* setlocal noexpandtab
-	au BufReadPre,FileReadPre,BufEnter,BufWinEnter project/qt-002/* setlocal noexpandtab
-	au BufReadPre,FileReadPre,BufEnter,BufWinEnter project/edicore-001/* setlocal noexpandtab
-	au BufReadPre,FileReadPre,BufEnter,BufWinEnter project/wedi/* setlocal noexpandtab
-	au BufReadPre,FileReadPre,BufEnter,BufWinEnter project/heroshi/* setlocal noexpandtab
-	au BufReadPre,FileReadPre,BufEnter,BufWinEnter project/corners-bot/* setlocal noexpandtab
-	au BufReadPre,FileReadPre,BufEnter,BufWinEnter project/insomnia-server/* setlocal noexpandtab
-	au BufReadPre,FileReadPre,BufEnter,BufWinEnter project/insomnia-client/* setlocal noexpandtab
-augroup END
-
-augroup html
-	au!
-	au BufReadPre,FileReadPre,BufEnter,BufWinEnter *.html setlocal tabstop=2 shiftwidth=2 softtabstop=2
+	au BufReadPre,FileReadPre,BufEnter,BufWinEnter */project/obuh/* setlocal noexpandtab
+	au BufReadPre,FileReadPre,BufEnter,BufWinEnter */project/vm-001/* setlocal noexpandtab
+	au BufReadPre,FileReadPre,BufEnter,BufWinEnter */project/qt-001/* setlocal noexpandtab
+	au BufReadPre,FileReadPre,BufEnter,BufWinEnter */project/qt-002/* setlocal noexpandtab
+	au BufReadPre,FileReadPre,BufEnter,BufWinEnter */project/edicore-001/* setlocal noexpandtab
+	au BufReadPre,FileReadPre,BufEnter,BufWinEnter */project/wedi/* setlocal noexpandtab
+	au BufReadPre,FileReadPre,BufEnter,BufWinEnter */project/corners-bot/* setlocal noexpandtab
+	au BufReadPre,FileReadPre,BufEnter,BufWinEnter */project/insomnia-server/* setlocal noexpandtab
+	au BufReadPre,FileReadPre,BufEnter,BufWinEnter */project/insomnia-client/* setlocal noexpandtab
 augroup END
 
 " markdown settings
 augroup mkd
-	autocmd BufRead *.mkd  setlocal ai formatoptions=tcroqn2 comments=n:>
+	au!
+	au BufRead,BufNewFile *.mkd  setlocal ai formatoptions=tcroqn2 comments=n:>
+augroup END
+
+" Jinja2
+augroup Jinja2
+	au!
+	au BufRead,BufNewFile */project/py-avia/**/*.html setlocal ft=htmljinja
+	au BufRead,BufNewFile */project/py-rambler-blog/**/*.html setlocal ft=htmljinja
+	au BufRead,BufNewFile */project/pravo-rulya/**/*.html setlocal ft=htmljinja
 augroup END
 
 " read-only windows trigger insert-mode off
