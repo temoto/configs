@@ -205,13 +205,13 @@ function! <SID>PythonGrep(tool)
 	set grepformat&vim
 	let &grepformat = '%f:%l:%m'
 	if a:tool == "pylint-errors"
-		let &grepprg = 'pylint --errors-only'
+		let &grepprg = 'python `which pylint` --errors-only'
 	elseif a:tool == "pylint-warnings"
-		let &grepprg = 'pylint --disable-msg-cat=E,C'
+		let &grepprg = 'python `which pylint` --disable=E,C'
 	elseif a:tool == "pylint-other"
-		let &grepprg = 'pylint --disable-msg-cat=E,W'
+		let &grepprg = 'python `which pylint` --disable=E,W'
 	elseif a:tool == "pychecker"
-		let &grepprg = 'pychecker --quiet -q'
+		let &grepprg = 'python `which pychecker` --quiet -q'
 	else
 		echohl WarningMsg
 		echo "PythonGrep Error: Unknown Tool"
