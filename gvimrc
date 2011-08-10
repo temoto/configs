@@ -1,9 +1,10 @@
 " GVim specific options
 
 set list
+set guicursor=a:block-Cursor
+set guicursor=a:blinkon0
 set guioptions=aegirLt
 set guifont=dejavu\ sans\ mono\ 10
-let &guicursor = "a:block-Cursor/blinkon0"
 
 " X clipboard
 ino <C-Insert> <C-o>"+yy
