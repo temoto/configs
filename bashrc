@@ -101,6 +101,8 @@ alias la='_l -a'
 alias cal='cal -h3'
 alias eix='apt-cache search'
 alias appt='apt-cache show'
+# Use time program, it reports more information than builtin command.
+alias time=$(which time)
 
 # cd and show todo
 if which devtodo >/dev/null ; then
