@@ -27,7 +27,7 @@ if exists('rdark_current_line') && rdark_current_line == 1
 endif
 
 " Default Colors
-hi Normal guifg=#daddd6 guibg=#1e2426
+hi Normal guifg=#daddd6 guibg=#1a2022
 hi NonText guifg=#2c3032 guibg=#2c3032 gui=none
 hi Cursor guibg=#babdb6
 hi ICursor guibg=#babdb6
@@ -44,8 +44,8 @@ hi Visual guibg=#696969
 hi MoreMsg guifg=#729fcf
 hi Question guifg=#8ae234 gui=none
 hi WildMenu guifg=#000000 guibg=#6ac214
-hi LineNr guifg=#5f6b6d guibg=#000000
-hi SignColumn guibg=#1e2426
+hi LineNr guifg=#5f6b6d guibg=#101010
+hi SignColumn guibg=#1a2022
 
 " Pmenu
 hi Pmenu guibg=#2e3436 guifg=#eeeeec
@@ -61,7 +61,7 @@ hi DiffText guibg=#000000 gui=none
 
 " Folds
 hi Folded guifg=#d3d7cf guibg=#204a87
-hi FoldColumn guifg=#3465a4 guibg=#000000
+hi FoldColumn guifg=#3465a4 guibg=#101010
 
 " Specials
 hi Title guifg=#fcaf3e
@@ -81,7 +81,7 @@ hi Directory guifg=#628fbf gui=bold
 
 " Syntax
 hi Comment guifg=#858683
-hi Constant guifg=#8ae234 guibg=#000000
+hi Constant guifg=#8ae234 guibg=#181818
 hi Number guifg=#8ae234
 hi Statement guifg=#729fcf gui=bold
 hi Identifier guifg=#fcaf3e
@@ -89,7 +89,7 @@ hi PreProc guifg=#fcaf3e
 hi Function guifg=#fcaf3e
 hi Type guifg=#b3b788 gui=none
 hi Keyword guifg=#fcaf3e
-hi Special guifg=#dc8f1e guibg=#000000
+hi Special guifg=#dc8f1e guibg=#181818
 hi Error guifg=#eeeeec guibg=#cc0000
 
 " C
