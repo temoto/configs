@@ -4,6 +4,7 @@
 [ -z "$PS1" ] && return
 
 # Important environment settings, must go first.
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
 export PATH=$HOME/bin:$HOME/.cabal/bin:$PATH
 export LANG=en_US.UTF-8
 
@@ -12,6 +13,7 @@ export LANG=en_US.UTF-8
 shopt -s histappend
 shopt -s checkwinsize
 
+export LESS="-iR"
 [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
 # colors
