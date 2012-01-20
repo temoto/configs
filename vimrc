@@ -172,6 +172,10 @@ let g:neocomplcache_dictionary_filetype_lists = {
     \ }
 
 
+" Project plugin settings.
+let g:proj_window_width = 48
+
+
 " filetype specific options
 " =========================
 
@@ -296,4 +300,10 @@ augroup NERDTree_Customized
 	au!
 	au BufEnter *NERD_tree* nmap <buffer> <CR> o
 	au BufEnter,BufWinEnter *NERD_tree* set noinsertmode
+augroup END
+
+" Project plugin is in normal mode
+augroup Project_Customized
+	au!
+	au BufEnter,BufWinEnter *.vimprojects setlocal noinsertmode
 augroup END
