@@ -4,7 +4,7 @@ set list
 set guicursor=a:block-Cursor
 set guicursor=a:blinkon0
 set guioptions=aegirLt
-set guifont=dejavu\ sans\ mono\ 10
+set guifont=dejavu\ sans\ mono\ 11
 
 " X clipboard
 ino <C-Insert> <C-o>"+yy

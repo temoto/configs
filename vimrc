@@ -1,3 +1,5 @@
+" Author: Sergey Shepelev <temotor@gmail.com>
+
 syntax on
 filetype on
 filetype plugin on
@@ -209,7 +211,7 @@ function! <SID>PythonGrep(tool)
 	if a:tool == "pylint-errors"
 		let &grepprg = 'python `which pylint` --errors-only'
 	elseif a:tool == "pylint-warnings"
-		let &grepprg = 'python `which pylint` --disable=E,C'
+		let &grepprg = 'python `which pylint` --disable=E,C --disable=W0142'
 	elseif a:tool == "pylint-other"
 		let &grepprg = 'python `which pylint` --disable=E,W'
 	elseif a:tool == "pychecker"
