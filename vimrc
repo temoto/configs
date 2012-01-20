@@ -5,11 +5,9 @@ filetype indent on
 
 set mouse=a
 
-if has("gui_running")
-	colors rdark_temoto
-else
-	colors evening
-endif
+set background=dark
+let g:solarized_italic = 0
+colors solarized
 
 set nocompatible
 set viminfo+=h
