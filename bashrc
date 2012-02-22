@@ -76,6 +76,7 @@ PROMPT_COMMAND=on_prompt
 export HISTCONTROL=ignoredups:erasedups
 export HISTSIZE=5000
 export EDITOR=$(which vim)
+export PAGER=less
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/lib
 export XDG_DATA_HOME=$HOME/.config
 export XDG_CONFIG_HOME=$HOME/.config
