@@ -105,10 +105,12 @@ alias cal='cal -h3'
 alias eix='apt-cache search'
 alias appt='apt-cache show'
 # Use time program, it reports more information than builtin command.
-alias time=$(which time)
+if which time >/dev/null 2>&1; then
+    alias time=$(which time)
+fi
 
 # cd and show todo
-if which devtodo >/dev/null ; then
+if which devtodo >/dev/null 2>&1; then
     cd()
     {
         builtin cd "$*" && devtodo
