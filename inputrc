@@ -1,3 +1,3 @@
-Tab: menu-complete
+set show-all-if-ambiguous on
 ";5D": backward-word
 ";5C": forward-word
