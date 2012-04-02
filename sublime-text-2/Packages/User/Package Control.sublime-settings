@@ -1,0 +1,20 @@
+{
+	"auto_upgrade_last_run": 1333369762,
+	"installed_packages":
+	[
+		"BracketHighlighter",
+		"Can I Use",
+		"Caret History",
+		"Function Name Display",
+		"Git",
+		"HTML Export",
+		"INI",
+		"LineEndings",
+		"Package Control",
+		"Sublime V8",
+		"sublime-github",
+		"SublimeRope",
+		"Terminal",
+		"Web Encoders"
+	]
+}

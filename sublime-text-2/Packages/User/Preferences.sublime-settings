@@ -1,0 +1,44 @@
+{
+	"auto_complete": false,
+	"binary_file_patterns":
+	[
+		"*.jpg",
+		"*.jpeg",
+		"*.png",
+		"*.gif",
+		"*.gz",
+		"*.ttf",
+		"*.tga",
+		"*.dds",
+		"*.ico",
+		"*.eot",
+		"*.pdf",
+		"*.swf",
+		"*.jar",
+		"*.zip"
+	],
+	"color_scheme": "Packages/Color Scheme - Default/Solarized (Dark).tmTheme",
+	"file_exclude_patterns":
+	[
+		"*.swp",
+		"*.swo",
+		"*.pyc",
+		"*.pyo",
+		"*.o",
+		"~*"
+	],
+	"font_face": "Dejavu Sans Mono",
+	"font_size": 12,
+	"ignored_packages":
+	[
+		"Vintage"
+	],
+	"indent_to_bracket": true,
+	"rulers":
+	[
+		120
+	],
+	"save_on_focus_lost": true,
+    "caret_style": "wide",
+	"trim_trailing_white_space_on_save": true
+}
