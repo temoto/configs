@@ -14,7 +14,7 @@
     Mod4 + Delete
 
 # dmenu-run
-"dmenu_run -i -fn 'Consolas-11' -nb '#555555' -nf '#000000' -sb '#304050' -sf '#eeeeee'"
+"dmenu_run -i -fn 'Monaco-14' -nb '#555555' -nf '#000000' -sb '#304050' -sf '#eeeeee'"
     Mod4 + r
 
 # lock
@@ -58,11 +58,11 @@
     Mod4 + grave
 
 # volume up
-"amixer sset Master 4+"
+"amixer sset Master 4%+"
     XF86AudioRaiseVolume
 
 # volume down
-"amixer sset Master 4-"
+"amixer sset Master 4%-"
     XF86AudioLowerVolume
 
 # volume mute
