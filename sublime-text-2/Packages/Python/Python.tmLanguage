@@ -15,6 +15,7 @@
 		<string>py</string>
 		<string>rpy</string>
 		<string>pyw</string>
+		<string>pyx</string>
 		<string>cpy</string>
 		<string>SConstruct</string>
 		<string>Sconstruct</string>
@@ -1171,7 +1172,7 @@
 		<key>constant_placeholder</key>
 		<dict>
 			<key>match</key>
-			<string>(?i:%(\([a-z_]+\))?#?0?\-?[ ]?\+?([0-9]*|\*)(\.([0-9]*|\*))?[hL]?[a-z%])</string>
+			<string>((?i:%(\([a-z_]+\))?#?0?\-?[ ]?\+?([0-9]*|\*)(\.([0-9]*|\*))?[hL]?[a-z%])|(?i:\{[0-9a-z_]+(\.[a-z_]+)?(![rs])?(\:\d*\.?\d+[bcdefgnox])?\}))</string>
 			<key>name</key>
 			<string>constant.other.placeholder.python</string>
 		</dict>
