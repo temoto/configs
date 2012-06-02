@@ -49,6 +49,16 @@ function on_prompt {
     c_host="$(tput setaf $host_hash)"
     ec_host="\[$c_host\]"
     unset host_hash
+
+    # get cursor position and add new line if we're not in first column
+    exec < /dev/tty
+    local oldstty=$(stty -g)
+    stty raw -echo min 0
+    echo -en "\033[6n" > /dev/tty && read -sdR curpos
+    stty $oldstty
+    if [ ${curpos##*;} -gt 1 ]; then
+        echo "${c_error}↵${c_clr}"
+    fi
 }
 
 # run git-prompt
