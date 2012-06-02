@@ -1,9 +1,4 @@
-##########################
-# xbindkeys configuration #
-###########################
-#
-# Version: 0.1.3
-#
+# xbindkeys configuration
 
 #keystate_numlock = enable
 #keystate_scrolllock = enable
@@ -13,16 +8,12 @@
 "xkill"
     Mod4 + Delete
 
-# dmenu-run
-"dmenu_run -i -fn 'Monaco-14' -nb '#555555' -nf '#000000' -sb '#304050' -sf '#eeeeee'"
-    Mod4 + r
-
 # lock
-"xscreensaver-command -lock"
+"xlock -mode blank -startCmd 'xset dpms force off' -endCmd 'xset dpms force on'"
     Mod4 + l
 
 # file browser
-"dolphin"
+"nautilus --no-desktop"
     Mod4 + e
 
 # terminal
@@ -38,8 +29,8 @@
     Mod4 + v
 
 # cmus-pause
-"cmus-remote --pause"
-    Mod4 + c
+#"cmus-remote --pause"
+#    Mod4 + c
 
 # cmus-next
 "cmus-remote --next"
