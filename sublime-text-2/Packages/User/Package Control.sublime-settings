@@ -1,5 +1,5 @@
 {
-	"auto_upgrade_last_run": 1333369762,
+	"auto_upgrade_last_run": 1343209288,
 	"installed_packages":
 	[
 		"BracketHighlighter",
@@ -10,9 +10,11 @@
 		"HTML Export",
 		"INI",
 		"LineEndings",
+		"Modific",
 		"Package Control",
 		"Sublime V8",
 		"sublime-github",
+		"SublimeOnSaveBuild",
 		"SublimeRope",
 		"Terminal",
 		"Web Encoders"
