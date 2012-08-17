@@ -161,31 +161,33 @@ alias ']st'='svn st | svn-list-filter'
 alias ']st?'='svn st | grep -E "^\?" | svn-list-filter'
 
 # git helpers
-alias '[b'='git branch'
-alias '[ca'='[[ ! -x ./tests.py ]] || ./tests.py && git commit -a'
-alias '[ci'='[[ ! -x ./tests.py ]] || ./tests.py && git commit'
-alias '[co'='git checkout'
-alias '[com'='git checkout master'
-alias '[ci'='git commit'
-alias '[ca'='git commit -a'
-alias '[d'='git diff --find-copies-harder -B -C --color-words --word-diff-regex="\\w+|[^[:space:]]"'
-alias '[dc'='git diff --find-copies-harder -B -C --color-words --cached --word-diff-regex="\\w+|[^[:space:]]"'
-alias '[dms'='git daemon --detach --base-path=/home/temoto/project --export-all'
-alias '[l'='git log --stat'
-alias '[st'='git status'
-alias '[s'='git stash'
-alias '[sa'='git stash apply'
-alias '[sd'='git stash drop'
-alias '[sp'='git stash pop'
-alias '[t'='git tag'
-complete -o default -o nospace -F _git_branch '[b'
-complete -o default -o nospace -F _git_checkout '[co'
-complete -o default -o nospace -F _git_log '[l'
-complete -o default -o nospace -F _git_diff '[d'
+alias ']b'='git branch'
+alias ']ca'='git commit -a'
+alias ']ci'='git commit'
+alias ']co'='git checkout'
+alias ']com'='git checkout master'
+alias ']ci'='git commit'
+alias ']ca'='git commit -a'
+alias ']d'='git diff --find-copies-harder -B -C --color-words --word-diff-regex="\\w+|[^[:space:]]"'
+alias ']dc'='git diff --find-copies-harder -B -C --color-words --cached --word-diff-regex="\\w+|[^[:space:]]"'
+alias ']dms'='git daemon --detach --base-path=/home/temoto/project --export-all'
+alias ']l'='git log --stat'
+alias ']st'='git status'
+alias ']s'='git stash'
+alias ']sa'='git stash apply'
+alias ']sd'='git stash drop'
+alias ']sp'='git stash pop'
+alias ']t'='git tag'
+if declare -f __git_complete >/dev/null; then
+    __git_complete ]b _git_branch
+    __git_complete ]co _git_checkout
+    __git_complete ]d _git_diff
+    __git_complete ]l _git_log
+fi
 
 # google appengine helpers
-alias 'gae-upload'='PYTHONPATH= ~/python2.5/bin/python2.5 ~/google_appengine/appcfg.py -q update .'
-alias 'gae-upload-all'='( [co stable && gae-upload ) ; ( [co master && gae-upload )'
+alias 'gae-upload'='PYTHONPATH=~/python2.7/bin/python2.7 ~/google_appengine/appcfg.py -q update .'
+alias 'gae-upload-all'='( git checkout stable && gae-upload ) ; ( git checkout master && gae-upload )'
 
 # toys
 alias sho='export PS1="" ; tput bold ; tput setaf 1 ; echo -e "\n\n\n\n\n\n\n\n\n\n\n    Шо?\n\n\n\n\n\n\n\n\n\n\n" ; tput sgr0'
