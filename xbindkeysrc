@@ -9,7 +9,7 @@
     Mod4 + Delete
 
 # lock
-"xlock -mode blank -startCmd 'xset dpms force off' -endCmd 'xset dpms force on'"
+"xlock -mode blank -startCmd 'cmus-remote --stop'"
     Mod4 + l
 
 # file browser
