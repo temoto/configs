@@ -1,5 +1,5 @@
 {
-	"auto_upgrade_last_run": 1343209288,
+	"auto_upgrade_last_run": 1350244075,
 	"installed_packages":
 	[
 		"BracketHighlighter",
@@ -7,6 +7,8 @@
 		"Caret History",
 		"Function Name Display",
 		"Git",
+		"Go Build",
+		"GoSublime",
 		"HTML Export",
 		"INI",
 		"LineEndings",
