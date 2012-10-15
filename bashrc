@@ -83,6 +83,7 @@ prompt=(
 )
 printf -v PS1 "%s" "${prompt[@]}"
 PROMPT_COMMAND=on_prompt
+export CDPATH=$HOME:$HOME/project:$HOME/src:$HOME/src/go/src/pkg/code.google.com:$HOME/src/go/src/pkg/github.com
 export HISTCONTROL=ignoredups:erasedups
 export HISTSIZE=5000
 export EDITOR=$(which vim)
@@ -90,6 +91,7 @@ export PAGER=less
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/lib
 export XDG_DATA_HOME=$HOME/.config
 export XDG_CONFIG_HOME=$HOME/.config
+export GOBIN=$HOME/bin
 export GOROOT=$HOME/src/go
 # Set <TAB> width to 4 characters.
 # Thanks http://superuser.com/questions/110421/tab-character-width-in-terminal
