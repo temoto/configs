@@ -240,6 +240,12 @@ nno <M-3> :call <SID>PythonGrep('pylint-other')<CR>
 ino <M-9> <C-o>:call <SID>PythonGrep('pychecker')<CR>
 nno <M-9> :call <SID>PythonGrep('pychecker')<CR>
 
+" Go uses tabs
+augroup go
+	au!
+	au BufReadPre,FileReadPre,BufEnter,BufWinEnter *.go setlocal noexpandtab
+augroup END
+
 " python has 4 spaces instead of tabs
 augroup python
 	au!
