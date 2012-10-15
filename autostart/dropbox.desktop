@@ -1,10 +1,10 @@
 [Desktop Entry]
 Name=Dropbox
-GenericName=File Synchronizer
-Comment=Sync your files across computers and to the web
-Exec=dropbox start -i
+GenericName=Network Storage
+Comment=Dropbox is a free service that lets you bring your photos, docs, and videos anywhere and share them easily
+Exec=dropboxd
+Icon=dropbox
 Terminal=false
 Type=Application
-Icon=dropbox
-Categories=Network;FileTransfer;
+Categories=Network;
 StartupNotify=false
