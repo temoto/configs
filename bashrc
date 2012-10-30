@@ -24,7 +24,7 @@ c_success="$(tput setaf 7)"; ec_success="\[$c_success\]" # grey
 c_error="$(tput setaf 1)$(tput bold)"; ec_error="\[$c_error\]" # red bold
 
 function print_exit_code {
-    if [ $__ec -ne 0 ]
+    if [ ${__ec-0} -ne 0 ]
     then printf "%b%s" "$c_error" "$__ec"; fi
     #then printf "%bok" "$c_success"
     #else printf "%b%s" "$c_error" "$__ec"; fi
@@ -51,12 +51,14 @@ function on_prompt {
     unset host_hash
 
     # get cursor position and add new line if we're not in first column
-    exec < /dev/tty
-    local oldstty=$(stty -g)
-    stty raw -echo min 0
-    echo -en "\033[6n" > /dev/tty && read -sdR curpos
-    stty $oldstty
-    if [ ${curpos##*;} -gt 1 ]; then
+    local cursor_pos
+    stty -echo
+    echo -n $'\e[6n'
+    read -r -dR cursor_pos
+    stty echo
+    cursor_pos=${cursor_pos#??}
+    cursor_line=${cursor_pos##*;}
+    if [ ${cursor_line-1} -gt 1 ]; then
         echo "${c_error}↵${c_clr}"
     fi
 }
