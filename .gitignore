@@ -1,13 +1,16 @@
 applications/
+autostart/
+google-chrome/
 gvfs-metadata/
 icons/
 libreoffice/
 menus/
 mime/
+session-state/
 sublime-text-2/Backup/
 sublime-text-2/Installed Packages/
 sublime-text-2/Packages/
 sublime-text-2/Pristine Packages/
 totem/
 Trash/
-
+vim/session
