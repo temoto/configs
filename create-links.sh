@@ -7,7 +7,6 @@ $link "$src/bash_profile" ~/.bash_profile
 $link "$src/bashrc" ~/.bashrc
 $link "$src/gvimrc" ~/.gvimrc
 $link "$src/inputrc" ~/.inputrc
-$link "$src/todorc" ~/.todorc
 $link "$src/vim" ~/.vim
 $link "$src/vimrc" ~/.vimrc
 $link "$src/xbindkeysrc" ~/.xbindkeysrc

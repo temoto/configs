@@ -131,14 +131,6 @@ if which time >/dev/null 2>&1; then
     alias time=$(which time)
 fi
 
-# cd and show todo
-if which devtodo >/dev/null 2>&1; then
-    cd()
-    {
-        builtin cd "$*" && devtodo
-    }
-fi
-
 # ls or less depending on type
 m()
 {
