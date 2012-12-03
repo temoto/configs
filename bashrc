@@ -3,9 +3,18 @@
 # non-interactive -> quit
 [ -z "$PS1" ] && return
 
+path_prepend() {
+    while [ -n "$1" ]; do
+        if [ ":$PATH:" != *":$1:"* ]; then
+            PATH="${1}:${PATH}"
+        fi
+        shift
+    done
+}
+
 # Important environment settings, must go first.
-PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin
-export PATH=$HOME/bin:$HOME/.cabal/bin:$PATH
+path_prepend /bin /sbin /usr/bin /usr/sbin /usr/local/bin /usr/local/sbin "$HOME/.cabal/bin" "$HOME/bin"
+export PATH
 export LANG=en_US.UTF-8
 
 [[ -f /etc/bash_completion ]] && source /etc/bash_completion
