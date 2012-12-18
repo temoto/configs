@@ -94,7 +94,7 @@ prompt=(
 )
 printf -v PS1 "%s" "${prompt[@]}"
 PROMPT_COMMAND=on_prompt
-export CDPATH=$HOME:$HOME/project:$HOME/src:$HOME/src/go/src/pkg/code.google.com:$HOME/src/go/src/pkg/github.com
+export CDPATH=$HOME/dev/bitbucket.org:$HOME/dev/code.google.com/p:$HOME/dev/github.com
 export HISTCONTROL=ignoredups:erasedups
 export HISTSIZE=5000
 export EDITOR=$(which vim)
