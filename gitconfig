@@ -7,9 +7,11 @@
 	whitespace = yellow reverse
 [core]
 	excludesfile = /home/temoto/.gitignore
-    whitespace = trailing-space,space-before-tab
+	whitespace = trailing-space,space-before-tab
+[credential]
+	helper = cache --timeout=7200
 [diff]
-    renames = copies
+	renames = copies
 [gui]
 	commitmsgwidth = 85
 	fontui = -family arial -size 11 -weight bold -slant roman -underline 0 -overstrike 0
