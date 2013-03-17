@@ -1,4 +1,4 @@
-CDPATH=$HOME/dev:$HOME/dev/github.com
+CDPATH=$HOME/dev
 GOPATH=$HOME
 LANG=en_US.UTF-8
 LC_TIME=en_DK.UTF-8
