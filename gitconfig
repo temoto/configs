@@ -20,6 +20,6 @@
 	tool = meld
 	summary = true
 [push]
-	default = matching
+	default = current
 [svn]
 	rmdir = true

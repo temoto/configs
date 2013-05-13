@@ -13,12 +13,14 @@
 # it's better to unpack these files and commit the raw source
 # git has its own built in compression methods
 *.7z
+*.bz2
 *.dmg
 *.gz
 *.iso
 *.jar
 *.rar
 *.tar
+*.xz
 *.zip
 
 # Logs and databases #
@@ -44,6 +46,7 @@ Thumbs.db
 .pydevproject
 .project
 .ropeproject
+.sublime*
 
 
 # TODO managers #
