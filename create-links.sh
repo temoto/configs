@@ -3,6 +3,8 @@ link="ln -sf"
 src="`pwd`"
 case $0 in /*) src="`dirname $0`";; esac
 
+mkdir -p ~/bin
+$link "$src/bin/install-pacaur" ~/bin/
 $link "$src/bash_profile" ~/.bash_profile
 $link "$src/bashrc" ~/.bashrc
 $link "$src/gvimrc" ~/.gvimrc
