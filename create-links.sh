@@ -12,5 +12,6 @@ $link "$src/inputrc" ~/.inputrc
 $link "$src/vim" ~/.vim
 $link "$src/vimrc" ~/.vimrc
 $link "$src/xbindkeysrc" ~/.xbindkeysrc
+$link "$src/xinitrc" ~/.xinitrc
 $link "$src/zshenv" ~/.zshenv
 $link "$src/zshrc" ~/.zshrc

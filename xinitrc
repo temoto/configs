@@ -1,6 +1,8 @@
 #!/bin/bash
 
-: ${WIN_MANAGER=xmonad}
+: ${WIN_MANAGER=metacity}
+
+systemd --user &
 
 # xcompmgr &
 xrdb -load .Xdefaults
@@ -10,10 +12,13 @@ xset +fp "/home/temoto/.fonts"
 xsetroot -cursor_name left_ptr
 xsetroot -fg "#1e1b1f" -bg "#131011" -mod 4 4
 setxkbmap us,ru ,winkeys grp:caps_toggle
+
 xscreensaver &
 xbindkeys
-eval `dbus-launch --sh-syntax`
-gconftool-2 --spawn
+
+#eval `dbus-launch --sh-syntax`
+#gconftool-2 --spawn
+
 gnome-terminal &
-gvim &
+google-chrome &
 exec "$WIN_MANAGER"
