@@ -1,5 +1,5 @@
 #!/bin/sh
-link="ln -sf"
+link="ln -nfs"
 src="`pwd`"
 case $0 in /*) src="`dirname $0`";; esac
 
