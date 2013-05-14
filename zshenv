@@ -4,6 +4,9 @@ LANG=en_US.UTF-8
 LC_TIME=en_DK.UTF-8
 PATH=$PATH:$HOME/bin
 
+alias la='ls -la --color=auto'
+alias lh='ls -lh --color=auto'
+alias ll='ls -l --color=auto'
 alias p='/usr/bin/env python $(which ipython)'
 
 alias ']find-py'='find . -name \*.py -print0 |xargs -0 '
