@@ -3,22 +3,15 @@
 	"installed_packages":
 	[
 		"BracketHighlighter",
-		"Can I Use",
 		"Caret History",
 		"Function Name Display",
 		"Git",
-		"Go Build",
 		"GoSublime",
-		"HTML Export",
 		"INI",
 		"LineEndings",
 		"Modific",
 		"Package Control",
-		"Sublime V8",
 		"sublime-github",
-		"SublimeOnSaveBuild",
-		"SublimeRope",
-		"Terminal",
-		"Web Encoders"
+		"Terminal"
 	]
 }
