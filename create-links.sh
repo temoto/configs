@@ -1,12 +1,13 @@
 #!/bin/sh
 link="ln -nfs"
-src="`pwd`"
-case $0 in /*) src="`dirname $0`";; esac
+src=`python -c "import os, sys; print(os.path.dirname(os.path.abspath(os.path.relpath(sys.argv[1]))))" $0`
 
 mkdir -p ~/bin
 $link "$src/bin/install-pacaur" ~/bin/
 $link "$src/bash_profile" ~/.bash_profile
 $link "$src/bashrc" ~/.bashrc
+$link "$src/gitconfig" ~/.gitconfig
+$link "$src/gitignore" ~/.gitignore
 $link "$src/gvimrc" ~/.gvimrc
 $link "$src/inputrc" ~/.inputrc
 $link "$src/vim" ~/.vim
