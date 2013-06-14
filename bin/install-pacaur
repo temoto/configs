@@ -7,13 +7,13 @@ cd $HOME/aur
     curl -L 'https://aur.archlinux.org/packages/co/cower/cower.tar.gz' |tar xzf -
     cd cower
     makepkg -s
-    sudo pacman -U cower*.tar.xz
+    sudo pacman -U --noconfirm cower*.tar.xz
 )
 
 (
     curl -L 'https://aur.archlinux.org/packages/pa/pacaur/pacaur.tar.gz' |tar xzf -
     cd pacaur
     makepkg -s
-    sudo pacman -U pacaur*.tar.xz
+    sudo pacman -U --noconfirm pacaur*.tar.xz
 )
 
