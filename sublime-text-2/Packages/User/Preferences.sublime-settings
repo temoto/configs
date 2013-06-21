@@ -3,50 +3,51 @@
 	"auto_indent": true,
 	"binary_file_patterns":
 	[
-	"*.dds",
-	"*.eot",
-	"*.gif",
-	"*.gz",
-	"*.ico",
-	"*.jar",
-	"*.jpeg",
-	"*.jpg",
-	"*.pdf",
-	"*.png",
-	"*.swf",
-	"*.tga",
-	"*.ttf",
-	"*.zip"
+		"*.jpg",
+		"*.jpeg",
+		"*.png",
+		"*.gif",
+		"*.gz",
+		"*.ttf",
+		"*.tga",
+		"*.dds",
+		"*.ico",
+		"*.eot",
+		"*.pdf",
+		"*.swf",
+		"*.jar",
+		"*.zip"
 	],
 	"caret_style": "wide",
 	"color_scheme": "Packages/Color Scheme - Default/Solarized (Dark).tmTheme",
 	"file_exclude_patterns":
 	[
-	"*.o",
-	"*.pyc",
-	"*.pyo",
-	"*.swo",
-	"*.swp",
-	"~*"
+		"*.swp",
+		"*.swo",
+		"*.pyc",
+		"*.pyo",
+		"*.o",
+		"~*"
 	],
-	"folder_exclude_patterns": [
-	".git",
-	".hg",
-	".svn",
-	"CVS",
-	"venv"
+	"folder_exclude_patterns":
+	[
+		".svn",
+		".git",
+		".hg",
+		"CVS",
+		"venv"
 	],
 	"font_face": "Dejavu Sans Mono",
 	"font_size": 12,
 	"ignored_packages":
 	[
-	"Vintage"
+		"Vintage"
 	],
 	"indent_to_bracket": true,
 	"margin": 0,
 	"rulers":
 	[
-	120
+		120
 	],
 	"save_on_focus_lost": true,
 	"smart_indent": true,

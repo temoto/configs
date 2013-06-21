@@ -3,9 +3,7 @@
 	"installed_packages":
 	[
 		"BracketHighlighter",
-		"Caret History",
 		"Function Name Display",
-		"Git",
 		"GoSublime",
 		"INI",
 		"LineEndings",
