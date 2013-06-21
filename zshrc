@@ -320,3 +320,5 @@ fi
 
 
 REPORTTIME=2
+
+setxkbmap us,ru ,winkeys grp:caps_toggle compose:ralt 2>/dev/null
