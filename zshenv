@@ -1,8 +1,8 @@
-CDPATH=$HOME/dev
-GOPATH=$HOME
-LANG=en_US.UTF-8
-LC_TIME=en_DK.UTF-8
-PATH=$PATH:$HOME/bin
+export CDPATH=$HOME/dev
+export GOPATH=$HOME
+export LANG=en_US.UTF-8
+export LC_TIME=en_DK.UTF-8
+export PATH=$PATH:$HOME/bin
 
 alias la='ls -la --color=auto'
 alias lh='ls -lh --color=auto'
