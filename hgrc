@@ -1,0 +1,24 @@
+[diff]
+git = True
+
+[extdiff]
+cmd.vd = vimdiff
+opts.vd =
+
+[extensions]
+color =
+extdiff =
+fetch =
+graphlog =
+mq =
+pager =
+progress =
+rebase =
+transplant =
+
+[pager]
+ignore = version, help, update
+pager = LESS='FRX' less
+
+[ui]
+username = Sergey Shepelev <temotor@gmail.com>
