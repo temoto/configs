@@ -30,13 +30,6 @@ if [ -r ~/.zshrc -a -r ~/.zshrc.global -a ! -r ~/.zshrc.local ] ; then
     printf '-!-\n'
 fi
 
-## Settings for umask
-#if (( EUID == 0 )); then
-#    umask 002
-#else
-#    umask 022
-#fi
-
 ## Now, we'll give a few examples of what you might want to use in your
 ## .zshrc.local file (just copy'n'paste and uncomment it there):
 
@@ -154,15 +147,8 @@ fi
 ## ignore ~/.ssh/known_hosts entries
 #alias insecssh='ssh -o "StrictHostKeyChecking=no" -o "UserKnownHostsFile=/dev/null" -o "PreferredAuthentications=keyboard-interactive"'
 
-
 ## global aliases (for those who like them) ##
 
-#alias -g '...'='../..'
-#alias -g '....'='../../..'
-#alias -g BG='& exit'
-#alias -g C='|wc -l'
-#alias -g G='|grep'
-#alias -g H='|head'
 #alias -g Hl=' --help |& less -r'
 #alias -g K='|keep'
 #alias -g L='|less'
@@ -262,13 +248,6 @@ fi
 #    fi
 #}
 
-## Memory overview
-#memusage() {
-#    ps aux | awk '{if (NR > 1) print $5;
-#                   if (NR > 2) print "+"}
-#                   END { print "p" }' | dc
-#}
-
 ## print hex value of a number
 #hex() {
 #    emulate -L zsh
@@ -317,8 +296,3 @@ fi
 #vimhelp ()    { vim -c "help $1" -c on -c "au! VimEnter *" }
 
 ## END OF FILE #################################################################
-
-
-REPORTTIME=2
-
-setxkbmap us,ru ,winkeys grp:caps_toggle compose:ralt 2>/dev/null
