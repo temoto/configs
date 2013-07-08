@@ -1,3 +1,7 @@
+# Environment variables that may have been overwritten by /etc/profile.d
+export GOPATH=$HOME
+
+
 # Settings for umask
 if (( EUID == 0 )); then
     umask 002
@@ -32,14 +36,6 @@ alias ']sa'='git stash apply'
 alias ']sd'='git stash drop'
 alias ']sp'='git stash pop'
 alias ']t'='git tag'
-
-
-# Memory overview
-memusage() {
-    ps aux | awk '{if (NR > 1) print $5;
-                   if (NR > 2) print "+"}
-                   END { print "p" }' | dc
-}
 
 
 REPORTTIME=2
