@@ -17,4 +17,3 @@ $link "$src/xbindkeysrc" ~/.xbindkeysrc
 $link "$src/xinitrc" ~/.xinitrc
 $link "$src/zshenv" ~/.zshenv
 $link "$src/zshrc" ~/.zshrc
-$link "$src/zshrc.local" ~/.zshrc.local
