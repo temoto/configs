@@ -1,0 +1,18 @@
+{
+	"auto_upgrade_last_run": 1353364822,
+	"installed_packages":
+	[
+		"AutoPEP8",
+		"BracketHighlighter",
+		"Function Name Display",
+		"GoSublime",
+		"INI",
+		"LineEndings",
+		"Modific",
+		"Package Control",
+		"sublime-github",
+		"SublimeAStyleFormatter",
+		"SublimeGit",
+		"Terminal"
+	]
+}
