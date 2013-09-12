@@ -1,0 +1,26 @@
+[global_config]
+  enabled_plugins = ,
+  title_transmit_bg_color = "#8b946c"
+[keybindings]
+  switch_to_tab_1 = <Alt>1
+  switch_to_tab_2 = <Alt>2
+  switch_to_tab_3 = <Alt>3
+  switch_to_tab_4 = <Alt>4
+  switch_to_tab_5 = <Alt>5
+[profiles]
+  [[default]]
+    background_image = None
+    scrollback_lines = 15000
+    use_system_font = False
+    scroll_on_output = False
+    font = DejaVu Sans Mono 12
+    cursor_blink = False
+[layouts]
+  [[default]]
+    [[[child1]]]
+      type = Terminal
+      parent = window0
+    [[[window0]]]
+      type = Window
+      parent = ""
+[plugins]

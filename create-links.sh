@@ -11,6 +11,7 @@ $link "$src/gitignore" ~/.gitignore
 $link "$src/gvimrc" ~/.gvimrc
 $link "$src/hgrc" ~/.hgrc
 $link "$src/inputrc" ~/.inputrc
+$link "$src/terminator" ~/.config/terminator/config
 $link "$src/vim" ~/.vim
 $link "$src/vimrc" ~/.vimrc
 $link "$src/xbindkeysrc" ~/.xbindkeysrc
