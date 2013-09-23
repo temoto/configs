@@ -3,6 +3,7 @@ link="ln -nfs"
 src=`python -c "import os, sys; print(os.path.dirname(os.path.abspath(os.path.relpath(sys.argv[1]))))" $0`
 
 mkdir -p ~/bin
+mkdir -p ~/.config/terminator
 $link "$src/bash_profile" ~/.bash_profile
 $link "$src/bashrc" ~/.bashrc
 $link "$src/bin/install-pacaur" ~/bin/
