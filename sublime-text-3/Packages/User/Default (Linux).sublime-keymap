@@ -1,25 +1,23 @@
 [
-	{ "keys": ["alt+backspace"], "command": "delete_word", "args": { "forward": true } },
-	{ "keys": ["alt+ctrl+shift+1"], "command": "build", "args": {"now": "what?"} },
-	{ "keys": ["alt+f"], "command": "reindent"},
-	{ "keys": ["alt+s"], "command": "sort_lines", "args": {"case_sensitive": false} },
 	{ "keys": ["alt+b"], "command": "insert", "args": {"characters": "import ipdb; ipdb.set_trace(); ############## DEBUG BREAKPOINT ##############"}, "context":
 		[
 			{ "key": "selector", "operator": "equal", "operand": "source.python"}
 		]
 	},
+	{ "keys": ["alt+s"], "command": "sort_lines", "args": {"case_sensitive": false} },
+	{ "keys": ["ctrl+k"], "command": "run_macro_file", "args": {"file": "Packages/Default/Delete Line.sublime-macro"} },
+	{ "keys": ["ctrl+space"], "command": "auto_complete" },
+	{ "keys": ["ctrl+t"], "command": "show_overlay", "args": {"overlay": "goto", "show_files": true} },
+	{ "keys": ["ctrl+shift+u"], "command": "upper_case" },
+	{ "keys": ["ctrl+u"], "command": "lower_case" },
+	{ "keys": ["ctrl+shift+w"], "command": "toggle_setting", "args": {"setting": "word_wrap"} },
+
+	{ "keys": ["alt+backspace"], "command": "delete_word", "args": { "forward": true } },
+	{ "keys": ["alt+ctrl+shift+1"], "command": "build", "args": {"now": "what?"} },
+	{ "keys": ["alt+f"], "command": "reindent"},
 
 	{ "keys": ["alt+pageup"], "command": "navigation_history_forward" },
 	{ "keys": ["alt+pagedown"], "command": "navigation_history_back" },
-
-	{ "keys": ["ctrl+k"], "command": "run_macro_file", "args": {"file": "Packages/Default/Delete Line.sublime-macro"} },
-	{ "keys": ["ctrl+shift+b"], "command": "toggle_side_bar" },
-	// { "keys": ["ctrl+shift+l"], "command": "expand_selection", "args": {"to": "line", "forward": "false"} },
-	{ "keys": ["ctrl+shift+w"], "command": "toggle_setting", "args": {"setting": "word_wrap"} },
-	{ "keys": ["ctrl+t"], "command": "show_overlay", "args": {"overlay": "goto", "show_files": true} },
-
-	{ "keys": ["ctrl+shift+u"], "command": "upper_case" },
-	{ "keys": ["ctrl+u"], "command": "lower_case" },
 
 	{ "keys": ["ctrl+r", "ctrl+d"], "command": "goto_python_definition", "context":
 	    [
