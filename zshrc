@@ -49,6 +49,57 @@ REPORTTIME=2
 setxkbmap us,ru ,winkeys grp:caps_toggle compose:ralt 2>/dev/null
 
 
+# key bindings
+bindkey ';5D' backward-word
+bindkey ';5C' forward-word
+
+# create a zkbd compatible hash;
+# to add other keys to this hash, see: man 5 terminfo
+typeset -A key
+
+key[Home]=${terminfo[khome]}
+
+key[End]=${terminfo[kend]}
+key[Insert]=${terminfo[kich1]}
+key[Delete]=${terminfo[kdch1]}
+key[Up]=${terminfo[kcuu1]}
+key[Down]=${terminfo[kcud1]}
+key[Left]=${terminfo[kcub1]}
+key[Right]=${terminfo[kcuf1]}
+key[PageUp]=${terminfo[kpp]}
+key[PageDown]=${terminfo[knp]}
+
+# setup key accordingly
+[[ -n "${key[Home]}"     ]]  && bindkey  "${key[Home]}"     beginning-of-line
+[[ -n "${key[End]}"      ]]  && bindkey  "${key[End]}"      end-of-line
+[[ -n "${key[Insert]}"   ]]  && bindkey  "${key[Insert]}"   overwrite-mode
+[[ -n "${key[Delete]}"   ]]  && bindkey  "${key[Delete]}"   delete-char
+[[ -n "${key[Up]}"       ]]  && bindkey  "${key[Up]}"       up-line-or-history
+[[ -n "${key[Down]}"     ]]  && bindkey  "${key[Down]}"     down-line-or-history
+[[ -n "${key[Left]}"     ]]  && bindkey  "${key[Left]}"     backward-char
+[[ -n "${key[Right]}"    ]]  && bindkey  "${key[Right]}"    forward-char
+[[ -n "${key[PageUp]}"   ]]  && bindkey  "${key[PageUp]}"   beginning-of-buffer-or-history
+[[ -n "${key[PageDown]}" ]]  && bindkey  "${key[PageDown]}" end-of-buffer-or-history
+
+# Finally, make sure the terminal is in application mode, when zle is
+# active. Only then are the values from $terminfo valid.
+if (( ${+terminfo[smkx]} )) && (( ${+terminfo[rmkx]} )); then
+    function zle-line-init () {
+        printf '%s' "${terminfo[smkx]}"
+    }
+    function zle-line-finish () {
+        printf '%s' "${terminfo[rmkx]}"
+    }
+    zle -N zle-line-init
+    zle -N zle-line-finish
+fi
+
+
+function virtualenv_info {
+    [ -n "$VIRTUAL_ENV" ] && echo `basename $VIRTUAL_ENV`
+}
+
+
 # Begin copied from grml
 
 # check for version/system
@@ -966,6 +1017,97 @@ if is437; then
     fi
 else
     grml_prompt_fallback
+fi
+
+
+# Terminal-title wizardry
+
+function ESC_print () {
+    info_print $'\ek' $'\e\\' "$@"
+}
+function set_title () {
+    info_print  $'\e]0;' $'\a' "$@"
+}
+
+function info_print () {
+    local esc_begin esc_end
+    esc_begin="$1"
+    esc_end="$2"
+    shift 2
+    printf '%s' ${esc_begin}
+    printf '%s' "$*"
+    printf '%s' "${esc_end}"
+}
+
+function grml_reset_screen_title () {
+    # adjust title of xterm
+    # see http://www.faqs.org/docs/Linux-mini/Xterm-Title.html
+    [[ ${NOTITLE:-} -gt 0 ]] && return 0
+    case $TERM in
+        (xterm*|rxvt*)
+            host="${(%):-"%m"}"
+            host=${host/temoto-/}
+            dir="${(%):-"%~"}"
+            dir=${dir/*bitbucket.org\//}
+            dir=${dir/*github.com\//}
+            dir=${dir/*ostrovok.ru\//}
+            title="$host $dir $(virtualenv_info)"
+            set_title "$title"
+            ;;
+    esac
+}
+
+function grml_vcs_to_screen_title () {
+    if [[ $TERM == screen* ]] ; then
+        if [[ -n ${vcs_info_msg_1_} ]] ; then
+            ESC_print ${vcs_info_msg_1_}
+        else
+            ESC_print "zsh"
+        fi
+    fi
+}
+
+function grml_maintain_name () {
+    # set hostname if not running on host with name 'grml'
+    if [[ -n "$HOSTNAME" ]] && [[ "$HOSTNAME" != $(hostname) ]] ; then
+       NAME="@$HOSTNAME"
+    fi
+}
+
+function grml_cmd_to_screen_title () {
+    # get the name of the program currently running and hostname of local
+    # machine set screen window title if running in a screen
+    if [[ "$TERM" == screen* ]] ; then
+        local CMD="${1[(wr)^(*=*|sudo|ssh|-*)]}$NAME"
+        ESC_print ${CMD}
+    fi
+}
+
+function grml_control_xterm_title () {
+    case $TERM in
+        (xterm*|rxvt*)
+            host="${(%):-"%m"}"
+            host=${host/temoto-/}
+            dir="${(%):-"%~"}"
+            dir=${dir/*bitbucket.org\//}
+            dir=${dir/*github.com\//}
+            dir=${dir/*ostrovok.ru\//}
+            cmd="$1"
+            title="$host $dir $cmd"
+            set_title "$title"
+            ;;
+    esac
+}
+
+zrcautoload add-zsh-hook || add-zsh-hook () { :; }
+if [[ $NOPRECMD -eq 0 ]]; then
+    add-zsh-hook precmd grml_reset_screen_title
+    add-zsh-hook precmd grml_vcs_to_screen_title
+    add-zsh-hook preexec grml_maintain_name
+    add-zsh-hook preexec grml_cmd_to_screen_title
+    if [[ $NOTITLE -eq 0 ]]; then
+        add-zsh-hook preexec grml_control_xterm_title
+    fi
 fi
 
 # End copied from grml
