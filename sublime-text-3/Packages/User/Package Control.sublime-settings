@@ -1,4 +1,5 @@
 {
+	"auto_upgrade_last_run": null,
 	"installed_packages":
 	[
 		"AutoPEP8",
@@ -8,6 +9,7 @@
 		"INI",
 		"LineEndings",
 		"Modific",
+		"nginx",
 		"Package Control",
 		"sublime-github",
 		"SublimeAStyleFormatter",

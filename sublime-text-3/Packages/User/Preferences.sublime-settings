@@ -22,18 +22,20 @@
 	"color_scheme": "Packages/Color Scheme - Default/Solarized (Dark).tmTheme",
 	"file_exclude_patterns":
 	[
-		"*.swp",
-		"*.swo",
+		"*.o",
 		"*.pyc",
 		"*.pyo",
-		"*.o",
+		"*.sublime-project",
+		"*.sublime-workspace",
+		"*.swo",
+		"*.swp",
 		"~*"
 	],
 	"folder_exclude_patterns":
 	[
-		".svn",
 		".git",
 		".hg",
+		".svn",
 		"CVS",
 		"venv"
 	],
