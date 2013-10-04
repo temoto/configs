@@ -10,11 +10,12 @@
 [profiles]
   [[default]]
     background_image = None
+    copy_on_selection = True
+    cursor_blink = False
+    font = DejaVu Sans Mono 12
+    scroll_on_output = False
     scrollback_lines = 15000
     use_system_font = False
-    scroll_on_output = False
-    font = DejaVu Sans Mono 12
-    cursor_blink = False
 [layouts]
   [[default]]
     [[[child1]]]
