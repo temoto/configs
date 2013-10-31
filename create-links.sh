@@ -6,6 +6,7 @@ mkdir -p ~/bin
 mkdir -p ~/.config/terminator
 $link "$src/bash_profile" ~/.bash_profile
 $link "$src/bashrc" ~/.bashrc
+$link "$src/bin/git-pre-commit-autopep8" ~/bin/
 $link "$src/bin/install-pacaur" ~/bin/
 $link "$src/gitconfig" ~/.gitconfig
 $link "$src/gitignore" ~/.gitignore
