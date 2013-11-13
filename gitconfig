@@ -12,6 +12,8 @@
 	helper = cache --timeout=7200
 [diff]
 	renames = copies
+[grep]
+	lineNumber = true
 [gui]
 	commitmsgwidth = 85
 	fontui = -family arial -size 11 -weight bold -slant roman -underline 0 -overstrike 0
