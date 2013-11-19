@@ -4,8 +4,11 @@
 	[
 		"AutoPEP8",
 		"BracketHighlighter",
+		"Dockerfile Syntax Highlighting",
+		"Dotfiles Syntax Highlighting",
 		"Function Name Display",
 		"GoSublime",
+		"Indent XML",
 		"INI",
 		"LineEndings",
 		"Modific",
