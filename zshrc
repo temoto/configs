@@ -26,7 +26,7 @@ alias ']find-py'='find . -name \*.py -print0 |xargs -0 '
 alias ']find-pyc'='find . -name \*.pyc -print0 |xargs -0 '
 
 # git helpers
-alias ']b'='git branch'
+alias ']b'='git branch --verbose'
 alias ']ca'='git commit --all'
 alias ']camn'='git commit --all --amend --no-edit'
 alias ']ci'='git commit'
