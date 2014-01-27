@@ -17,6 +17,7 @@
 		"SFTP",
 		"sublime-github",
 		"SublimeAStyleFormatter",
-		"SublimeGit"
+		"SublimeGit",
+		"TOML"
 	]
 }

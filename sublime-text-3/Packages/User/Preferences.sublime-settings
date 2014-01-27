@@ -18,6 +18,9 @@
 		"*.jar",
 		"*.zip"
 	],
+	"caret_extra_bottom": 1,
+	"caret_extra_top": 1,
+	"caret_extra_width": 1,
 	"caret_style": "wide",
 	"color_scheme": "Packages/Color Scheme - Default/Solarized (Dark).tmTheme",
 	"file_exclude_patterns":
@@ -52,6 +55,8 @@
 		120
 	],
 	"save_on_focus_lost": true,
+	"show_encoding": true,
+	"show_line_endings": true,
 	"smart_indent": true,
 	"trim_trailing_white_space_on_save": true
 }
