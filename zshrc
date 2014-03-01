@@ -51,6 +51,9 @@ REPORTTIME=2
 
 setxkbmap us,ru ,winkeys grp:caps_toggle compose:ralt 2>/dev/null
 
+# disable bell
+xset -b 2>/dev/null
+
 
 # create a zkbd compatible hash;
 # to add other keys to this hash, see: man 5 terminfo
