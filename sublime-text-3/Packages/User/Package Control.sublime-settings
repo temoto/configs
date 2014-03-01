@@ -10,6 +10,7 @@
 		"GoSublime",
 		"Indent XML",
 		"INI",
+		"Javatar",
 		"LineEndings",
 		"Modific",
 		"nginx",
@@ -18,6 +19,7 @@
 		"sublime-github",
 		"SublimeAStyleFormatter",
 		"SublimeGit",
+		"SublimeLinter-javac",
 		"TOML"
 	]
 }

@@ -25,6 +25,7 @@
 	"color_scheme": "Packages/Color Scheme - Default/Solarized (Dark).tmTheme",
 	"file_exclude_patterns":
 	[
+		"*.class",
 		"*.o",
 		"*.pyc",
 		"*.pyo",
