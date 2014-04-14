@@ -1,12 +1,36 @@
-# Compiled source #
-###################
+# Auto generated files #
+########################
 *.a
-*.com
+*.backup
 *.class
+*.com
 *.dll
+*.egg
+*.egg-info
 *.exe
+*.kilepr
+*.mo
 *.o
+*.pyc
+*.pyo
 *.so
+*.sublime-project
+*.sublime-workspace
+*.swo
+*.swp
+*~
+.coverage
+.DS_Store?
+.eric4project
+.project
+.pydevproject
+.ropeproject
+build_log.txt
+ehthumbs.db
+Icon?
+pip-log.txt
+Thumbs.db
+
 
 # Packages #
 ############
@@ -23,30 +47,11 @@
 *.xz
 *.zip
 
+
 # Logs and databases #
 ######################
 *.log
 *.sqlite
-
-# OS generated files #
-######################
-.DS_Store?
-ehthumbs.db
-Icon?
-Thumbs.db
-
-
-# Editors, IDE #
-################
-*~
-*.swp
-*.swo
-*.kilepr
-.eric4project
-.pydevproject
-.project
-.ropeproject
-.sublime*
 
 
 # TODO managers #
@@ -57,21 +62,9 @@ Thumbs.db
 .todo.*
 
 
-# Python #
-##########
-*.egg
-*.egg-info
-*.pyc
-*.pyo
-.coverage
-pip-log.txt
-
-
 # Misc #
 ########
 *.aux
-*.backup
-*.mo
 *.pdf
 .gitignore
 .settings
