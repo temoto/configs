@@ -15,13 +15,10 @@ set nocompatible
 set viminfo+=h
 set ttyfast
 
-set tabstop=4 shiftwidth=4 softtabstop=4 autoindent smartindent
+set expandtab tabstop=4 shiftwidth=4 softtabstop=4 autoindent smartindent
 set backspace=indent,eol,start
 set history=2000
 set undolevels=200
-
-" i hate freaking space indentation, but most people use it :(
-set expandtab
 
 set ffs=unix,mac,dos
 set listchars=tab:>-,trail:-
@@ -33,12 +30,70 @@ set laststatus=2
 set statusline=%F%m%r%h%w\ [%{&ff},\ %Y]\ [0x\%02.2B]\ [%04l,%04v][%p%%/%L]
 set cmdheight=2
 
-set tags+=~/.vim/tags/python.ctags
-set tags+=~/.vim/tags/*.ctags
+" Begin excerpt from mswin.vim
+" backspace and cursor keys wrap to previous/next line
+set backspace=indent,eol,start whichwrap+=<,>,[,]
+" CTRL-X and SHIFT-Del are Cut
+vnoremap <C-X> "+x
+vnoremap <S-Del> "+x
+" CTRL-C and CTRL-Insert are Copy
+vnoremap <C-C> "+y
+vnoremap <C-Insert> "+y
+" CTRL-V and SHIFT-Insert are Paste
+map <C-V>		"+gP
+map <S-Insert>		"+gP
+cmap <C-V>		<C-R>+
+cmap <S-Insert>		<C-R>+
+" backspace in Visual mode deletes selection
+vnoremap <BS> d
+" CTRL-Z is Undo; not in cmdline though
+noremap <C-Z> u
+inoremap <C-Z> <C-O>u
+" CTRL-Y is Redo (although not repeat); not in cmdline though
+noremap <C-Y> <C-R>
+inoremap <C-Y> <C-O><C-R>
+" End excerpt from mswin.vim
 
-" good-mode
-set insertmode
-so ~/.vim/temoto-mswin.vim
+" Combination of mswin and vim selection behaviour
+set keymodel=startsel
+set selection=inclusive
+set selectmode=
+imap <S-Up> <C-o>V
+imap <S-Down> <C-o>V
+
+" <C-p> does neocomplcache completion
+inoremap <C-p> <C-x><C-u>
+
+" C-v in normal mode is for block-selection, not pasting clipboard
+unmap <C-v>
+" But in visual mode, C-v is for pasting clipboard.
+" Use C-q for block selection in visual.
+vmap <C-v> "+gP
+smap <C-v> "+gP
+
+" CTRL-X, Ctrl-c, Ctrl-v for insert mode operate on whole line
+imap <C-x> <C-o>"+dd
+inoremap <C-c> <C-o>"+yy
+imap <C-v> <C-o>"+gP
+
+" CTRL-A is Select all
+noremap <C-A> gggH<C-O>G
+inoremap <C-A> <C-O>gg<C-O>gH<C-O>G
+cnoremap <C-A> <C-C>gggH<C-O>G
+onoremap <C-A> <C-C>gggH<C-O>G
+snoremap <C-A> <C-C>gggH<C-O>G
+xnoremap <C-A> <C-C>ggVG
+
+" CTRL-Tab is Next window
+noremap <C-Tab> <C-W>w
+inoremap <C-Tab> <C-O><C-W>w
+cnoremap <C-Tab> <C-C><C-W>w
+onoremap <C-Tab> <C-C><C-W>w
+
+" Shift-Tab is previous window
+inoremap <S-Tab> <C-O><C-W>W
+cnoremap <S-Tab> <C-C><C-W>W
+onoremap <S-Tab> <C-C><C-W>W
 
 " reread config
 if has("gui_running")
@@ -70,15 +125,6 @@ nno <silent><F3> :NERDTreeToggle<CR>
 vno <silent><F3> :<C-w>NERDTreeToggle<CR>
 let g:NERDTreeSplitVertical = 1
 let g:NERDTreeIgnore = ['\.pyc', '\.hi', '\.o']
-
-" tag list
-ino <silent><F4> <C-o>:TlistToggle<CR>
-
-" comment/uncomment and move lower
-ino <M-;> <Home># <Down>
-ino ; <Home># <Down>
-ino <M-'> <Home><Del><Del><Down>
-ino ' <Home><Del><Del><Down>
 
 " erase word
 ino <C-BS> <C-w>
@@ -249,6 +295,7 @@ augroup END
 " python has 4 spaces instead of tabs
 augroup python
 	au!
+	au BufReadPre,FileReadPre,BufEnter,BufWinEnter *.py setlocal expandtab
 	au BufRead,BufEnter,BufWinEnter *.py setlocal makeprg=python\ -c\ \"import\ py_compile,sys;\ sys.stderr=sys.stdout;\ py_compile.compile(r'%')\"
 	au BufRead,BufEnter,BufWinEnter *.py setlocal efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
 	au BufEnter,BufWinEnter *.py ino <buffer><silent> <C-n> <C-r>=RopeCodeAssistInsertMode()<CR>
@@ -267,32 +314,10 @@ augroup vimrc
 	au BufEnter,BufWinEnter *vimrc setlocal noexpandtab
 augroup END
 
-" some particular projects use tabs
-augroup python_tabs
-	au!
-	au BufReadPre,FileReadPre,BufEnter,BufWinEnter */project/obuh/* setlocal noexpandtab
-	au BufReadPre,FileReadPre,BufEnter,BufWinEnter */project/vm-001/* setlocal noexpandtab
-	au BufReadPre,FileReadPre,BufEnter,BufWinEnter */project/qt-001/* setlocal noexpandtab
-	au BufReadPre,FileReadPre,BufEnter,BufWinEnter */project/qt-002/* setlocal noexpandtab
-	au BufReadPre,FileReadPre,BufEnter,BufWinEnter */project/edicore-001/* setlocal noexpandtab
-	au BufReadPre,FileReadPre,BufEnter,BufWinEnter */project/wedi/* setlocal noexpandtab
-	au BufReadPre,FileReadPre,BufEnter,BufWinEnter */project/corners-bot/* setlocal noexpandtab
-	au BufReadPre,FileReadPre,BufEnter,BufWinEnter */project/insomnia-server/* setlocal noexpandtab
-	au BufReadPre,FileReadPre,BufEnter,BufWinEnter */project/insomnia-client/* setlocal noexpandtab
-augroup END
-
 " markdown settings
 augroup mkd
 	au!
-	au BufRead,BufNewFile *.mkd  setlocal ai formatoptions=tcroqn2 comments=n:>
-augroup END
-
-" Jinja2
-augroup Jinja2
-	au!
-	au BufRead,BufNewFile */project/py-avia/**/*.html setlocal ft=htmljinja
-	au BufRead,BufNewFile */project/py-rambler-blog/**/*.html setlocal ft=htmljinja
-	au BufRead,BufNewFile */project/pravo-rulya/**/*.html setlocal ft=htmljinja
+	au BufRead,BufNewFile *.mkd setlocal ai formatoptions=tcroqn2 comments=n:>
 augroup END
 
 " read-only windows trigger insert-mode off
