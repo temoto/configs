@@ -15,11 +15,15 @@
 		"Modific",
 		"nginx",
 		"Package Control",
+		"Python Create Package",
+		"Python Imports Sorter",
 		"SFTP",
+		"SSH Config",
 		"sublime-github",
 		"SublimeAStyleFormatter",
 		"SublimeGit",
 		"SublimeLinter-javac",
+		"SublimePythonIDE",
 		"TOML"
 	]
 }
