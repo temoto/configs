@@ -196,3 +196,8 @@ alias 'gae-upload-all'='( git checkout stable && gae-upload ) ; ( git checkout m
 
 # toys
 alias sho='export PS1="" ; tput bold ; tput setaf 1 ; echo -e "\n\n\n\n\n\n\n\n\n\n\n    Шо?\n\n\n\n\n\n\n\n\n\n\n" ; tput sgr0'
+
+# Update PATH for the Google Cloud SDK.
+source $HOME/google-cloud-sdk/path.bash.inc
+# Enable bash completion for gcloud.
+source $HOME/google-cloud-sdk/completion.bash.inc
