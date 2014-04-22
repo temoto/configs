@@ -25,6 +25,7 @@
 .project
 .pydevproject
 .ropeproject
+__pycache__
 build_log.txt
 ehthumbs.db
 Icon?

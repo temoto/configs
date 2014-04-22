@@ -16,8 +16,8 @@
 	lineNumber = true
 [gui]
 	commitmsgwidth = 85
-	fontui = -family arial -size 11 -weight bold -slant roman -underline 0 -overstrike 0
-	fontdiff = -family fixed -size 11 -weight normal -slant roman -underline 0 -overstrike 0
+	fontui = -family \"DejaVu Sans\" -size 11 -weight bold -slant roman -underline 0 -overstrike 0
+	fontdiff = -family \"DejaVu Sans Mono\" -size 11 -weight normal -slant roman -underline 0 -overstrike 0
 [merge]
 	tool = meld
 	summary = true
@@ -25,3 +25,6 @@
 	default = current
 [svn]
 	rmdir = true
+[hub]
+	http-clone = true
+	protocol = https
