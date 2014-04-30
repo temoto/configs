@@ -1,0 +1,3 @@
+{
+    "env": { "GOPATH": "$GS_GOPATH:$HOME" }
+}
