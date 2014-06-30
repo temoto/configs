@@ -1,0 +1,9 @@
+directory = /home/temoto/Downloads/
+session = /home/temoto/.session/
+
+schedule = low_diskspace,5,60,close_low_diskspace=100M
+encryption = allow_incoming,try_outgoing,enable_retry
+
+dht = auto
+dht_port = 6881
+peer_exchange = yes

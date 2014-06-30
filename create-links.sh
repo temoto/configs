@@ -13,6 +13,7 @@ $link "$src/gitignore" ~/.gitignore
 $link "$src/gvimrc" ~/.gvimrc
 $link "$src/hgrc" ~/.hgrc
 $link "$src/inputrc" ~/.inputrc
+$link "$src/rtorrent.rc" ~/.rtorrent.rc
 $link "$src/sublime-text-2" ~/.config/sublime-text-2
 $link "$src/sublime-text-3" ~/.config/sublime-text-3
 $link "$src/terminator" ~/.config/terminator/config
