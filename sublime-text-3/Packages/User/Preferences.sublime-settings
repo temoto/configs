@@ -57,6 +57,7 @@
 		120
 	],
 	"save_on_focus_lost": true,
+	"scroll_speed": 1000,
 	"show_encoding": true,
 	"show_line_endings": true,
 	"smart_indent": true,

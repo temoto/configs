@@ -69,3 +69,5 @@ Thumbs.db
 *.pdf
 .gitignore
 .settings
+.tox/
+venv*/
