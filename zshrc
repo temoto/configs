@@ -54,6 +54,9 @@ REPORTTIME=2
 
 setxkbmap us,ru ,winkeys grp:caps_toggle compose:ralt 2>/dev/null
 
+# keyboard repeat rate
+xset r rate 300 30 2>/dev/null
+
 # disable bell
 xset -b 2>/dev/null
 
