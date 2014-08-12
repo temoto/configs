@@ -22,7 +22,7 @@
 	"caret_extra_top": 1,
 	"caret_extra_width": 1,
 	"caret_style": "wide",
-	"color_scheme": "Packages/Color Scheme - Default/Solarized (Dark).tmTheme",
+	"color_scheme": "Packages/User/Solarized (Dark) DL.tmTheme",
 	"file_exclude_patterns":
 	[
 		"*.class",
