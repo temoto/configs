@@ -39,7 +39,9 @@ alias ']fap'='git fetch --all --prune'
 alias ']fpp'='git fetch --all --prune && git pull'
 alias ']from'='git fetch && git rebase origin/master'
 alias ']l'='git log --cherry --decorate=short --stat'
+alias ']la'='git log --all --cherry --decorate=short --stat'
 alias ']lp'='git log --cherry --decorate=short --patch'
+alias ']lpa'='git log --all --cherry --decorate=short --patch'
 alias ']mf'='git merge --ff-only'
 alias ']pd'='( current_branch=`git symbolic-ref --short HEAD` && git push origin :$current_branch )'
 alias ']s'='git stash'
@@ -55,7 +57,7 @@ REPORTTIME=2
 setxkbmap us,ru ,winkeys grp:caps_toggle compose:ralt 2>/dev/null
 
 # keyboard repeat rate
-xset r rate 300 30 2>/dev/null
+xset r rate 300 34 2>/dev/null
 
 # disable bell
 xset -b 2>/dev/null
