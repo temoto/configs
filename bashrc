@@ -16,7 +16,6 @@ path_prepend() {
 path_prepend /bin /sbin /usr/bin /usr/sbin /usr/local/bin /usr/local/sbin "$HOME/.cabal/bin" "$HOME/bin"
 export PATH
 export LANG=en_US.UTF-8
-export LC_TIME=en_DK.UTF-8
 
 [[ -f /etc/bash_completion ]] && source /etc/bash_completion
 
