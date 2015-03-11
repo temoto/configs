@@ -1,5 +1,5 @@
 #!/bin/sh
-link="ln --force --no-dereference --symbolic"
+link="ln -fns"
 src=`python -c "import os, sys; print(os.path.dirname(os.path.abspath(os.path.relpath(sys.argv[1]))))" $0`
 
 mkdir -p ~/bin
