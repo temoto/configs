@@ -33,17 +33,6 @@ set cmdheight=2
 " Begin excerpt from mswin.vim
 " backspace and cursor keys wrap to previous/next line
 set backspace=indent,eol,start whichwrap+=<,>,[,]
-" CTRL-X and SHIFT-Del are Cut
-vnoremap <C-X> "+x
-vnoremap <S-Del> "+x
-" CTRL-C and CTRL-Insert are Copy
-vnoremap <C-C> "+y
-vnoremap <C-Insert> "+y
-" CTRL-V and SHIFT-Insert are Paste
-map <C-V>		"+gP
-map <S-Insert>		"+gP
-cmap <C-V>		<C-R>+
-cmap <S-Insert>		<C-R>+
 " backspace in Visual mode deletes selection
 vnoremap <BS> d
 " CTRL-Z is Undo; not in cmdline though
@@ -54,35 +43,8 @@ noremap <C-Y> <C-R>
 inoremap <C-Y> <C-O><C-R>
 " End excerpt from mswin.vim
 
-" Combination of mswin and vim selection behaviour
-set keymodel=startsel
-set selection=inclusive
-set selectmode=
-imap <S-Up> <C-o>V
-imap <S-Down> <C-o>V
-
 " <C-p> does neocomplcache completion
 inoremap <C-p> <C-x><C-u>
-
-" C-v in normal mode is for block-selection, not pasting clipboard
-unmap <C-v>
-" But in visual mode, C-v is for pasting clipboard.
-" Use C-q for block selection in visual.
-vmap <C-v> "+gP
-smap <C-v> "+gP
-
-" CTRL-X, Ctrl-c, Ctrl-v for insert mode operate on whole line
-imap <C-x> <C-o>"+dd
-inoremap <C-c> <C-o>"+yy
-imap <C-v> <C-o>"+gP
-
-" CTRL-A is Select all
-noremap <C-A> gggH<C-O>G
-inoremap <C-A> <C-O>gg<C-O>gH<C-O>G
-cnoremap <C-A> <C-C>gggH<C-O>G
-onoremap <C-A> <C-C>gggH<C-O>G
-snoremap <C-A> <C-C>gggH<C-O>G
-xnoremap <C-A> <C-C>ggVG
 
 " CTRL-Tab is Next window
 noremap <C-Tab> <C-W>w
@@ -318,23 +280,4 @@ augroup END
 augroup mkd
 	au!
 	au BufRead,BufNewFile *.mkd setlocal ai formatoptions=tcroqn2 comments=n:>
-augroup END
-
-" read-only windows trigger insert-mode off
-augroup read_only
-	au!
-	au BufEnter,BufWinEnter * if &readonly || !&modifiable | set noinsertmode | else | set insertmode | endif
-augroup END
-
-" NERDTree is in normal mode, nodes are opened with <CR>
-augroup NERDTree_Customized
-	au!
-	au BufEnter *NERD_tree* nmap <buffer> <CR> o
-	au BufEnter,BufWinEnter *NERD_tree* set noinsertmode
-augroup END
-
-" Project plugin is in normal mode
-augroup Project_Customized
-	au!
-	au BufEnter,BufWinEnter *.vimprojects setlocal noinsertmode
 augroup END
