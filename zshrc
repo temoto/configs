@@ -21,6 +21,7 @@ alias la='ls -la --color=auto'
 alias lh='ls -lh --color=auto'
 alias ll='ls -l --color=auto'
 alias p='/usr/bin/env python $(which ipython)'
+alias generate_passwords='base64 -d20 /dev/random |grep -Ev "[+/]" |head -n7'
 
 alias ']find-py'='find . -name \*.py -print0 |xargs -0 '
 alias ']find-pyc'='find . -name \*.pyc -print0 |xargs -0 '
