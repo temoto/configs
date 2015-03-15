@@ -17,11 +17,14 @@ fi
 
 
 # aliases
-alias 'cd!'=mkdircd
-alias la='ls -lAF --color=auto'
-alias ll='ls -lhF --color=auto'
+if ls --color=auto -d . >/dev/null 2>/dev/null ; then
+    alias ls='ls --color=auto'
+fi
+alias la='ls -la'
+alias lh='ls -lh'
+alias ll='ls -l'
 alias p='/usr/bin/env python $(which ipython)'
-alias generate_passwords='base64 -d20 /dev/random |grep -Ev "[+/]" |head -n7'
+alias generate_passwords='base64 -b20 /dev/random |grep -Ev "[+/]" |head -n7'
 
 alias 'find-py'='find . -name \*.py -print0 |xargs -0 '
 alias 'find-pyc'='find . -name \*.pyc -print0 |xargs -0 '
