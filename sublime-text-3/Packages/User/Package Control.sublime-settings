@@ -1,13 +1,16 @@
 {
 	"auto_upgrade_last_run": null,
+	"in_process_packages":
+	[
+	],
 	"installed_packages":
 	[
 		"AutoPEP8",
 		"Better CoffeeScript",
 		"BracketHighlighter",
-		"Dart",
 		"Dockerfile Syntax Highlighting",
 		"Dotfiles Syntax Highlighting",
+		"FileSystem Autocompletion",
 		"Function Name Display",
 		"GoSublime",
 		"Indent XML",
@@ -17,6 +20,7 @@
 		"Modific",
 		"nginx",
 		"Package Control",
+		"phpfmt",
 		"Preset Command",
 		"Python Create Package",
 		"Python Imports Sorter",

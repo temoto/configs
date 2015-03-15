@@ -17,40 +17,40 @@ fi
 
 
 # aliases
-alias la='ls -la --color=auto'
-alias lh='ls -lh --color=auto'
-alias ll='ls -l --color=auto'
+alias 'cd!'=mkdircd
+alias la='ls -lAF --color=auto'
+alias ll='ls -lhF --color=auto'
 alias p='/usr/bin/env python $(which ipython)'
 alias generate_passwords='base64 -d20 /dev/random |grep -Ev "[+/]" |head -n7'
 
-alias ']find-py'='find . -name \*.py -print0 |xargs -0 '
-alias ']find-pyc'='find . -name \*.pyc -print0 |xargs -0 '
+alias 'find-py'='find . -name \*.py -print0 |xargs -0 '
+alias 'find-pyc'='find . -name \*.pyc -print0 |xargs -0 '
 
 # git helpers
-alias ']b'='git branch --verbose'
-alias ']ba'='git branch --all --list --verbose'
-alias ']ca'='git commit --all'
-alias ']camn'='git commit --all --amend --no-edit'
-alias ']ci'='git commit'
-alias ']co'='git checkout'
-alias ']com'='git checkout master'
-alias ']d'='git diff --find-copies-harder -B -C --color-words --word-diff-regex="\\w+|[^[:space:]]"'
-alias ']dc'='git diff --find-copies-harder -B -C --color-words --cached --word-diff-regex="\\w+|[^[:space:]]"'
-alias ']fap'='git fetch --all --prune'
-alias ']fpp'='git fetch --all --prune && git pull'
-alias ']from'='git fetch && git rebase origin/master'
-alias ']l'='git log --cherry --decorate=short --stat'
-alias ']la'='git log --all --cherry --decorate=short --stat'
-alias ']lp'='git log --cherry --decorate=short --patch'
-alias ']lpa'='git log --all --cherry --decorate=short --patch'
-alias ']mf'='git merge --ff-only'
-alias ']pd'='( current_branch=`git symbolic-ref --short HEAD` && git push origin :$current_branch )'
-alias ']s'='git stash'
-alias ']sa'='git stash apply'
-alias ']sd'='git stash drop'
-alias ']sp'='git stash pop'
-alias ']st'='git status'
-alias ']t'='git tag'
+alias 'gb'='git branch --verbose'
+alias 'gba'='git branch --all --list --verbose'
+alias 'gca'='git commit --all'
+alias 'gcamn'='git commit --all --amend --no-edit'
+alias 'gci'='git commit'
+alias 'gco'='git checkout'
+alias 'gcom'='git checkout master'
+alias 'gd'='git diff --find-copies-harder -B -C --color-words --word-diff-regex="\\w+|[^[:space:]]"'
+alias 'gdc'='git diff --find-copies-harder -B -C --color-words --cached --word-diff-regex="\\w+|[^[:space:]]"'
+alias 'gfap'='git fetch --all --prune'
+alias 'gfpp'='git fetch --all --prune && git pull'
+alias 'gfrom'='git fetch && git rebase origin/master'
+alias 'gl'='git log --cherry --decorate=short --stat'
+alias 'gla'='git log --all --cherry --decorate=short --stat'
+alias 'glp'='git log --cherry --decorate=short --patch'
+alias 'glpa'='git log --all --cherry --decorate=short --patch'
+alias 'gmf'='git merge --ff-only'
+alias 'gpd'=git_push_delete
+alias 'gs'='git stash'
+alias 'gsa'='git stash apply'
+alias 'gsd'='git stash drop'
+alias 'gsp'='git stash pop'
+alias 'gst'='git status'
+alias 'gt'='git tag'
 
 
 REPORTTIME=2
@@ -62,6 +62,14 @@ xset r rate 300 34 2>/dev/null
 
 # disable bell
 xset -b 2>/dev/null
+
+function mkdircd() {
+    mkdir -p "$1" && cd "$1"
+}
+
+function git_push_delete() {
+    git push --delete origin ${1-$(git symbolic-ref --short HEAD)}
+}
 
 
 # create a zkbd compatible hash;

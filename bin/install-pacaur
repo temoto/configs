@@ -4,6 +4,7 @@ mkdir -p $HOME/aur
 cd $HOME/aur
 
 (
+    rm -rf ./cower
     curl -L 'https://aur.archlinux.org/packages/co/cower/cower.tar.gz' |tar xzf -
     cd cower
     makepkg -s
@@ -11,6 +12,7 @@ cd $HOME/aur
 )
 
 (
+    rm -rf ./pacaur
     curl -L 'https://aur.archlinux.org/packages/pa/pacaur/pacaur.tar.gz' |tar xzf -
     cd pacaur
     makepkg -s
