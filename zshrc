@@ -66,6 +66,8 @@ xset r rate 300 34 2>/dev/null
 # disable bell
 xset -b 2>/dev/null
 
+if which pyenv >/dev/null; then eval "$(pyenv init -)"; fi
+
 function mkdircd() {
     mkdir -p "$1" && cd "$1"
 }
