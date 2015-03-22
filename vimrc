@@ -6,11 +6,7 @@ filetype plugin on
 filetype indent on
 
 set mouse=a
-
 set background=dark
-let g:solarized_italic = 0
-colors solarized
-
 set nocompatible
 set viminfo+=h
 set ttyfast
