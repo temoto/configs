@@ -1,7 +1,4 @@
-sublime-text-2/Backup/
-sublime-text-2/Installed Packages/
-sublime-text-2/Packages/
-sublime-text-2/Pristine Packages/
+.DS_Store
 sublime-text-3/Backup/
 sublime-text-3/Cache/
 sublime-text-3/Index/
