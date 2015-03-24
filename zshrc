@@ -23,7 +23,8 @@ fi
 alias la='ls -la'
 alias lh='ls -lh'
 alias ll='ls -l'
-alias p='/usr/bin/env python $(which ipython)'
+alias p2='/usr/bin/env python2 $(which ipython)'
+alias p3='/usr/bin/env python3 $(which ipython)'
 alias generate_passwords='base64 -b20 /dev/random |grep -Ev "[+/]" |head -n7'
 
 alias 'find-py'='find . -name \*.py -print0 |xargs -0 '
