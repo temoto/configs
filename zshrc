@@ -48,6 +48,7 @@ alias 'gla'='git log --all --cherry --decorate=short --stat'
 alias 'glp'='git log --cherry --decorate=short --patch'
 alias 'glpa'='git log --all --cherry --decorate=short --patch'
 alias 'gmf'='git merge --ff-only'
+alias 'gmfd'=git_merge_delete
 alias 'gpd'=git_push_delete
 alias 'gs'='git stash'
 alias 'gsa'='git stash apply'
@@ -74,7 +75,19 @@ function mkdircd() {
 }
 
 function git_push_delete() {
-    git push --delete origin ${1-$(git symbolic-ref --short HEAD)}
+    local branch="${1-$(git symbolic-ref --short HEAD)}"
+    git push --delete origin $branch
+}
+
+function git_rebase_merge() {
+    local branch="${1-$(git symbolic-ref --short HEAD)}"
+    git rebase master && git checkout master && git merge --ff-only --stat $branch
+    git branch --list --verbose master $branch
+}
+
+function git_merge_delete() {
+    local branch="${1-$(git symbolic-ref --short HEAD)}"
+    git checkout master && git merge --ff-only $branch && git branch -d $branch && git push --delete origin $branch
 }
 
 
