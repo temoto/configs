@@ -118,85 +118,47 @@ fi
 alias grep='grep --color=auto'
 alias ls='ls ${ls_color_flag}'
 alias _m='less'
-alias _l='ls -lh ${ls_color_flag}'
-alias l=_l
+alias ls='ls -l ${ls_color_flag}'
+alias la='ls -a'
+alias lh='ls -h'
+alias ll=ls
 alias p='/usr/bin/env python $(which ipython)'
 alias py='/usr/bin/env python'
 alias la='_l -a'
 alias cal='cal -h3'
-alias eix='apt-cache search'
-alias appt='apt-cache show'
 # Use time program, it reports more information than builtin command.
 if which time >/dev/null 2>&1; then
     alias time=$(which time)
 fi
 
-# ls or less depending on type
-m()
-{
-    if [ $# = 0 ] || [ -d "$1" ]; then
-        _l "$@"
-    else
-        _m "$@"
-    fi
-}
-
-# execute command in other dir
-function in_ {
-    local ret
-    pushd "$1" > /dev/null || return 255
-    shift
-    "$@"; ret=$?
-    popd > /dev/null
-    return $ret
-}
-function in_s() ( cd "$1"; shift; "$@" )
-alias ']i'=in_
-alias ']i_'=in_s
-
-alias ']find-py'='find . -name \*.py | xargs '
-alias ']find-pyc'='find . -name \*.pyc | xargs '
-alias ']py-wc-l'=']find-py cat | wc -l'
-
-# subversion helpers
-alias 'svn-list-filter'='grep -vE "\.(swp|swo|pyc)$"'
-alias ']di'='svn diff | colordiff | less -R'
-alias ']st'='svn st | svn-list-filter'
-alias ']st?'='svn st | grep -E "^\?" | svn-list-filter'
+alias 'find-py'='find . -name \*.py | xargs '
+alias 'find-pyc'='find . -name \*.pyc | xargs '
 
 # git helpers
-alias ']b'='git branch'
-alias ']ca'='git commit -a'
-alias ']ci'='git commit'
-alias ']co'='git checkout'
-alias ']com'='git checkout master'
-alias ']ci'='git commit'
-alias ']ca'='git commit -a'
-alias ']d'='git diff --find-copies-harder -B -C --color-words --word-diff-regex="\\w+|[^[:space:]]"'
-alias ']dc'='git diff --find-copies-harder -B -C --color-words --cached --word-diff-regex="\\w+|[^[:space:]]"'
-alias ']dms'='git daemon --detach --base-path=/home/temoto/project --export-all'
-alias ']l'='git log --stat'
-alias ']st'='git status'
-alias ']s'='git stash'
-alias ']sa'='git stash apply'
-alias ']sd'='git stash drop'
-alias ']sp'='git stash pop'
-alias ']t'='git tag'
+alias 'gb'='git branch'
+alias 'gca'='git commit -a'
+alias 'gci'='git commit'
+alias 'gco'='git checkout'
+alias 'gcom'='git checkout master'
+alias 'gci'='git commit'
+alias 'gca'='git commit -a'
+alias 'gd'='git diff --find-copies-harder -B -C --color-words --word-diff-regex="\\w+|[^[:space:]]"'
+alias 'gdc'='git diff --find-copies-harder -B -C --color-words --cached --word-diff-regex="\\w+|[^[:space:]]"'
+alias 'gdms'='git daemon --detach --base-path=/home/temoto/project --export-all'
+alias 'gl'='git log --stat'
+alias 'gst'='git status'
+alias 'gs'='git stash'
+alias 'gsa'='git stash apply'
+alias 'gsd'='git stash drop'
+alias 'gsp'='git stash pop'
+alias 'gt'='git tag'
 if declare -f __git_complete >/dev/null; then
-    __git_complete ]b _git_branch
-    __git_complete ]co _git_checkout
-    __git_complete ]d _git_diff
-    __git_complete ]l _git_log
+    __git_complete gb _git_branch
+    __git_complete gco _git_checkout
+    __git_complete gd _git_diff
+    __git_complete gl _git_log
 fi
 
-# google appengine helpers
-alias 'gae-upload'='PYTHONPATH=~/python2.7/bin/python2.7 ~/google_appengine/appcfg.py -q update .'
-alias 'gae-upload-all'='( git checkout stable && gae-upload ) ; ( git checkout master && gae-upload )'
-
-# toys
-alias sho='export PS1="" ; tput bold ; tput setaf 1 ; echo -e "\n\n\n\n\n\n\n\n\n\n\n    Шо?\n\n\n\n\n\n\n\n\n\n\n" ; tput sgr0'
-
-# Update PATH for the Google Cloud SDK.
-source $HOME/google-cloud-sdk/path.bash.inc
-# Enable bash completion for gcloud.
-source $HOME/google-cloud-sdk/completion.bash.inc
+for f in $HOME/google-cloud-sdk/*.bash.inc; do
+    source "$f"
+done

@@ -1,6 +1,8 @@
 " Author: Sergey Shepelev <temotor@gmail.com>
 
-syntax on
+if has("syntax")
+	syntax on
+endif
 filetype on
 filetype plugin on
 filetype indent on
@@ -52,15 +54,6 @@ onoremap <C-Tab> <C-C><C-W>w
 inoremap <S-Tab> <C-O><C-W>W
 cnoremap <S-Tab> <C-C><C-W>W
 onoremap <S-Tab> <C-C><C-W>W
-
-" reread config
-if has("gui_running")
-	ino <M-r> <C-o>:so ~/.vimrc<CR><C-o>:so ~/.gvimrc<CR>
-	nno <M-r> :so ~/.vimrc<CR>:so ~/.gvimrc<CR>
-else
-	ino <M-r> <C-o>:so ~/.vimrc<CR>
-	nno <M-r> :so ~/.vimrc<CR>
-endif
 
 " open/save/exit
 ino <C-e> <C-o>:e!<Space>
@@ -136,26 +129,6 @@ ino <M-C-Right> <C-o><C-i>
 nno <M-C-Right> <C-i>
 ino <C-Space> <C-x><C-o>
 
-" quickfix
-ino <F11> <C-o>:cnext<CR>
-nno <F11> :cnext<CR>
-ino <S-F11> <C-o>:cprevious<CR>
-nno <S-F11> :cprevious<CR>
-ino <silent><C-F11> <C-o>:cclose<CR>
-nno <silent><C-F11> :cclose<CR>
-
-" not yet smart Tab indentation cycle
-function! InsertTabWrapper()
-	"let col = col('.') - 1
-	"if !col || getline('.')[col - 1] !~ '\k'
-	"	return "\<Tab>"
-	"else
-	"	return "\<C-p>"
-	"endif
-	return "\<C-t>"
-endfunction
-ino <silent><Tab> <C-r>=InsertTabWrapper()<CR>
-
 " diff
 com! DiffOrig diffoff! | vert new | set bt=nofile | r # | 0d_ | diffthis | wincmd p | diffthis
 
@@ -192,64 +165,6 @@ let g:ftplugin_sql_omni_key_left = 'stub'
 let g:ftplugin_sql_omni_key_right = 'stub'
 
 
-python << ENDCODE
-import vim
-def EvaluateCurrentRange():
-	try:
-		eval(compile('\n'.join(vim.current.range), '', 'exec'), globals())
-	except:
-		raise
-	else:
-		print("OK")
-ENDCODE
-
-function! <SID>PythonGrep(tool)
-	set lazyredraw
-	" Close any existing cwindows.
-	cclose
-	let l:grepformat_save = &grepformat
-	let l:grepprogram_save = &grepprg
-	set grepformat&vim
-	set grepformat&vim
-	let &grepformat = '%f:%l:%m'
-	if a:tool == "pylint-errors"
-		let &grepprg = 'python `which pylint` --errors-only'
-	elseif a:tool == "pylint-warnings"
-		let &grepprg = 'python `which pylint` --disable=E,C --disable=W0142'
-	elseif a:tool == "pylint-other"
-		let &grepprg = 'python `which pylint` --disable=E,W'
-	elseif a:tool == "pychecker"
-		let &grepprg = 'python `which pychecker` --quiet -q'
-	else
-		echohl WarningMsg
-		echo "PythonGrep Error: Unknown Tool"
-		echohl none
-	endif
-	if &readonly == 0 | update | endif
-	silent! grep! %
-	let &grepformat = l:grepformat_save
-	let &grepprg = l:grepprogram_save
-	" Open cwindow
-	execute 'belowright copen'
-	set nolazyredraw
-	redraw!
-endfunction
-
-ino <M-1> <C-o>:call <SID>PythonGrep('pylint-errors')<CR>
-nno <M-1> :call <SID>PythonGrep('pylint-errors')<CR>
-ino <M-2> <C-o>:call <SID>PythonGrep('pylint-warnings')<CR>
-nno <M-2> :call <SID>PythonGrep('pylint-warnings')<CR>
-ino <M-3> <C-o>:call <SID>PythonGrep('pylint-other')<CR>
-nno <M-3> :call <SID>PythonGrep('pylint-other')<CR>
-ino <M-9> <C-o>:call <SID>PythonGrep('pychecker')<CR>
-nno <M-9> :call <SID>PythonGrep('pychecker')<CR>
-
-" Go uses tabs
-augroup go
-	au!
-	au BufReadPre,FileReadPre,BufEnter,BufWinEnter *.go setlocal noexpandtab
-augroup END
-
 " python has 4 spaces instead of tabs
 augroup python
 	au!
@@ -270,10 +185,4 @@ augroup END
 augroup vimrc
 	au!
 	au BufEnter,BufWinEnter *vimrc setlocal noexpandtab
-augroup END
-
-" markdown settings
-augroup mkd
-	au!
-	au BufRead,BufNewFile *.mkd setlocal ai formatoptions=tcroqn2 comments=n:>
 augroup END
