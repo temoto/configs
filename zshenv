@@ -2,6 +2,7 @@ export CDPATH=$HOME/dev
 export CLICOLOR=1
 export EDITOR=vim
 export LANG=en_US.UTF-8
+export LC_ALL=en_US.UTF-8
 export PATH=$PATH:$HOME/bin:$HOME/google-cloud-sdk/bin
 
 # Add custom completions

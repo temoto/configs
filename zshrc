@@ -25,7 +25,7 @@ alias lh='ls -lh'
 alias ll='ls -l'
 alias p2='/usr/bin/env python2 $(which ipython)'
 alias p3='/usr/bin/env python3 $(which ipython)'
-alias generate_passwords='base64 -b20 /dev/random |grep -Ev "[+/]" |head -n7'
+alias generate_passwords='base64 /dev/urandom |fold -w20 |grep -Ev "[+/]" |head -n7'
 
 alias 'find-py'='find . -name \*.py -print0 |xargs -0 '
 alias 'find-pyc'='find . -name \*.pyc -print0 |xargs -0 '
