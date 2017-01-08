@@ -20,7 +20,7 @@
 *.swp
 *~
 .coverage
-.DS_Store?
+.DS_Store
 .eric4project
 .project
 .pydevproject
@@ -67,7 +67,6 @@ Thumbs.db
 ########
 *.aux
 *.pdf
-.gitignore
 .settings
 .tox/
 venv*/

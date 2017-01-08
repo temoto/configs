@@ -6,7 +6,7 @@
 [color "diff"]
 	whitespace = yellow reverse
 [core]
-	excludesfile = /home/temoto/.gitignore
+	excludesfile = ~/.gitignore
 	whitespace = trailing-space,space-before-tab
 [credential]
 	helper = cache --timeout=7200

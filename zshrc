@@ -15,6 +15,11 @@ else
     umask 022
 fi
 
+# completion
+autoload -U +X compinit && compinit || print 'Notice: no compinit available :(' >&2
+autoload -U +X bashcompinit && bashcompinit
+autoload _git && _git >/dev/null 2>&1
+setopt no_complete_aliases
 
 # aliases
 if ls --color=auto -d . >/dev/null 2>/dev/null ; then
@@ -73,23 +78,27 @@ if which pyenv >/dev/null; then eval "$(pyenv init -)"; fi
 function mkdircd() {
     mkdir -p "$1" && cd "$1"
 }
+compdef _cd mkdircd
 
 function git_push_delete() {
     local branch="${1-$(git symbolic-ref --short HEAD)}"
     git push --delete origin $branch
 }
+compdef _git-branch git_push_delete
 
 function git_rebase_merge() {
     local branch="${1-$(git symbolic-ref --short HEAD)}"
     git rebase master && git checkout master && git merge --ff-only --stat $branch
     git branch --list --verbose master $branch
 }
+compdef _git-branch git_rebase_merge
 
 function git_merge_delete() {
     local branch="${1-$(git symbolic-ref --short HEAD)}"
     git checkout master && git merge --ff-only $branch && git branch -d $branch && git push --delete origin $branch
 }
-
+compdef _git-branch git_merge_delete
+compdef _git-branch gmfd
 
 # create a zkbd compatible hash;
 # to add other keys to this hash, see: man 5 terminfo
@@ -141,6 +150,19 @@ bindkey ';5C' forward-word
 function virtualenv_info {
     [ -n "$VIRTUAL_ENV" ] && echo `basename $VIRTUAL_ENV`
 }
+
+
+# Begin apex
+# http://apex.run wrapper for AWS Lambda
+_apex()  {
+  COMPREPLY=()
+  local cur="${COMP_WORDS[COMP_CWORD]}"
+  local opts="$(apex autocomplete -- ${COMP_WORDS[@]:1})"
+  COMPREPLY=( $(compgen -W "${opts}" -- ${cur}) )
+  return 0
+}
+complete -F _apex apex
+# End apex
 
 
 # Begin copied from grml
@@ -294,14 +316,6 @@ if is4 ; then
     zmodload -a  zsh/stat    zstat
     zmodload -a  zsh/zpty    zpty
     zmodload -ap zsh/mapfile mapfile
-fi
-
-# completion system
-if zrcautoload compinit ; then
-    compinit || print 'Notice: no compinit available :('
-else
-    print 'Notice: no compinit available :('
-    function compdef { }
 fi
 
 # completion system
@@ -1093,7 +1107,6 @@ function grml_reset_screen_title () {
             dir="${(%):-"%~"}"
             dir=${dir/*bitbucket.org\//}
             dir=${dir/*github.com\//}
-            dir=${dir/*ostrovok.ru\//}
             title="$host $dir $(virtualenv_info)"
             set_title "$title"
             ;;
@@ -1134,7 +1147,6 @@ function grml_control_xterm_title () {
             dir="${(%):-"%~"}"
             dir=${dir/*bitbucket.org\//}
             dir=${dir/*github.com\//}
-            dir=${dir/*ostrovok.ru\//}
             cmd="$1"
             title="$host $dir $cmd"
             set_title "$title"

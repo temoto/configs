@@ -13,7 +13,6 @@
 	{ "keys": ["ctrl+shift+w"], "command": "toggle_setting", "args": {"setting": "word_wrap"} },
 
 	{ "keys": ["alt+backspace"], "command": "delete_word", "args": { "forward": true } },
-	{ "keys": ["alt+ctrl+shift+1"], "command": "build", "args": {"now": "what?"} },
 	{ "keys": ["alt+f"], "command": "reindent"},
 
 	{ "keys": ["alt+pageup"], "command": "navigation_history_forward" },

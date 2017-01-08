@@ -1,10 +1,12 @@
 {
 	"auto_upgrade_last_run": null,
+	"bootstrapped": true,
 	"in_process_packages":
 	[
 	],
 	"installed_packages":
 	[
+		"ApplySyntax",
 		"AutoPEP8",
 		"Better CoffeeScript",
 		"BracketHighlighter",
@@ -16,12 +18,12 @@
 		"Indent XML",
 		"INI",
 		"Jinja2",
-		"LineEndings",
 		"Modific",
 		"nginx",
 		"Package Control",
 		"phpfmt",
 		"Preset Command",
+		"Pug",
 		"Python Create Package",
 		"Python Imports Sorter",
 		"SFTP",
