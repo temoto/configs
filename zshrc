@@ -61,6 +61,7 @@ alias 'gsd'='git stash drop'
 alias 'gsp'='git stash pop'
 alias 'gst'='git status'
 alias 'gt'='git tag'
+alias 'ghclone'=github_clone
 
 
 REPORTTIME=2
@@ -99,6 +100,17 @@ function git_merge_delete() {
 }
 compdef _git-branch git_merge_delete
 compdef _git-branch gmfd
+
+function github_clone() {
+    local repo=${1?"usage github_clone user/repo"}
+    local suffix="github.com/$repo"
+    local url="https://$suffix"
+    local target="$HOME/dev/$suffix"
+    local rc=0
+    git clone "$url" "$target" || rc=$?
+    cd "$target"
+    return $rc
+}
 
 # create a zkbd compatible hash;
 # to add other keys to this hash, see: man 5 terminfo
