@@ -157,8 +157,6 @@ let g:proj_window_width = 48
 " =========================
 
 let python_highlight_all = 1
-let ropevim_vim_completion = 1
-let ropevim_autoimport_underlineds = 1
 " Don't let sql completion ruin your insert-mode experience.
 " Annoying completions on Left/Right keys. Impossible to move cursor!
 let g:ftplugin_sql_omni_key_left = 'stub'
