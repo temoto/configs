@@ -159,6 +159,8 @@ if declare -f __git_complete >/dev/null; then
     __git_complete gl _git_log
 fi
 
-for f in $HOME/google-cloud-sdk/*.bash.inc; do
-    source "$f"
-done
+if [[ -d "$HOME/google-cloud-sdk" ]] ; then
+    for f in $HOME/google-cloud-sdk/*.bash.inc ; do
+        source "$f"
+    done
+fi
