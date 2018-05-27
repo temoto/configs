@@ -161,6 +161,7 @@ let python_highlight_all = 1
 " Annoying completions on Left/Right keys. Impossible to move cursor!
 let g:ftplugin_sql_omni_key_left = 'stub'
 let g:ftplugin_sql_omni_key_right = 'stub'
+let g:terraform_align = 1
 
 
 " python has 4 spaces instead of tabs
