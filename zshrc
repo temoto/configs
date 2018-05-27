@@ -44,7 +44,9 @@ alias 'gci'='git commit'
 alias 'gco'='git checkout'
 alias 'gcom'='git checkout master'
 alias 'gd'='git diff --find-copies-harder -B -C --color-words --word-diff-regex="\\w+|[^[:space:]]"'
+alias 'gdl'='git diff --find-copies-harder -B -C'
 alias 'gdc'='git diff --find-copies-harder -B -C --color-words --cached --word-diff-regex="\\w+|[^[:space:]]"'
+alias 'gdlc'='git diff --find-copies-harder -B -C --cached'
 alias 'gfap'='git fetch --all --prune'
 alias 'gfpp'='git fetch --all --prune && git pull'
 alias 'gfrom'='git fetch && git rebase origin/master'
@@ -96,7 +98,10 @@ compdef _git-branch git_rebase_merge
 
 function git_merge_delete() {
     local branch="${1-$(git symbolic-ref --short HEAD)}"
-    git checkout master && git merge --ff-only $branch && git branch -d $branch && git push --delete origin $branch
+    git checkout $branch && git rebase master && \
+        git checkout master && git merge --ff-only $branch && \
+        git branch -d $branch && git push --delete origin $branch && \
+        git branch --list --verbose master
 }
 compdef _git-branch git_merge_delete
 compdef _git-branch gmfd
@@ -107,7 +112,7 @@ function github_clone() {
     local url="https://$suffix"
     local target="$HOME/dev/$suffix"
     local rc=0
-    git clone "$url" "$target" || rc=$?
+    git clone --recursive "$url" "$target" || rc=$?
     cd "$target"
     return $rc
 }
@@ -1178,3 +1183,9 @@ if [[ $NOPRECMD -eq 0 ]]; then
 fi
 
 # End copied from grml
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then source "$HOME/google-cloud-sdk/path.zsh.inc"; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then source "$HOME/google-cloud-sdk/completion.zsh.inc"; fi

@@ -22,7 +22,7 @@
 	"caret_extra_top": 1,
 	"caret_extra_width": 1,
 	"caret_style": "wide",
-	"color_scheme": "Packages/User/Solarized (Dark) (SublimePythonIDE).tmTheme",
+	"color_scheme": "Packages/User/SublimeLinter/Solarized (Dark) (SublimePythonIDE) (SL).tmTheme",
 	"file_exclude_patterns":
 	[
 		"*.class",
