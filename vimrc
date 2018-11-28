@@ -168,15 +168,6 @@ let g:terraform_align = 1
 augroup python
 	au!
 	au BufReadPre,FileReadPre,BufEnter,BufWinEnter *.py setlocal expandtab
-	au BufRead,BufEnter,BufWinEnter *.py setlocal makeprg=python\ -c\ \"import\ py_compile,sys;\ sys.stderr=sys.stdout;\ py_compile.compile(r'%')\"
-	au BufRead,BufEnter,BufWinEnter *.py setlocal efm=%C\ %.%#,%A\ \ File\ \"%f\"\\,\ line\ %l%.%#,%Z%[%^\ ]%\\@=%m
-	au BufEnter,BufWinEnter *.py ino <buffer><silent> <C-n> <C-r>=RopeCodeAssistInsertMode()<CR>
-	au BufEnter,BufWinEnter *.py ino <buffer><silent> <F8> <C-o>:!python %<CR>
-	au BufEnter,BufWinEnter *.py ino <buffer><silent> <F9> <C-o>:py EvaluateCurrentRange()<CR>
-	au BufEnter,BufWinEnter *.py vno <buffer><silent> <F9> :py EvaluateCurrentRange()<CR>
-	au BufEnter,BufWinEnter *.py ino <buffer><silent> ( ()<Left>
-	au BufEnter,BufWinEnter *.py ino <buffer><silent> [ []<Left>
-	au BufEnter,BufWinEnter *.py ino <buffer><silent> { {}<Left>
 	au BufWritePre *.py silent! %s/\v(\ +)$//
 augroup END
 
