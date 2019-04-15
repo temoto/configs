@@ -5,7 +5,7 @@ HISTFILE=~/.zsh_history
 
 
 # Environment variables that may have been overwritten by /etc/profile.d
-export GOPATH=$HOME
+#export GOPATH=$HOME
 
 
 # Settings for umask
@@ -64,6 +64,8 @@ alias 'gsp'='git stash pop'
 alias 'gst'='git status'
 alias 'gt'='git tag'
 alias 'ghclone'=github_clone
+
+alias arch_instal_yay='git clone https://aur.archlinux.org/yay.git && ( cd yay && makepkg -si ) ; rm -rf ./yay/'
 
 
 REPORTTIME=2
@@ -1183,6 +1185,25 @@ if [[ $NOPRECMD -eq 0 ]]; then
 fi
 
 # End copied from grml
+
+# Begin percol
+
+function exists { which $1 &> /dev/null }
+
+if exists percol; then
+    function percol_select_history() {
+        local tac
+        exists gtac && tac="gtac" || { exists tac && tac="tac" || { tac="tail -r" } }
+        BUFFER=$(fc -l -n 1 | eval $tac | percol --auto-fail --auto-match --prompt-bottom --query "$LBUFFER")
+        CURSOR=$#BUFFER         # move cursor
+        zle -R -c               # refresh
+    }
+
+    zle -N percol_select_history
+    bindkey '^R' percol_select_history
+fi
+
+# End percol
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then source "$HOME/google-cloud-sdk/path.zsh.inc"; fi
