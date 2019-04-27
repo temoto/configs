@@ -23,6 +23,7 @@
 	summary = true
 [push]
 	default = current
+	followTags = true
 [svn]
 	rmdir = true
 [hub]

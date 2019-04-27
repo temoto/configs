@@ -3,9 +3,10 @@
 if has("syntax")
 	syntax on
 endif
-filetype on
-filetype plugin on
-filetype indent on
+"filetype on
+filetype off " required for Vundle
+"filetype plugin on " Vundle related
+"filetype indent on " Vundle related
 
 set mouse=a
 set background=dark
@@ -27,6 +28,17 @@ set splitright
 set laststatus=2
 set statusline=%F%m%r%h%w\ [%{&ff},\ %Y]\ [0x\%02.2B]\ [%04l,%04v][%p%%/%L]
 set cmdheight=2
+
+" Begin Vundle
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+Plugin 'VundleVim/Vundle.vim'
+Plugin 'editorconfig/editorconfig-vim'
+call vundle#end()
+filetype plugin indent on    " required
+" To ignore plugin indent changes, instead use:
+"filetype plugin on
+" End Vundle
 
 " Begin excerpt from mswin.vim
 " backspace and cursor keys wrap to previous/next line

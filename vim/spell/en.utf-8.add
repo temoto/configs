@@ -1,0 +1,8 @@
+hostname
+plaintext
+offline
+wildcard
+bool
+MQTT
+fallback
+keepalive
