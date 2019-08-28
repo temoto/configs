@@ -25,9 +25,8 @@ set nowrap showbreak=+ ignorecase
 
 set number showmode showmatch incsearch hlsearch lazyredraw wildmenu ruler
 set splitright
-set laststatus=2
 set statusline=%F%m%r%h%w\ [%{&ff},\ %Y]\ [0x\%02.2B]\ [%04l,%04v][%p%%/%L]
-set cmdheight=2
+set cmdheight=2 showcmd laststatus=2
 
 " Begin Vundle
 set rtp+=~/.vim/bundle/Vundle.vim

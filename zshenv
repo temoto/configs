@@ -8,6 +8,12 @@ export PATH=$PATH:$HOME/bin:$HOME/google-cloud-sdk/bin:$HOME/.cargo/bin:$HOME/go
 export PYTHONDONTWRITEBYTECODE=1
 export ESP_ROOT=$HOME/dev/esp-open-sdk
 
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME/dev
+if [[ $(uname -s) = Darwin ]] ; then
+	export VIRTUALENVWRAPPER_PYTHON="/Library/Frameworks/Python.framework/Versions/3.7/bin/python3.7"
+fi
+
 # Add custom completions
 zshrc_path=$(readlink $HOME/.zshrc)
 zshrc_dir=${zshrc_path%/*}

@@ -63,7 +63,9 @@ alias 'gsd'='git stash drop'
 alias 'gsp'='git stash pop'
 alias 'gst'='git status'
 alias 'gt'='git tag'
-alias 'ghclone'=github_clone
+alias ghclone=github_clone
+alias gomg=go_mod_get
+alias gor=goreplace
 
 alias arch_instal_yay='git clone https://aur.archlinux.org/yay.git && ( cd yay && makepkg -si ) ; rm -rf ./yay/'
 
@@ -118,6 +120,23 @@ function github_clone() {
     cd "$target"
     return $rc
 }
+compdef _git-clone github_clone
+compdef _git-clone ghclone
+
+function go_mod_get() {
+    local rc=0
+    local target=$(mktemp -d)
+    (
+        set -eux
+        cd "$target"
+        GO111MODULE=on go mod init tmp
+        GO111MODULE=on go get "$@"
+    ) || rc=$?
+    rm -rf "$target"
+    return $rc
+}
+compdef _go go_mod_get
+compdef _go gomg
 
 # create a zkbd compatible hash;
 # to add other keys to this hash, see: man 5 terminfo
