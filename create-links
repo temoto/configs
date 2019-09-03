@@ -3,17 +3,13 @@ link="ln -fns"
 src="$(dirname ${BASH_SOURCE[0]})"
 
 mkdir -p ~/bin
-mkdir -p ~/.config/terminator
 $link "$src/bash_profile" ~/.bash_profile
 $link "$src/bashrc" ~/.bashrc
 $link "$src/gitconfig" ~/.gitconfig
 $link "$src/gitignore" ~/.gitignore
 $link "$src/gvimrc" ~/.gvimrc
-$link "$src/hgrc" ~/.hgrc
 $link "$src/inputrc" ~/.inputrc
 $link "$src/rtorrent.rc" ~/.rtorrent.rc
-$link "$src/sublime-text-3" ~/.config/sublime-text-3
-$link "$src/terminator" ~/.config/terminator/config
 $link "$src/vim" ~/.vim
 $link "$src/vimrc" ~/.vimrc
 $link "$src/xbindkeysrc" ~/.xbindkeysrc
