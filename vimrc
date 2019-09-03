@@ -32,7 +32,15 @@ set cmdheight=2 showcmd laststatus=2
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'altercation/vim-colors-solarized'
+"Plugin 'dcharbon/vim-flatbuffers'
 Plugin 'editorconfig/editorconfig-vim'
+Plugin 'racer-rust/vim-racer'
+Plugin 'rhysd/vim-clang-format'
+Plugin 'valloric/YouCompleteMe'
+Plugin 'sheerun/vim-polyglot'
+"Plugin 'zig-lang/zig.vim'
 call vundle#end()
 filetype plugin indent on    " required
 " To ignore plugin indent changes, instead use:
