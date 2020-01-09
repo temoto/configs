@@ -4,8 +4,7 @@ SAVEHIST=10000
 HISTFILE=~/.zsh_history
 
 
-# Environment variables that may have been overwritten by /etc/profile.d
-#export GOPATH=$HOME
+setopt extended_glob
 
 
 # Settings for umask
@@ -66,6 +65,7 @@ alias 'gt'='git tag'
 alias ghclone=github_clone
 alias gomg=go_mod_get
 alias gor=goreplace
+alias goag='ag --ignore-dir=vendor'
 
 alias arch_instal_yay='git clone https://aur.archlinux.org/yay.git && ( cd yay && makepkg -si ) ; rm -rf ./yay/'
 
@@ -1229,3 +1229,31 @@ if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then source "$HOME/google-cloud
 
 # The next line enables shell command completion for gcloud.
 if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then source "$HOME/google-cloud-sdk/completion.zsh.inc"; fi
+
+# Begin broot https://github.com/Canop/broot
+
+# This function starts broot and executes the command
+# it produces, if any.
+# It's needed because some shell commands, like `cd`,
+# have no useful effect if executed in a subshell.
+function br {
+    f=$(mktemp)
+    (
+	set +e
+	broot --outcmd "$f" "$@"
+	code=$?
+	if [ "$code" != 0 ]; then
+	    rm -f "$f"
+	    exit "$code"
+	fi
+    )
+    code=$?
+    if [ "$code" != 0 ]; then
+	return "$code"
+    fi
+    d=$(<"$f")
+    rm -f "$f"
+    eval "$d"
+}
+
+# End broot
