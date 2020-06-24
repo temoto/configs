@@ -68,5 +68,6 @@ Thumbs.db
 *.aux
 *.pdf
 .settings
+.vscode/
 .tox/
 venv*/

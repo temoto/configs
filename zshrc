@@ -72,13 +72,16 @@ alias arch_instal_yay='git clone https://aur.archlinux.org/yay.git && ( cd yay &
 
 REPORTTIME=2
 
-setxkbmap us,ru ,winkeys grp:caps_toggle compose:ralt 2>/dev/null
+# TODO Linux GUI start script
+if false ; then
+    setxkbmap us,ru ,winkeys grp:caps_toggle compose:ralt 2>/dev/null
 
-# keyboard repeat rate
-xset r rate 300 34 2>/dev/null
+    # keyboard repeat rate
+    xset r rate 300 34 2>/dev/null
 
-# disable bell
-xset -b 2>/dev/null
+    # disable bell
+    xset -b 2>/dev/null
+fi
 
 if which pyenv >/dev/null; then eval "$(pyenv init -)"; fi
 
@@ -116,7 +119,7 @@ function github_clone() {
     local url="https://$suffix"
     local target="$HOME/dev/$suffix"
     local rc=0
-    git clone --recursive "$url" "$target" || rc=$?
+    git clone --recursive "$url" "$target" "${@:2}" || rc=$?
     cd "$target"
     return $rc
 }
