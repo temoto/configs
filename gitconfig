@@ -41,3 +41,11 @@
 	enabled = true
 [interactive]
 	singleKey = true
+[mergetool]
+	keepBackup = false
+[gpg]
+	program = /usr/local/bin/gpg
+[init]
+	defaultBranch = master
+[pull]
+	rebase = true

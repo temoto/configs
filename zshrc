@@ -24,12 +24,12 @@ setopt no_complete_aliases
 if ls --color=auto -d . >/dev/null 2>/dev/null ; then
     alias ls='ls --color=auto'
 fi
-alias la='ls -la'
+alias la='ls -lah'
 alias lh='ls -lh'
 alias ll='ls -l'
 alias p2='/usr/bin/env python2 $(which ipython)'
 alias p3='/usr/bin/env python3 $(which ipython)'
-alias generate_passwords='base64 /dev/urandom |fold -w20 |grep -Ev "[+/]" |head -n7'
+alias generate_passwords='base64 /dev/urandom |tr -d "+/" |fold -w20 |head -n7'
 
 alias 'find-py'='find . -name \*.py -print0 |xargs -0 '
 alias 'find-pyc'='find . -name \*.pyc -print0 |xargs -0 '
@@ -39,6 +39,7 @@ alias 'gb'='git branch --verbose'
 alias 'gba'='git branch --all --list --verbose'
 alias 'gca'='git commit --all'
 alias 'gcamn'='git commit --all --amend --no-edit'
+alias 'gcimn'='git commit --amend --no-edit'
 alias 'gci'='git commit'
 alias 'gco'='git checkout'
 alias 'gcom'='git checkout master'
@@ -61,11 +62,13 @@ alias 'gsa'='git stash apply'
 alias 'gsd'='git stash drop'
 alias 'gsp'='git stash pop'
 alias 'gst'='git status'
+alias 'gsw'='git switch'
 alias 'gt'='git tag'
 alias ghclone=github_clone
 alias gomg=go_mod_get
 alias gor=goreplace
-alias goag='ag --ignore-dir=vendor'
+alias goag='ag --ignore-dir=build --ignore-dir=dist --ignore-dir=vendor'
+alias tf=terraform
 
 alias arch_instal_yay='git clone https://aur.archlinux.org/yay.git && ( cd yay && makepkg -si ) ; rm -rf ./yay/'
 
@@ -1260,3 +1263,5 @@ function br {
 }
 
 # End broot
+
+complete -o nospace -C $(which terraform) terraform

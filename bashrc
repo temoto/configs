@@ -192,3 +192,5 @@ function br {
 }
 
 # End broot
+
+complete -C $(which terraform) terraform
