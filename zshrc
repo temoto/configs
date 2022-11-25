@@ -15,15 +15,22 @@ else
 fi
 
 # completion
+for d in ~/.config/zsh-completion ~/.zfunc ; do
+    [[ -d "$d" ]] && fpath+=("$d")
+done
 autoload -U +X compinit && compinit || print 'Notice: no compinit available :(' >&2
 autoload -U +X bashcompinit && bashcompinit
 autoload _git && _git >/dev/null 2>&1
 setopt no_complete_aliases
 
 # aliases
-if ls --color=auto -d . >/dev/null 2>/dev/null ; then
+if exa &>/dev/null ; then
+    alias ls='exa'
+elif ls --color=auto -d . &>/dev/null ; then
     alias ls='ls --color=auto'
 fi
+alias fgrep='grep -F'
+alias egrep='grep -E'
 alias la='ls -lah'
 alias lh='ls -lh'
 alias ll='ls -l'
@@ -35,37 +42,36 @@ alias 'find-py'='find . -name \*.py -print0 |xargs -0 '
 alias 'find-pyc'='find . -name \*.pyc -print0 |xargs -0 '
 
 # git helpers
-alias 'gb'='git branch --verbose'
-alias 'gba'='git branch --all --list --verbose'
-alias 'gca'='git commit --all'
-alias 'gcamn'='git commit --all --amend --no-edit'
-alias 'gcimn'='git commit --amend --no-edit'
-alias 'gci'='git commit'
-alias 'gco'='git checkout'
-alias 'gcom'='git checkout master'
-alias 'gd'='git diff --find-copies-harder -B -C --color-words --word-diff-regex="\\w+|[^[:space:]]"'
-alias 'gdl'='git diff --find-copies-harder -B -C'
-alias 'gdc'='git diff --find-copies-harder -B -C --color-words --cached --word-diff-regex="\\w+|[^[:space:]]"'
-alias 'gdlc'='git diff --find-copies-harder -B -C --cached'
-alias 'gfap'='git fetch --all --prune'
-alias 'gfpp'='git fetch --all --prune && git pull'
-alias 'gfrom'='git fetch && git rebase origin/master'
-alias 'gl'='git log --cherry --decorate=short --stat'
-alias 'gla'='git log --all --cherry --decorate=short --stat'
-alias 'glp'='git log --cherry --decorate=short --patch'
-alias 'glpa'='git log --all --cherry --decorate=short --patch'
-alias 'gmf'='git merge --ff-only'
-alias 'gmfd'=git_merge_delete
-alias 'gpd'=git_push_delete
-alias 'gs'='git stash'
-alias 'gsa'='git stash apply'
-alias 'gsd'='git stash drop'
-alias 'gsp'='git stash pop'
-alias 'gst'='git status'
-alias 'gsw'='git switch'
-alias 'gt'='git tag'
+alias gb='git branch --verbose'
+alias gba='git branch --all --list --verbose'
+alias gca='git commit --all'
+alias gcamn='git commit --all --amend --no-edit'
+alias gcimn='git commit --amend --no-edit'
+alias gci='git commit'
+alias gco='git checkout'
+alias gd='git diff --find-copies-harder -B -C --color-words --word-diff-regex="\\w+|[^[:space:]]"'
+alias gdl='git diff --find-copies-harder -B -C'
+alias gdc='git diff --find-copies-harder -B -C --color-words --cached --word-diff-regex="\\w+|[^[:space:]]"'
+alias gdlc='git diff --find-copies-harder -B -C --cached'
+alias gfap='git fetch --all --prune'
+alias gfpp='git fetch --all --prune && git pull'
+alias gfrom='git fetch && git rebase origin/master'
+alias gl='git log --cherry --decorate=short --stat'
+alias gla='git log --all --cherry --decorate=short --stat'
+alias glp='git log --cherry --decorate=short --patch'
+alias glpa='git log --all --cherry --decorate=short --patch'
+alias gmf='git merge --ff-only'
+alias gmfd=git_merge_delete
+alias gpd=git_push_delete
+alias gs='git stash'
+alias gsa='git stash apply'
+alias gsd='git stash drop'
+alias gsp='git stash pop'
+alias gst='git status'
+alias gsw='git switch'
+alias gswm='git switch master'
+alias gt='git tag'
 alias ghclone=github_clone
-alias gomg=go_mod_get
 alias gor=goreplace
 alias goag='ag --ignore-dir=build --ignore-dir=dist --ignore-dir=vendor'
 alias tf=terraform
@@ -108,10 +114,20 @@ compdef _git-branch git_rebase_merge
 
 function git_merge_delete() {
     local branch="${1-$(git symbolic-ref --short HEAD)}"
-    git checkout $branch && git rebase master && \
-        git checkout master && git merge --ff-only $branch && \
-        git branch -d $branch && git push --delete origin $branch && \
-        git branch --list --verbose master
+    local into="${2-master}"
+    (
+        set -eu
+        echo "- switch $branch, rebase on $into" >&2
+        git switch $branch && git rebase $into
+        echo "- switch $into, ff-merge $branch" >&2
+        git switch $into && git merge --ff-only $branch
+        echo "- push $into" >&2
+#        git push origin $into
+        echo "- delete local and remote $branch" >&2
+        git branch -d $branch
+        git push --delete origin $branch || true
+        git branch --list --verbose $into
+    )
 }
 compdef _git-branch git_merge_delete
 compdef _git-branch gmfd
@@ -128,21 +144,6 @@ function github_clone() {
 }
 compdef _git-clone github_clone
 compdef _git-clone ghclone
-
-function go_mod_get() {
-    local rc=0
-    local target=$(mktemp -d)
-    (
-        set -eux
-        cd "$target"
-        GO111MODULE=on go mod init tmp
-        GO111MODULE=on go get "$@"
-    ) || rc=$?
-    rm -rf "$target"
-    return $rc
-}
-compdef _go go_mod_get
-compdef _go gomg
 
 # create a zkbd compatible hash;
 # to add other keys to this hash, see: man 5 terminfo

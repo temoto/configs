@@ -1,0 +1,55 @@
+#!/bin/bash
+set -eu
+src="$(cd "$(dirname ${BASH_SOURCE[0]})" ; pwd)"
+config_items=(
+    zsh-completion
+)
+dot_items=(
+    bash_profile
+    bashrc
+    gitconfig
+    gitignore
+    gvimrc
+    inputrc
+    rtorrent.rc
+    vim
+    vimrc
+    xbindkeysrc
+    zshenv
+    zshrc
+)
+ln_flags=(
+    --force
+    --no-dereference
+    --relative
+    --symbolic
+    --verbose
+)
+pdm_completion_path="$src/zsh-completion/_pdm"
+
+link_src_config() {
+    ln "${ln_flags[@]}" "$src/$1" ~/.config/"$1"
+}
+link_src_dot() {
+    ln "${ln_flags[@]}" "$src/$1" ~/".$1"
+}
+
+mkdir -p ~/bin
+
+echo "- link configs" >&2
+for item in "${config_items[@]}" ; do
+    link_src_config "$item"
+done
+for item in "${dot_items[@]}" ; do
+    link_src_dot "$item"
+done
+
+echo -n "- pdm zsh completion: " >&2
+if [[ -f "$pdm_completion_path" ]] ; then
+    echo "exists" >&2
+elif ! pdm --version &>/dev/null ; then
+    echo "pdm not installed" >&2
+else
+    echo "creating" >&2
+    pdm completion zsh >"$src/zsh-completion/_pdm"
+fi
