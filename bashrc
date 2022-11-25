@@ -40,18 +40,8 @@ function print_exit_code {
     tput sgr0
 }
 
-function print_vcs_info {
-    printf "%b" "$head_local"
-}
-
 function on_prompt {
     __ec=${?-0} # save last executed command exit code
-    # these two are from git-prompt.sh
-    if declare -f parse_vcs_status >/dev/null; then
-        set_shell_label
-        unset head_local
-        parse_vcs_status
-    fi
 
     host_id=$(which hostid >/dev/null && hostid || echo 1)
     host_hash=$(( (${#HOSTNAME}+0x${host_id}) % 15+1))
@@ -72,9 +62,6 @@ function on_prompt {
     fi
 }
 
-# run git-prompt
-[[ $- == *i* ]] && which git-prompt.sh >/dev/null && . $(which git-prompt.sh)
-
 # my settings
 # command prompt: (two lines)
 # First: green username, different color hostname, blue current dir, green/red exitcode
@@ -87,7 +74,6 @@ prompt=(
     "$ec_clr"                  ':'
     "$ec_path"                 '\w'
     "$ec_clr"                  ' '
-    ""                         "\$(print_vcs_info)"
     "$ec_clr"                  "\[\$(print_exit_code)\]"
     "$ec_clr"                  '\n'
     ""                         "\\$ "
@@ -194,3 +180,6 @@ function br {
 # End broot
 
 complete -C $(which terraform) terraform
+source /usr/share/nvm/init-nvm.sh
+
+source /home/temoto/.config/broot/launcher/bash/br

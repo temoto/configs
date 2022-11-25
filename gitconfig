@@ -8,8 +8,6 @@
 [core]
 	excludesfile = ~/.gitignore
 	whitespace = trailing-space,space-before-tab
-[credential]
-	helper = cache --timeout=7200
 [diff]
 	renames = copies
 [grep]
@@ -19,7 +17,7 @@
 	fontui = -family \"DejaVu Sans\" -size 11 -weight bold -slant roman -underline 0 -overstrike 0
 	fontdiff = -family \"DejaVu Sans Mono\" -size 11 -weight normal -slant roman -underline 0 -overstrike 0
 [merge]
-	tool = meld
+#	tool = meld
 	summary = true
 [push]
 	default = current
@@ -43,9 +41,13 @@
 	singleKey = true
 [mergetool]
 	keepBackup = false
-[gpg]
-	program = /usr/local/bin/gpg
 [init]
 	defaultBranch = master
 [pull]
 	rebase = true
+[credential "https://github.com"]
+	helper =
+	helper = !/usr/bin/gh auth git-credential
+[credential "https://gist.github.com"]
+	helper =
+	helper = !/usr/bin/gh auth git-credential

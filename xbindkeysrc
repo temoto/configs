@@ -67,4 +67,3 @@
 # send clipboard to paste service
 "xclip -o | ~/bin/lodgeit.py"
     Control+Mod4 + p
-

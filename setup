@@ -23,23 +23,43 @@ dot_items=(
     zshenv
     zshrc
 )
-ln_flags=(
-    --force
-    --no-dereference
-    --relative
-    --symbolic
-    --verbose
-)
-pdm_completion_path="$src/zsh-completion/_pdm"
 
-link() { ln "${ln_flags[@]}" "$@" ; }
+log() {
+    echo "$@" >&2
+}
+
+link() {
+    local flags=(
+        --force
+        --no-dereference
+        --relative
+        --symbolic
+        "$@"
+    )
+    ln "${flags[@]}"
+}
 link_config() { link -- "$src/$1" ~/.config/"$1" ; }
 link_dot() { link -- "$src/$1" ~/".$1" ; }
-log() { echo "$@" >&2 ; }
 
-mkdir -p ~/bin
+pdm_zsh_completion() {
+    local log_prefix="- python pdm zsh completion: "
+    local path="$src/zsh-completion/_pdm"
+    if [[ -f "$path" ]] ; then
+        log "$log_prefix $path exists"
+    elif ! pdm --version &>/dev/null ; then
+        log "$log_prefix pdm is not installed"
+    else
+        log "$log_prefix $path not found, creating"
+        pdm completion zsh >"$path"
+    fi
+}
 
-echo "- link configs" >&2
+
+# main
+
+mkdir -p -- ~/bin
+
+log "- link configs"
 for item in "${config_items[@]}" ; do
     link_config "$item"
 done
@@ -47,19 +67,10 @@ for item in "${dot_items[@]}" ; do
     link_dot "$item"
 done
 
-log -n "- pdm zsh completion: "
-if [[ -f "$pdm_completion_path" ]] ; then
-    log "exists"
-elif ! pdm --version &>/dev/null ; then
-    log "pdm not installed"
-else
-    log "creating"
-    pdm completion zsh >"$src/zsh-completion/_pdm"
-fi
+pdm_zsh_completion
 
-echo "- vscodium"
-mkdir -p ~/.config/VSCodium/User
-for path in "$src"/VSCodium/User/* ; do
-    relative="$(realpath --relative-base="$src" -- "$path")"
-    link_config "$relative"
+log "- vscodium"
+mkdir -p -- ~/.config/VSCodium/User
+for item in VSCodium/User/* ; do
+    link_config "$item"
 done

@@ -1266,3 +1266,8 @@ function br {
 # End broot
 
 complete -o nospace -C $(which terraform) terraform
+test -r /usr/share/nvm/init-nvm.sh && source /usr/share/nvm/init-nvm.sh
+
+which broot &>/dev/null && source /home/temoto/.config/broot/launcher/bash/br
+
+which direnv &>/dev/null && eval "$(direnv hook zsh)"

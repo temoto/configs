@@ -19,6 +19,7 @@ set backspace=indent,eol,start
 set history=2000
 set undolevels=200
 
+set encoding=utf-8
 set ffs=unix,mac,dos
 set listchars=tab:>-,trail:-
 set nowrap showbreak=+ ignorecase
