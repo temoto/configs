@@ -1,0 +1,155 @@
+{
+  "atomKeymap.promptV3Features": true,
+  "breadcrumbs.icons": false,
+  "clang-format.language.proto.style": "{ BasedOnStyle: file, AllowShortBlocksOnASingleLine: Empty, AllowShortEnumsOnASingleLine: false, AllowShortFunctionsOnASingleLine: Empty }",
+  "debug.onTaskErrors": "showErrors",
+  "diffEditor.renderSideBySide": true,
+  "editor.codeActionsOnSaveTimeout": 3000,
+  "editor.copyWithSyntaxHighlighting": false,
+  "editor.cursorBlinking": "solid",
+  "editor.find.addExtraSpaceOnTop": false,
+  "editor.find.autoFindInSelection": "multiline",
+  "editor.folding": false,
+  "editor.fontFamily": "Inconsolas, Hack, Menlo, Consolas, DejaVu Sans Mono, monospace",
+  "editor.formatOnSave": true,
+  "editor.formatOnSaveTimeout": 3000,
+  "editor.formatOnType": true,
+  "editor.highlightActiveIndentGuide": false,
+  "editor.maxTokenizationLineLength": 5000,
+  "editor.minimap.scale": 2,
+  "editor.minimap.showSlider": "always",
+  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.parameterHints.cycle": true,
+  "editor.parameterHints.enabled": true,
+  "editor.quickSuggestions": { "other": false, "comments": false, "strings": false },
+  "editor.renderIndentGuides": false,
+  "editor.rulers": [120],
+  "editor.suggest.insertHighlight": true,
+  "editor.suggest.localityBonus": true,
+  "editor.suggest.maxVisibleSuggestions": 13,
+  "editor.suggestSelection": "first",
+  "editor.tabCompletion": "onlySnippets",
+  "editor.tokenColorCustomizations": { "comments": "#b58900", "keywords": "#dc322f" },
+  "editor.wordBasedSuggestions": true,
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "extensions.autoCheckUpdates": false,
+  "extensions.autoUpdate": false,
+  "extensions.ignoreRecommendations": true,
+  "extensions.showRecommendationsOnlyOnDemand": true,
+  "files.autoSave": "onFocusChange",
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "githubNotificationsBell.oauthToken": "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",
+  "githubPullRequests.defaultMergeMethod": "rebase",
+  "githubPullRequests.showInSCM": true,
+  "go.autocompleteUnimportedPackages": true,
+  "go.buildFlags": ["-race", "-trimpath"],
+  "go.coverageDecorator": { "type": "gutter" },
+  "go.coverOnSingleTest": true,
+  "go.coverOnSingleTestFile": true,
+  "go.formatFlags": ["-s"],
+  "go.formatTool": "goimports",
+  "go.installDependenciesWhenBuilding": false,
+  "go.lintTool": "golangci-lint",
+  "go.testOnSave": true,
+  "go.testTimeout": "15s",
+  "go.useCodeSnippetsOnFunctionSuggest": true,
+  "go.useCodeSnippetsOnFunctionSuggestWithoutType": true,
+  "go.useLanguageServer": true,
+  "hclfmt.path": "",
+  "html.format.endWithNewline": true,
+  "html.format.extraLiners": "",
+  "prettier.printWidth": 120,
+  "prettier.requireConfig": true,
+  "python.jediEnabled": false,
+  "terminal.external.osxExec": "iTerm.app",
+  "terminal.integrated.fontSize": 14,
+  "update.mode": "manual",
+  "window.nativeFullScreen": false,
+  "window.newWindowDimensions": "maximized",
+  "window.restoreFullscreen": true,
+  "window.restoreWindows": "all",
+  "workbench.colorTheme": "Solarized Dark",
+  "workbench.colorCustomizations": {
+    "editor.foreground": "#839496",
+    // "activityBar.background": "#b0b8b7",
+    // "tab.border": "#003847",
+    "panel.border": "#ccc",
+    "editorGroup.border": "#ccc"
+    // "peekView.border": "#ccc",
+  },
+  "workbench.editor.highlightModifiedTabs": true,
+  "workbench.fontAliasing": "auto",
+  "workbench.settings.enableNaturalLanguageSearch": false,
+  "workbench.settings.useSplitJSON": true,
+  "workbench.tips.enabled": false,
+  "workbench.tree.indent": 16,
+  "workbench.tree.renderIndentGuides": "always",
+  "workbench.view.alwaysShowHeaderActions": true,
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.python",
+    "editor.formatOnPaste": false
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "problems.showCurrentInStatus": true,
+  "[yaml]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "C_Cpp.default.includePath": [],
+  "[c]": {
+    "editor.defaultFormatter": "xaver.clang-format"
+  },
+  "search.useGlobalIgnoreFiles": true,
+  "python.linting.ignorePatterns": [".vscode/*.py", "**/site-packages/**/*.py", "**/node_modules/**", ".*_cache/**"],
+  "go.gotoSymbol.ignoreFolders": ["layout-sandbox", ".mypy_cache", "node_modules", "site-packages", ".pypy_cache"],
+  "platformio-ide.activateOnlyOnPlatformIOProject": true,
+  "platformio-ide.activateProjectOnTextEditorChange": true,
+  "editor.unicodeHighlight.ambiguousCharacters": false,
+  "workbench.editor.untitled.hint": "hidden",
+  "files.associations": {
+    "**/*.html": "html",
+    "**/templates/**/*.html": "django-html",
+    "**/templates/**/*": "django-txt",
+    "**/requirements{/**,*}.{txt,in}": "pip-requirements"
+  },
+  "emmet.includeLanguages": {
+    "django-html": "html"
+  },
+  "beautify.language": {
+    "html": ["html", "django-html"]
+  },
+  "[django-html]": {
+    "editor.defaultFormatter": "HookyQR.beautify"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "python.languageServer": "Pylance",
+  "workbench.startupEditor": "none",
+  "svelte.enable-ts-plugin": true,
+  "gitlens.statusBar.enabled": false,
+  "[html]": {
+    "editor.defaultFormatter": "HookyQR.beautify"
+  },
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "rust.build_on_save": true,
+  "[proto3]": {
+    "editor.defaultFormatter": "zxh404.vscode-proto3"
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "pgFormatter.pgFormatterPath": "/home/temoto/dev/github.com/darold/pgFormatter/pg_format"
+}

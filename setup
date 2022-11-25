@@ -1,6 +1,11 @@
 #!/bin/bash
 set -eu
-src="$(cd "$(dirname ${BASH_SOURCE[0]})" ; pwd)"
+
+# setup
+
+cd "$(dirname "${BASH_SOURCE[0]}")"
+# all paths are relative to $src (repo root), but absolute for ln
+src="$(pwd)"
 config_items=(
     zsh-completion
 )
@@ -27,29 +32,34 @@ ln_flags=(
 )
 pdm_completion_path="$src/zsh-completion/_pdm"
 
-link_src_config() {
-    ln "${ln_flags[@]}" "$src/$1" ~/.config/"$1"
-}
-link_src_dot() {
-    ln "${ln_flags[@]}" "$src/$1" ~/".$1"
-}
+link() { ln "${ln_flags[@]}" "$@" ; }
+link_config() { link -- "$src/$1" ~/.config/"$1" ; }
+link_dot() { link -- "$src/$1" ~/".$1" ; }
+log() { echo "$@" >&2 ; }
 
 mkdir -p ~/bin
 
 echo "- link configs" >&2
 for item in "${config_items[@]}" ; do
-    link_src_config "$item"
+    link_config "$item"
 done
 for item in "${dot_items[@]}" ; do
-    link_src_dot "$item"
+    link_dot "$item"
 done
 
-echo -n "- pdm zsh completion: " >&2
+log -n "- pdm zsh completion: "
 if [[ -f "$pdm_completion_path" ]] ; then
-    echo "exists" >&2
+    log "exists"
 elif ! pdm --version &>/dev/null ; then
-    echo "pdm not installed" >&2
+    log "pdm not installed"
 else
-    echo "creating" >&2
+    log "creating"
     pdm completion zsh >"$src/zsh-completion/_pdm"
 fi
+
+echo "- vscodium"
+mkdir -p ~/.config/VSCodium/User
+for path in "$src"/VSCodium/User/* ; do
+    relative="$(realpath --relative-base="$src" -- "$path")"
+    link_config "$relative"
+done
