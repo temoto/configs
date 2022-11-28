@@ -154,5 +154,27 @@
     "key": "ctrl+k ctrl+r",
     "command": "-git.revertSelectedRanges",
     "when": "isInDiffEditor"
+  },
+  {
+    "key": "ctrl+r",
+    "command": "-workbench.action.reloadWindow",
+    "when": "isDevelopment"
+  },
+  {
+    "key": "ctrl+alt+o",
+    "command": "workbench.action.openRecent"
+  },
+  {
+    "key": "ctrl+r",
+    "command": "-workbench.action.openRecent"
+  },
+  {
+    "key": "ctrl+alt+r",
+    "command": "-workbench.action.reloadWindow"
+  },
+  {
+    "key": "ctrl+alt+r",
+    "command": "-revealFileInOS",
+    "when": "!editorFocus"
   }
 ]

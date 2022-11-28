@@ -38,8 +38,6 @@ link() {
     )
     ln "${flags[@]}"
 }
-link_config() { link -- "$src/$1" ~/.config/"$1" ; }
-link_dot() { link -- "$src/$1" ~/".$1" ; }
 
 pdm_zsh_completion() {
     local log_prefix="- python pdm zsh completion: "
@@ -57,20 +55,21 @@ pdm_zsh_completion() {
 
 # main
 
-mkdir -p -- ~/bin
+mkdir -p -- ~/bin ~/.config/pip
 
 log "- link configs"
 for item in "${config_items[@]}" ; do
-    link_config "$item"
+    link -- "$src/$item" ~/.config/"$item"
 done
 for item in "${dot_items[@]}" ; do
-    link_dot "$item"
+    link -- "$src/$item" ~/."$item"
 done
+item=pip.conf ; link -- "$src/$item" ~/.config/pip/"$item"
 
 pdm_zsh_completion
 
 log "- vscodium"
 mkdir -p -- ~/.config/VSCodium/User
 for item in VSCodium/User/* ; do
-    link_config "$item"
+    link -- "$src/$item" ~/.config/"$item"
 done
